@@ -13,6 +13,14 @@
  .wrap{max-width:none;margin:0;padding:0}
  .toolbar,.source{display:none!important}
  .sheet{box-shadow:none;padding:0;margin:0;width:100%}
+ .print-page{width:100%;}
+ .current-page{height:281mm;page-break-after:always;break-after:page;padding-top:12mm}
+ .forecast-page{page-break-before:always;break-before:page}
+ .current-page .section-title{font-size:18pt;line-height:1.1;margin:0 0 12pt;font-weight:700}
+ .current-page .current{margin:0}
+ .current-page .field{font-size:16pt;line-height:1.35;min-height:0;margin:0 0 4pt}
+ .current-page .label{min-width:48mm;font-weight:700}
+ .forecast-page .section-title{font-size:13pt;line-height:1.05;margin:0 0 7pt;font-weight:700}
  .section-title{font-size:11pt;line-height:1.05;margin:0 0 4pt;font-weight:700}
  .current{margin:0 0 8pt}
  .field{font-size:9.2pt;line-height:1.08;min-height:0;margin:0 0 1pt}
@@ -29,8 +37,8 @@
 </head><body><div class="wrap">
 <div class="toolbar"><h1>Pronóstico para Informativo</h1><span id="status" class="status">Cargando…</span><button class="primary" onclick="loadData()">↻ Actualizar</button><button onclick="window.print()">🖨 Imprimir</button></div>
 <main class="sheet"><p class="source">Fuente exclusiva: Instituto Uruguayo de Meteorología (INUMET). Estado actual: Carrasco.</p>
-<div class="section-title">ESTADO ACTUAL</div><div id="current" class="current">Cargando…</div>
-<div class="section-title">PRONÓSTICO DE TRES DÍAS</div><div id="forecast">Cargando…</div></main></div>
+<section class="print-page current-page"><div class="section-title">ESTADO ACTUAL</div><div id="current" class="current">Cargando…</div></section>
+<section class="print-page forecast-page"><div class="section-title">PRONÓSTICO DE TRES DÍAS</div><div id="forecast">Cargando…</div></section></main></div>
 <script>
 const REGIONS=[['E','ESTE'],['NE','NORESTE'],['NW','NOROESTE'],['M','SUR'],['SO','SUROESTE']];
 const esc=s=>String(s??'—').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
