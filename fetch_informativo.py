@@ -349,17 +349,16 @@ try:
     datos_ext = respuesta_ext.json()
     items_ext = datos_ext.get("items", []) if isinstance(datos_ext, dict) else []
 
-    print("Ítems de pronóstico extendido recibidos:", len(items_ext))
-    for item in items_ext:
-    if item.get("diaMasN") == 3:
-        print(
-            "EXTENDIDO DÍA 3:",
-            item.get("zonaCorta"),
-            "| estadoTiempo:", item.get("estadoTiempo"),
-            "| min:", item.get("tempMin"),
-            "| max:", item.get("tempMax"),
-            "| grupo:", item.get("grupo")
-        )
+        for item in items_ext:
+        if item.get("diaMasN") == 3:
+            print(
+                "EXTENDIDO DÍA 3:",
+                item.get("zonaCorta"),
+                "| estadoTiempo:", item.get("estadoTiempo"),
+                "| min:", item.get("tempMin"),
+                "| max:", item.get("tempMax"),
+                "| grupo:", item.get("grupo")
+            )
     if items_ext:
         print("Campos del primer ítem extendido:", sorted(items_ext[0].keys()))
 
