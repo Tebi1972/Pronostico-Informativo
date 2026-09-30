@@ -1,29 +1,29 @@
 {
-  "updated": "30/09/2026 15:18",
+  "updated": "30/09/2026 18:16",
   "source": "INUMET",
   "locations": {
     "montevideo_carrasco": {
-      "temperature": 12.4,
+      "temperature": 12.6,
       "station": "Carrasco",
       "wigos": "0-20000-0-86580",
-      "observation_time": "2026-09-30T17:00:00Z",
-      "condition_time": "2026-09-30T17:00:00Z",
+      "observation_time": "2026-09-30T21:00:00Z",
+      "condition_time": "2026-09-30T21:00:00Z",
       "humidity": 70,
-      "wind_speed_kmh": 27.7,
-      "wind_direction_deg": 230,
+      "wind_speed_kmh": 18.4,
+      "wind_direction_deg": 200,
       "visibility_m": 20000,
       "forecast_zone": "M"
     }
   },
   "current": {
-    "temperature": 12.4,
+    "temperature": 12.6,
     "station": "Carrasco",
     "wigos": "0-20000-0-86580",
-    "observation_time": "2026-09-30T17:00:00Z",
-    "condition_time": "2026-09-30T17:00:00Z",
+    "observation_time": "2026-09-30T21:00:00Z",
+    "condition_time": "2026-09-30T21:00:00Z",
     "humidity": 70,
-    "wind_speed_kmh": 27.7,
-    "wind_direction_deg": 230,
+    "wind_speed_kmh": 18.4,
+    "wind_direction_deg": 200,
     "visibility_m": 20000,
     "forecast_zone": "M"
   },
@@ -53,8 +53,8 @@
           "date": "Viernes 02",
           "min": "3",
           "max": "18",
-          "morning": "Algo nuboso, períodos de claro. Heladas agrometeorológicas. Neblinas y bancos de niebla.",
-          "evening": "Nuboso.",
+          "morning": "Algo nuboso y nuboso. Heladas agrometeorológicas. Nieblas y neblinas.",
+          "evening": "Algo nuboso y nuboso.",
           "extended": false,
           "weather_code": "2"
         },
@@ -75,9 +75,9 @@
         {
           "date": "Miércoles 30",
           "min": "10",
-          "max": "21",
+          "max": "20",
           "morning": "Nuboso, períodos de cubierto. Neblinas.",
-          "evening": "Algo nuboso y nuboso.",
+          "evening": "Algo nuboso y nuboso, períodos de cubierto.",
           "extended": false,
           "weather_code": "13"
         },
@@ -85,7 +85,7 @@
           "date": "Jueves 01",
           "min": "6",
           "max": "18",
-          "morning": "Nuboso, períodos de cubierto. Precipitaciones escasas. Neblinas y bancos de niebla.",
+          "morning": "Algo nuboso y nuboso, períodos de cubierto. Precipitaciones escasas. Neblinas y bancos de niebla.",
           "evening": "Disminución de nubosidad. Probables precipitaciones. Neblinas.",
           "extended": false,
           "weather_code": "2"
@@ -94,8 +94,8 @@
           "date": "Viernes 02",
           "min": "3",
           "max": "19",
-          "morning": "Algo nuboso, períodos de claro. Heladas agrometeorológicas. Neblinas y bancos de niebla.",
-          "evening": "Nuboso.",
+          "morning": "Algo nuboso, períodos de claro. Heladas agrometeorológicas. Nieblas y neblinas.",
+          "evening": "Algo nuboso y nuboso.",
           "extended": false,
           "weather_code": "2"
         },
@@ -116,9 +116,9 @@
         {
           "date": "Miércoles 30",
           "min": "10",
-          "max": "20",
+          "max": "22",
           "morning": "Algo nuboso y nuboso, períodos de cubierto. Tormentas aisladas. Neblinas.",
-          "evening": "Algo nuboso y nuboso.",
+          "evening": "Algo nuboso y nuboso, períodos de cubierto.",
           "extended": false,
           "weather_code": "13"
         },
@@ -126,7 +126,7 @@
           "date": "Jueves 01",
           "min": "8",
           "max": "20",
-          "morning": "Nuboso, períodos de cubierto. Precipitaciones escasas y aisladas. Neblinas.",
+          "morning": "Algo nuboso y nuboso, períodos de cubierto. Precipitaciones escasas y aisladas. Neblinas.",
           "evening": "Disminución de nubosidad. Probables precipitaciones.",
           "extended": false,
           "weather_code": "2"
@@ -135,8 +135,8 @@
           "date": "Viernes 02",
           "min": "6",
           "max": "22",
-          "morning": "Algo nuboso, períodos de claro. Neblinas y bancos de niebla.",
-          "evening": "Nuboso.",
+          "morning": "Algo nuboso, períodos de claro. Nieblas y neblinas.",
+          "evening": "Algo nuboso y nuboso.",
           "extended": false,
           "weather_code": "2"
         },
@@ -157,9 +157,9 @@
         {
           "date": "Miércoles 30",
           "min": "11",
-          "max": "15",
+          "max": "14",
           "morning": "Cubierto a nuboso y algo nuboso. Probables precipitaciones escasas.",
-          "evening": "Nuboso a cubierto. Neblinas.",
+          "evening": "Algo nuboso y nuboso. Probables precipitaciones escasas. Neblinas.",
           "extended": false,
           "weather_code": "4"
         },
@@ -167,7 +167,7 @@
           "date": "Jueves 01",
           "min": "7",
           "max": "15",
-          "morning": "Nuboso y cubierto. Probables precipitaciones escasas.",
+          "morning": "Nuboso y cubierto. Precipitaciones escasas. Neblinas.",
           "evening": "Disminución de nubosidad.",
           "extended": false,
           "weather_code": "13"
@@ -198,9 +198,9 @@
         {
           "date": "Miércoles 30",
           "min": "7",
-          "max": "18",
+          "max": "19",
           "morning": "Algo nuboso y nuboso. Neblinas y bancos de niebla.",
-          "evening": "Nuboso a cubierto. Precipitaciones escasas. Neblinas.",
+          "evening": "Algo nuboso y nuboso. Precipitaciones escasas. Neblinas.",
           "extended": false,
           "weather_code": "4"
         },
@@ -217,7 +217,7 @@
           "date": "Viernes 02",
           "min": "4",
           "max": "21",
-          "morning": "Algo nuboso, períodos de claro. Heladas agrometeorológicas. Neblinas y bancos de niebla.",
+          "morning": "Algo nuboso, períodos de claro. Heladas agrometeorológicas. Nieblas y neblinas.",
           "evening": "Nuboso.",
           "extended": false,
           "weather_code": "2"
