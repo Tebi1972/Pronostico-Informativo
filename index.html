@@ -7,15 +7,23 @@
 :root{font-family:Arial,Helvetica,sans-serif;color:#000;background:#e9edf1}*{box-sizing:border-box}body{margin:0}.wrap{max-width:1000px;margin:22px auto;padding:0 16px}.toolbar{display:flex;gap:10px;align-items:center;margin-bottom:14px}.toolbar h1{font-size:22px;margin:0 auto 0 0}.toolbar button{border:1px solid #bbb;border-radius:6px;padding:9px 14px;font-weight:700;cursor:pointer;background:#fff}.primary{background:#1f5b88!important;color:#fff;border-color:#1f5b88!important}.sheet{background:#fff;padding:24px 30px;box-shadow:0 2px 12px #0002}.source{font-size:11px;color:#555;margin:0 0 16px}.section-title{font-size:16px;font-weight:800;margin:16px 0 9px;text-transform:uppercase}.current{display:block;margin:0 0 20px}.field{display:flex;gap:7px;line-height:1.45;min-height:22px}.label{font-weight:800;min-width:125px}.day{break-inside:avoid;margin:13px 0 18px}.day h2{font-size:15px;margin:0 0 7px;text-transform:uppercase}.region{display:grid;grid-template-columns:105px 145px minmax(0,1fr);gap:8px;padding:4px 0;align-items:start}.region-name{font-weight:800}.temps{font-weight:700;white-space:nowrap}.forecast{line-height:1.25}.extended{font-size:10px;color:#555;margin-top:1px}.status{font-size:13px;color:#555}.error{color:#a00000;font-weight:700}
 @media(max-width:700px){.current{display:block}.region{grid-template-columns:95px 1fr}.forecast{grid-column:1/-1}.sheet{padding:18px}.toolbar{flex-wrap:wrap}.toolbar h1{width:100%}.temps{white-space:normal}}
 @media print{
- @page{size:A4 portrait;margin:12mm 14mm}
- body{background:#fff;font-family:Arial,Helvetica,sans-serif;font-size:10pt}
- .wrap{max-width:none;margin:0;padding:0}.toolbar,.source{display:none}.sheet{box-shadow:none;padding:0}
- .section-title{font-size:12pt;margin:0 0 6pt;font-weight:700}
- .current{margin:0 0 13pt}.field{font-size:10pt;line-height:1.25;min-height:0;margin:0 0 2pt}.label{min-width:31mm}
- #forecast+.x{display:none}
- .day{margin:0 0 11pt;break-inside:avoid}.day h2{font-size:10.5pt;margin:0 0 4pt;font-weight:700}
- .region{grid-template-columns:27mm 39mm 1fr;gap:2mm;padding:2pt 0;font-size:9.5pt;border:0}
- .region-name,.temps{font-weight:700}.temps{white-space:nowrap}.forecast{line-height:1.18}.extended{font-size:7.5pt;margin-top:1pt}
+ @page{size:A4 portrait;margin:8mm 10mm}
+ html,body{background:#fff;margin:0;padding:0}
+ body{font-family:Arial,Helvetica,sans-serif;font-size:9.2pt;color:#000}
+ .wrap{max-width:none;margin:0;padding:0}
+ .toolbar,.source{display:none!important}
+ .sheet{box-shadow:none;padding:0;margin:0;width:100%}
+ .section-title{font-size:11pt;line-height:1.05;margin:0 0 4pt;font-weight:700}
+ .current{margin:0 0 8pt}
+ .field{font-size:9.2pt;line-height:1.08;min-height:0;margin:0 0 1pt}
+ .label{min-width:29mm;font-weight:700}
+ .day{margin:0 0 6pt;break-inside:avoid;page-break-inside:avoid}
+ .day h2{font-size:9.6pt;line-height:1.05;margin:0 0 2.5pt;font-weight:700;border-bottom:.4pt solid #aaa;padding-bottom:1.5pt}
+ .region{grid-template-columns:25mm 37mm minmax(0,1fr);gap:1.5mm;padding:1.2pt 0;font-size:8.8pt;line-height:1.08;break-inside:avoid;page-break-inside:avoid}
+ .region-name,.temps{font-weight:700}
+ .temps{white-space:nowrap}
+ .forecast{line-height:1.08}
+ .extended{font-size:6.8pt;line-height:1;margin-top:.5pt;color:#444}
 }
 </style>
 </head><body><div class="wrap">
