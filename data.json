@@ -1,29 +1,29 @@
 {
-  "updated": "01/10/2026 03:23",
+  "updated": "01/10/2026 06:18",
   "source": "INUMET",
   "locations": {
     "montevideo_carrasco": {
-      "temperature": 11.3,
+      "temperature": 10.7,
       "station": "Carrasco",
       "wigos": "0-20000-0-86580",
-      "observation_time": "2026-10-01T05:00:00Z",
-      "condition_time": "2026-10-01T05:00:00Z",
-      "humidity": 90,
-      "wind_speed_kmh": 1.8,
-      "wind_direction_deg": 130,
+      "observation_time": "2026-10-01T09:00:00Z",
+      "condition_time": "2026-10-01T09:00:00Z",
+      "humidity": 93,
+      "wind_speed_kmh": 13.0,
+      "wind_direction_deg": 250,
       "visibility_m": 15000,
       "forecast_zone": "M"
     }
   },
   "current": {
-    "temperature": 11.3,
+    "temperature": 10.7,
     "station": "Carrasco",
     "wigos": "0-20000-0-86580",
-    "observation_time": "2026-10-01T05:00:00Z",
-    "condition_time": "2026-10-01T05:00:00Z",
-    "humidity": 90,
-    "wind_speed_kmh": 1.8,
-    "wind_direction_deg": 130,
+    "observation_time": "2026-10-01T09:00:00Z",
+    "condition_time": "2026-10-01T09:00:00Z",
+    "humidity": 93,
+    "wind_speed_kmh": 13.0,
+    "wind_direction_deg": 250,
     "visibility_m": 15000,
     "forecast_zone": "M"
   },
@@ -36,7 +36,7 @@
           "min": "6",
           "max": "16",
           "morning": "Nuboso y cubierto. Precipitaciones escasas. Neblinas y bancos de niebla.",
-          "evening": "Disminución de nubosidad. Precipitaciones escasas. Neblinas.",
+          "evening": "Disminución de nubosidad. Precipitaciones escasas. Mejorando. Neblinas.",
           "extended": false,
           "weather_code": "13"
         },
@@ -76,8 +76,8 @@
           "date": "Jueves 01",
           "min": "7",
           "max": "18",
-          "morning": "Algo nuboso y nuboso, períodos de cubierto. Precipitaciones escasas. Neblinas y bancos de niebla.",
-          "evening": "Disminución de nubosidad. Precipitaciones escasas. Neblinas.",
+          "morning": "Nuboso y cubierto. Precipitaciones escasas. Neblinas y bancos de niebla.",
+          "evening": "Disminución de nubosidad. Precipitaciones escasas. Mejorando. Neblinas.",
           "extended": false,
           "weather_code": "2"
         },
@@ -115,10 +115,10 @@
       "days": [
         {
           "date": "Jueves 01",
-          "min": "8",
+          "min": "10",
           "max": "20",
-          "morning": "Algo nuboso y nuboso, períodos de cubierto. Precipitaciones escasas y aisladas. Neblinas.",
-          "evening": "Disminución de nubosidad. Probables precipitaciones.",
+          "morning": "Nuboso y cubierto, períodos de algo nuboso. Precipitaciones escasas y aisladas. Neblinas.",
+          "evening": "Disminución de nubosidad. Precipitaciones escasas y aisladas. Mejorando.",
           "extended": false,
           "weather_code": "2"
         },
@@ -159,7 +159,7 @@
           "min": "10",
           "max": "14",
           "morning": "Nuboso y cubierto. Precipitaciones escasas. Neblinas.",
-          "evening": "Disminución de nubosidad.",
+          "evening": "Nuboso. Baja probabilidad de precipitaciones escasas.",
           "extended": false,
           "weather_code": "13"
         },
@@ -197,7 +197,7 @@
       "days": [
         {
           "date": "Jueves 01",
-          "min": "9",
+          "min": "8",
           "max": "18",
           "morning": "Nuboso y cubierto. Precipitaciones escasas. Neblinas.",
           "evening": "Disminución de nubosidad. Probables precipitaciones escasas. Neblinas.",
