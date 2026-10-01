@@ -1,29 +1,29 @@
 {
-  "updated": "01/10/2026 06:18",
+  "updated": "01/10/2026 09:22",
   "source": "INUMET",
   "locations": {
     "montevideo_carrasco": {
-      "temperature": 10.7,
+      "temperature": 10.6,
       "station": "Carrasco",
       "wigos": "0-20000-0-86580",
-      "observation_time": "2026-10-01T09:00:00Z",
-      "condition_time": "2026-10-01T09:00:00Z",
-      "humidity": 93,
-      "wind_speed_kmh": 13.0,
-      "wind_direction_deg": 250,
+      "observation_time": "2026-10-01T11:00:00Z",
+      "condition_time": "2026-10-01T11:00:00Z",
+      "humidity": 76,
+      "wind_speed_kmh": 24.1,
+      "wind_direction_deg": 230,
       "visibility_m": 15000,
       "forecast_zone": "M"
     }
   },
   "current": {
-    "temperature": 10.7,
+    "temperature": 10.6,
     "station": "Carrasco",
     "wigos": "0-20000-0-86580",
-    "observation_time": "2026-10-01T09:00:00Z",
-    "condition_time": "2026-10-01T09:00:00Z",
-    "humidity": 93,
-    "wind_speed_kmh": 13.0,
-    "wind_direction_deg": 250,
+    "observation_time": "2026-10-01T11:00:00Z",
+    "condition_time": "2026-10-01T11:00:00Z",
+    "humidity": 76,
+    "wind_speed_kmh": 24.1,
+    "wind_direction_deg": 230,
     "visibility_m": 15000,
     "forecast_zone": "M"
   },
