@@ -1,54 +1,78 @@
 <!doctype html>
 <html lang="es">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Pronóstico para Informativo</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Pronóstico Informativo</title>
 <style>
-:root{font-family:Arial,Helvetica,sans-serif;color:#000;background:#e9edf1}*{box-sizing:border-box}body{margin:0}.wrap{max-width:1000px;margin:22px auto;padding:0 16px}.toolbar{display:flex;gap:10px;align-items:center;margin-bottom:14px}.toolbar h1{font-size:22px;margin:0 auto 0 0}.toolbar button{border:1px solid #bbb;border-radius:6px;padding:9px 14px;font-weight:700;cursor:pointer;background:#fff}.primary{background:#1f5b88!important;color:#fff;border-color:#1f5b88!important}.sheet{background:#fff;padding:24px 30px;box-shadow:0 2px 12px #0002}.source{font-size:11px;color:#555;margin:0 0 16px}.section-title{font-size:16px;font-weight:800;margin:16px 0 9px;text-transform:uppercase}.current{display:block;margin:0 0 20px}.field{display:flex;gap:7px;line-height:1.45;min-height:22px}.label{font-weight:800;min-width:125px}.day{break-inside:avoid;margin:13px 0 18px}.day h2{font-size:15px;margin:0 0 7px;text-transform:uppercase}.region{display:grid;grid-template-columns:105px 145px minmax(0,1fr);gap:8px;padding:4px 0;align-items:start}.region-name{font-weight:800}.temps{font-weight:700;white-space:nowrap}.forecast{line-height:1.25}.extended{font-size:10px;color:#555;margin-top:1px}.status{font-size:13px;color:#555}.error{color:#a00000;font-weight:700}
-@media(max-width:700px){.current{display:block}.region{grid-template-columns:95px 1fr}.forecast{grid-column:1/-1}.sheet{padding:18px}.toolbar{flex-wrap:wrap}.toolbar h1{width:100%}.temps{white-space:normal}}
-@media print{
- @page{size:A4 portrait;margin:8mm 10mm}
- html,body{background:#fff;margin:0;padding:0}
- body{font-family:Arial,Helvetica,sans-serif;font-size:9.2pt;color:#000}
- .wrap{max-width:none;margin:0;padding:0}
- .toolbar,.source{display:none!important}
- .sheet{box-shadow:none;padding:0;margin:0;width:100%}
- .print-page{width:100%;}
- .current-page{height:281mm;page-break-after:always;break-after:page;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:0}
- .forecast-page{height:281mm;page-break-before:always;break-before:page;display:flex;flex-direction:column}
- .current-page .section-title{font-size:26pt;line-height:1.1;margin:0 0 18pt;font-weight:700;width:150mm}
- .current-page .current{margin:0;width:150mm}
- .current-page .field{font-size:23pt;line-height:1.42;min-height:0;margin:0 0 6pt}
- .current-page .label{min-width:65mm;font-weight:700}
- .forecast-page .section-title{font-size:19pt;line-height:1.05;margin:0 0 10pt;font-weight:700}
- .forecast-page #forecast{flex:1;display:flex;flex-direction:column;justify-content:space-between;min-height:0}
- .section-title{font-size:11pt;line-height:1.05;margin:0 0 4pt;font-weight:700}
- .current{margin:0 0 8pt}
- .field{font-size:9.2pt;line-height:1.08;min-height:0;margin:0 0 1pt}
- .label{min-width:29mm;font-weight:700}
- .day{margin:0;break-inside:avoid;page-break-inside:avoid}
- .day h2{font-size:14pt;line-height:1.1;margin:0 0 5pt;font-weight:700;border-bottom:.6pt solid #999;padding-bottom:3pt}
- .region{grid-template-columns:27mm 40mm minmax(0,1fr);gap:2mm;padding:3.2pt 0;font-size:11.6pt;line-height:1.15;break-inside:avoid;page-break-inside:avoid}
- .region-name,.temps{font-weight:700}
- .temps{white-space:nowrap}
- .forecast{line-height:1.15}
- .extended{font-size:8.6pt;line-height:1.05;margin-top:1pt;color:#444}
-}
+  *{box-sizing:border-box} body{margin:0;background:#e9e9e9;color:#000;font-family:Arial,Helvetica,sans-serif}
+  .toolbar{position:sticky;top:0;z-index:10;background:#222;color:#fff;padding:10px;text-align:center}
+  button{font-size:16px;padding:8px 18px;cursor:pointer}
+  .page{width:210mm;min-height:297mm;margin:12mm auto;background:#fff;padding:18mm 18mm 16mm;box-shadow:0 2px 10px #999;font-size:16pt;line-height:1.32}
+  h1{text-align:center;font-size:23pt;margin:0 0 14mm;font-weight:700}
+  h2{text-align:center;font-size:19pt;margin:13mm 0 8mm}
+  .meta{margin-bottom:11mm}.meta div{margin:3mm 0}.current-regions div{margin:7mm 0}
+  .day{margin:0 0 10mm}.day-title{font-size:18pt;font-weight:700;margin-bottom:5mm}
+  .region{margin:0 0 5mm}.region-name{font-weight:700}.temps{white-space:nowrap}
+  .forecast-text{margin-top:1mm}
+  .error{padding:20px;color:#900;font-weight:bold}
+  @page{size:A4 portrait;margin:0}
+  @media print{
+    body{background:#fff}.toolbar{display:none}.page{margin:0;box-shadow:none;width:210mm;height:297mm;min-height:297mm;page-break-after:always;overflow:hidden}.page:last-child{page-break-after:auto}
+  }
 </style>
-</head><body><div class="wrap">
-<div class="toolbar"><h1>Pronóstico para Informativo</h1><span id="status" class="status">Cargando…</span><button class="primary" onclick="loadData()">↻ Actualizar</button><button onclick="window.print()">🖨 Imprimir</button></div>
-<main class="sheet"><p class="source">Fuente exclusiva: Instituto Uruguayo de Meteorología (INUMET). Estado actual: Carrasco.</p>
-<section class="print-page current-page"><div class="section-title">ESTADO ACTUAL</div><div id="current" class="current">Cargando…</div></section>
-<section class="print-page forecast-page"><div class="section-title">PRONÓSTICO DE TRES DÍAS</div><div id="forecast">Cargando…</div></section></main></div>
+</head>
+<body>
+<div class="toolbar"><button onclick="window.print()">Imprimir</button></div>
+<div id="app"><div class="error">Cargando datos de INUMET…</div></div>
 <script>
-const REGIONS=[['E','ESTE'],['NE','NORESTE'],['NW','NOROESTE'],['M','SUR'],['SO','SUROESTE']];
+const REGION_ORDER=[
+  {label:'Norte', current:'Norte', forecast:'NW'},
+  {label:'Este',  current:'Este',  forecast:'E'},
+  {label:'Sur',   current:'Sur',   forecast:'M'},
+  {label:'Oeste', current:'Oeste', forecast:'SO'}
+];
 const esc=s=>String(s??'—').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-function compass(deg){if(deg==null)return '—';const p=['N','NNE','NE','ENE','E','ESE','SE','SSE','S','SSW','SW','WSW','W','WNW','NW','NNW'];return p[Math.round((((+deg)%360)+360)%360/22.5)%16]}
-function uyTime(iso){if(!iso)return {date:'—',time:'—'};const d=new Date(iso);return {date:new Intl.DateTimeFormat('es-UY',{timeZone:'America/Montevideo',day:'2-digit',month:'2-digit',year:'numeric'}).format(d),time:new Intl.DateTimeFormat('es-UY',{timeZone:'America/Montevideo',hour:'2-digit',minute:'2-digit',hour12:false}).format(d)}}
-function extendedIconText(day){if(!day?.extended)return '';const code=String(day.weather_code??'').trim();const labels={'7':'Chaparrones','11':'Tormentas'};return labels[code]||''}
-function forecastText(day){const parts=[];if(day?.morning)parts.push('Mañana: '+day.morning);if(day?.extended){const iconText=extendedIconText(day);if(iconText)parts.push(iconText+'.');if(day?.evening)parts.push(day.evening)}else if(day?.evening){parts.push('Tarde/Noche: '+day.evening)}return parts.join(' ')||'—'}
-function render(data){const c=data.locations?.montevideo_carrasco||{};const t=uyTime(c.observation_time||c.condition_time);const wind=c.wind_speed_kmh==null?'—':(c.wind_speed_kmh<1?'Calmo':`${compass(c.wind_direction_deg)}/${Math.round(c.wind_speed_kmh)} km/h`);const vis=c.visibility_m==null?'—':`${(+c.visibility_m/1000).toLocaleString('es-UY',{maximumFractionDigits:1})} km`;
-document.querySelector('#current').innerHTML=`<div class="field"><span class="label">FECHA:</span>${esc(t.date)}</div><div class="field"><span class="label">HORA:</span>${esc(t.time)}</div><div class="field"><span class="label">TEMPERATURA:</span>${c.temperature==null?'—':esc(c.temperature)+' °C'}</div><div class="field"><span class="label">HUMEDAD:</span>${c.humidity==null?'—':esc(c.humidity)+' %'}</div><div class="field"><span class="label">VIENTO:</span>${esc(wind)}</div><div class="field"><span class="label">VISIBILIDAD:</span>${esc(vis)}</div>`;
-let html='';for(let future=1;future<=3;future++){let title=future===1?'DÍA SIGUIENTE':future===2?'SEGUNDO DÍA':'TERCER DÍA';let ref=null;for(const [code] of REGIONS){const d=data.forecasts?.[code]?.days?.[future];if(d){ref=d;break}}html+=`<section class="day"><h2>${title}${ref?.date?' — '+esc(ref.date):''}</h2>`;for(const [code,name] of REGIONS){const d=data.forecasts?.[code]?.days?.[future];if(!d){html+=`<div class="region"><div class="region-name">${name}:</div><div class="temps">—</div><div class="forecast">Sin datos disponibles</div></div>`;continue}html+=`<div class="region"><div class="region-name">${name}:</div><div class="temps">MÍN ${esc(d.min)}° / MÁX ${esc(d.max)}°</div><div class="forecast">${esc(forecastText(d))}${d.extended?'<div class="extended">Pronóstico extendido de INUMET.</div>':''}</div></div>`}html+='</section>'}document.querySelector('#forecast').innerHTML=html;document.querySelector('#status').textContent='Datos: '+(data.updated||'actualizados')}
-async function loadData(){const s=document.querySelector('#status');s.textContent='Actualizando…';s.classList.remove('error');try{const r=await fetch('data.json?ts='+Date.now(),{cache:'no-store'});if(!r.ok)throw new Error('HTTP '+r.status);render(await r.json())}catch(e){s.textContent='No se pudo cargar data.json';s.classList.add('error')}}loadData();
-</script></body></html>
+const num=(v,d=0)=>v==null||v===''?'—':Number(v).toFixed(d).replace('.',',');
+function cardinal(deg){if(deg==null||deg==='')return '—';const a=['N','NE','E','SE','S','SO','O','NO'];return a[Math.round(Number(deg)/45)%8]}
+function uyDateTime(iso){
+  if(!iso)return {date:'—',time:'—'};
+  const d=new Date(iso); if(isNaN(d))return {date:'—',time:'—'};
+  const parts=new Intl.DateTimeFormat('es-UY',{timeZone:'America/Montevideo',day:'2-digit',month:'2-digit',year:'numeric',hour:'2-digit',minute:'2-digit',hour12:false}).formatToParts(d);
+  const o=Object.fromEntries(parts.map(x=>[x.type,x.value])); return {date:`${o.day}/${o.month}/${o.year}`,time:`${o.hour}:${o.minute}`};
+}
+function forecastText(day){
+  if(!day)return '—';
+  const a=[];
+  if(day.morning)a.push(`Mañana: ${day.morning}`);
+  if(day.evening)a.push(`${day.extended?'Pronóstico:':'Tarde/Noche:'} ${day.evening}`);
+  return a.join(' ' )||'—';
+}
+function render(d){
+  const c=d.current||{}; const dt=uyDateTime(c.observation_time);
+  const vis=c.visibility_m==null?'—':`${num(Number(c.visibility_m)/1000,1)} km`;
+  const wind=c.wind_speed_kmh==null?'—':`${cardinal(c.wind_direction_deg)} ${num(c.wind_speed_kmh,1)} km/h`;
+  const currents=REGION_ORDER.map(r=>{const x=(d.current_regions||{})[r.current]||{};return `<div><b>${r.label}:</b> temperatura actual ${num(x.temperature,1)}° - ${esc(x.condition)}</div>`}).join('');
+  // Se imprimen los tres días futuros: mañana, pasado mañana y el tercero (extendido de INUMET).
+  const days=[1,2,3].map((idx,i)=>{
+    const regs=REGION_ORDER.map(r=>{const day=(((d.forecasts||{})[r.forecast]||{}).days||[])[idx];return `<div class="region"><span class="region-name">${r.label}:</span> <span class="temps">máx. ${day?esc(day.max):'—'}° / mín. ${day?esc(day.min):'—'}°.</span><div class="forecast-text">${esc(forecastText(day))}</div></div>`}).join('');
+    return `<section class="day"><div class="day-title">${['Primer día','Segundo día','Tercer día'][i]}:</div>${regs}</section>`;
+  }).join('');
+  document.getElementById('app').innerHTML=`
+  <section class="page">
+    <h1>TIEMPO ACTUAL</h1>
+    <div class="meta">
+      <div><b>Fecha:</b> ${dt.date}</div><div><b>Hora:</b> ${dt.time}</div>
+      <br>
+      <div><b>Temperatura:</b> ${num(c.temperature,1)}°</div>
+      <div><b>Humedad:</b> ${c.humidity==null?'—':num(c.humidity)+'%'}</div>
+      <div><b>Visibilidad:</b> ${vis}</div>
+      <div><b>Viento:</b> ${wind}</div>
+    </div>
+    <h2>Datos actuales</h2><div class="current-regions">${currents}</div>
+  </section>
+  <section class="page"><h1>PRONÓSTICO</h1>${days}</section>`;
+}
+fetch('data.json?ts='+Date.now(),{cache:'no-store'}).then(r=>{if(!r.ok)throw new Error('HTTP '+r.status);return r.json()}).then(render).catch(e=>{document.getElementById('app').innerHTML='<div class="error">No se pudo cargar data.json: '+esc(e.message)+'</div>'});
+</script>
+</body></html>
