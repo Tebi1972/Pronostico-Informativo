@@ -4,11 +4,13 @@ from datetime import datetime, timezone, timedelta
 from zoneinfo import ZoneInfo
 
 import requests
+from bs4 import BeautifulSoup
 
 HEADERS = {"User-Agent": "Pronostico-Informativo/1.0"}
 UY_TZ = ZoneInfo("America/Montevideo")
 URL_PRONOSTICO = "https://www.inumet.gub.uy/tiempo/pronostico"
 URL_EXTENDIDO = "https://www.inumet.gub.uy/reportes/pronosticos/pronosticoV4.json"
+URL_ESTADO = "https://www.inumet.gub.uy/index.php/tiempo/estado-actual"
 API_OBSERVACIONES = (
     "https://w2b.inumet.gub.uy/oapi/collections/"
     "urn:wmo:md:uy-inumet:surface-based-observations.synop/items"
@@ -230,6 +232,41 @@ ESTACIONES = {
 }
 
 
+def obtener_estado_actual_oficial():
+    """Lee de INUMET el estado actual publicado para las cuatro estaciones.
+
+    Se usa solamente como complemento del SYNOP para tiempo presente/nubosidad.
+    Las temperaturas y demás variables continúan saliendo de la API SYNOP.
+    """
+    try:
+        r = requests.get(URL_ESTADO, headers=HEADERS, timeout=30)
+        r.raise_for_status()
+        soup = BeautifulSoup(r.text, "html.parser")
+        buscadas = {
+            "Norte": "artigas",
+            "Este": "rocha",
+            "Sur": "carrasco",
+            "Oeste": "mercedes",
+        }
+        salida = {}
+        for tr in soup.find_all("tr"):
+            c = [re.sub(r"\s+", " ", x.get_text(" ", strip=True)).strip()
+                 for x in tr.find_all(["td", "th"])]
+            if len(c) < 4:
+                continue
+            nombre = c[0].lower()
+            zona = next((z for z, prefijo in buscadas.items() if nombre.startswith(prefijo)), None)
+            if not zona:
+                continue
+            cielo = c[2] if len(c) > 2 and c[2] not in ("", "-") else None
+            presente = c[3] if len(c) > 3 and c[3] not in ("", "-") else None
+            salida[zona] = {"sky": cielo, "present_weather": presente}
+        return salida
+    except Exception as e:
+        print("Aviso: no se pudo leer estado actual de INUMET:", e)
+        return {}
+
+
 def obtener_actuales():
     # Mismo procedimiento de Tiempo Uruguay: recorrer todas las páginas SYNOP,
     # identificar cada estación por WIGOS y elegir observaciones recientes.
@@ -289,6 +326,7 @@ def obtener_actuales():
                 pass
         return texto
 
+    estado_oficial = obtener_estado_actual_oficial()
     actuales = {}
     for zona, (wigos, estacion) in ESTACIONES.items():
         registros = por_wigos[wigos]
@@ -300,13 +338,18 @@ def obtener_actuales():
         weather = recientes(registros, "present_weather")
         clouds = recientes(registros, "cloud_amount")
         totals = recientes(registros, "cloud_cover_total")
+        condicion_synop = condicion(weather, clouds, totals)
+        oficial = estado_oficial.get(zona, {})
+        # Prioridad: fenómeno observado; luego cielo SYNOP; si falta, tabla oficial
+        # de estado actual de INUMET para esa misma estación.
+        condicion_final = condicion_synop or oficial.get("present_weather") or oficial.get("sky")
         actuales[zona] = {
             "station": estacion,
             "wigos": wigos,
             "temperature": temp[0]["value"] if temp else None,
-            "condition": condicion(weather, clouds, totals),
-            "present_weather": descripcion(weather),
-            "cloud_amount": descripcion(clouds),
+            "condition": condicion_final,
+            "present_weather": descripcion(weather) or oficial.get("present_weather"),
+            "cloud_amount": descripcion(clouds) or oficial.get("sky"),
             "observation_time": instante(temp[0]) if temp else None,
             "humidity": round(float(hum[0]["value"])) if hum else None,
             "wind_speed_kmh": round(float(viento[0]["value"]) * 3.6, 1) if viento else None,
