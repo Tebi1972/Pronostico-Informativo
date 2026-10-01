@@ -48,6 +48,15 @@ function forecastText(day){
   if(day.evening)a.push(`${day.extended?'Pronóstico:':'Tarde/Noche:'} ${day.evening}`);
   return a.join(' ' )||'—';
 }
+function weekdayName(baseIso,offset){
+  let base=baseIso?new Date(baseIso):new Date();
+  if(isNaN(base))base=new Date();
+  const parts=new Intl.DateTimeFormat('en-CA',{timeZone:'America/Montevideo',year:'numeric',month:'2-digit',day:'2-digit'}).formatToParts(base);
+  const o=Object.fromEntries(parts.map(x=>[x.type,x.value]));
+  const d=new Date(Date.UTC(Number(o.year),Number(o.month)-1,Number(o.day)+offset,12));
+  const name=new Intl.DateTimeFormat('es-UY',{weekday:'long',timeZone:'UTC'}).format(d);
+  return name.charAt(0).toUpperCase()+name.slice(1);
+}
 function render(d){
   const c=d.current||{}; const dt=uyDateTime(c.observation_time);
   const vis=c.visibility_m==null?'—':`${num(Number(c.visibility_m)/1000,1)} km`;
@@ -56,7 +65,7 @@ function render(d){
   // Se imprimen los tres días futuros: mañana, pasado mañana y el tercero (extendido de INUMET).
   const days=[1,2,3].map((idx,i)=>{
     const regs=REGION_ORDER.map(r=>{const day=(((d.forecasts||{})[r.forecast]||{}).days||[])[idx];return `<div class="region"><span class="region-name">${r.label}:</span> <span class="temps">máx. ${day?esc(day.max):'—'}° / mín. ${day?esc(day.min):'—'}°.</span><div class="forecast-text">${esc(forecastText(day))}</div></div>`}).join('');
-    return `<section class="day"><div class="day-title">${['Primer día','Segundo día','Tercer día'][i]}:</div>${regs}</section>`;
+    return `<section class="day"><div class="day-title">${weekdayName(c.observation_time,idx)}:</div>${regs}</section>`;
   }).join('');
   document.getElementById('app').innerHTML=`
   <section class="page">
