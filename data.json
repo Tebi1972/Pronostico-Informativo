@@ -1,30 +1,30 @@
 {
-  "updated": "30/09/2026 21:25",
+  "updated": "01/10/2026 00:18",
   "source": "INUMET",
   "locations": {
     "montevideo_carrasco": {
-      "temperature": 11.1,
+      "temperature": 11.5,
       "station": "Carrasco",
       "wigos": "0-20000-0-86580",
-      "observation_time": "2026-09-30T23:00:00Z",
-      "condition_time": "2026-09-30T23:00:00Z",
-      "humidity": 82,
-      "wind_speed_kmh": 5.4,
-      "wind_direction_deg": 200,
-      "visibility_m": 18000,
+      "observation_time": "2026-10-01T03:00:00Z",
+      "condition_time": "2026-10-01T03:00:00Z",
+      "humidity": 86,
+      "wind_speed_kmh": 16.6,
+      "wind_direction_deg": 170,
+      "visibility_m": 15000,
       "forecast_zone": "M"
     }
   },
   "current": {
-    "temperature": 11.1,
+    "temperature": 11.5,
     "station": "Carrasco",
     "wigos": "0-20000-0-86580",
-    "observation_time": "2026-09-30T23:00:00Z",
-    "condition_time": "2026-09-30T23:00:00Z",
-    "humidity": 82,
-    "wind_speed_kmh": 5.4,
-    "wind_direction_deg": 200,
-    "visibility_m": 18000,
+    "observation_time": "2026-10-01T03:00:00Z",
+    "condition_time": "2026-10-01T03:00:00Z",
+    "humidity": 86,
+    "wind_speed_kmh": 16.6,
+    "wind_direction_deg": 170,
+    "visibility_m": 15000,
     "forecast_zone": "M"
   },
   "forecasts": {
@@ -32,17 +32,8 @@
       "name": "Este",
       "days": [
         {
-          "date": "Miércoles 30",
-          "min": "9",
-          "max": "18",
-          "morning": "Nuboso y cubierto. Precipitaciones escasas y aisladas. Mejorando.",
-          "evening": "Algo nuboso y nuboso, períodos de cubierto. Neblinas y bancos de niebla.",
-          "extended": false,
-          "weather_code": "4"
-        },
-        {
           "date": "Jueves 01",
-          "min": "5",
+          "min": "6",
           "max": "16",
           "morning": "Nuboso y cubierto. Precipitaciones escasas. Neblinas y bancos de niebla.",
           "evening": "Disminución de nubosidad. Precipitaciones escasas. Neblinas.",
@@ -61,11 +52,20 @@
         {
           "date": "Sábado 03",
           "min": "6",
-          "max": "17",
-          "morning": null,
-          "evening": "Alta probabilidad de precipitaciones",
-          "extended": true,
+          "max": "19",
+          "morning": "Desmejorando con aumento de nubosidad. Precipitaciones. Neblinas.",
+          "evening": "Nuboso y cubierto. Precipitaciones. Neblinas y bancos de niebla.",
+          "extended": false,
           "weather_code": "7"
+        },
+        {
+          "date": "Domingo 04",
+          "min": "8",
+          "max": "22",
+          "morning": null,
+          "evening": "Baja probabilidad de precipitaciones",
+          "extended": true,
+          "weather_code": "13"
         }
       ]
     },
@@ -73,20 +73,11 @@
       "name": "Noreste",
       "days": [
         {
-          "date": "Miércoles 30",
-          "min": "10",
-          "max": "20",
-          "morning": "Nuboso, períodos de cubierto. Neblinas.",
-          "evening": "Algo nuboso y nuboso, períodos de cubierto.",
-          "extended": false,
-          "weather_code": "13"
-        },
-        {
           "date": "Jueves 01",
-          "min": "6",
+          "min": "7",
           "max": "18",
           "morning": "Algo nuboso y nuboso, períodos de cubierto. Precipitaciones escasas. Neblinas y bancos de niebla.",
-          "evening": "Disminución de nubosidad. Probables precipitaciones. Neblinas.",
+          "evening": "Disminución de nubosidad. Precipitaciones escasas. Neblinas.",
           "extended": false,
           "weather_code": "2"
         },
@@ -101,27 +92,27 @@
         },
         {
           "date": "Sábado 03",
-          "min": "8",
-          "max": "19",
-          "morning": null,
-          "evening": "Alta probabilidad de precipitaciones",
-          "extended": true,
+          "min": "6",
+          "max": "20",
+          "morning": "Desmejorando con aumento de nubosidad. Precipitaciones y probables tormentas.",
+          "evening": "Nuboso y cubierto. Precipitaciones y tormentas.",
+          "extended": false,
           "weather_code": "11"
+        },
+        {
+          "date": "Domingo 04",
+          "min": "10",
+          "max": "22",
+          "morning": null,
+          "evening": "Baja probabilidad de precipitaciones",
+          "extended": true,
+          "weather_code": "13"
         }
       ]
     },
     "NW": {
       "name": "Noroeste",
       "days": [
-        {
-          "date": "Miércoles 30",
-          "min": "10",
-          "max": "22",
-          "morning": "Algo nuboso y nuboso, períodos de cubierto. Tormentas aisladas. Neblinas.",
-          "evening": "Algo nuboso y nuboso, períodos de cubierto.",
-          "extended": false,
-          "weather_code": "13"
-        },
         {
           "date": "Jueves 01",
           "min": "8",
@@ -143,11 +134,20 @@
         {
           "date": "Sábado 03",
           "min": "11",
-          "max": "20",
-          "morning": null,
-          "evening": "Alta probabilidad de precipitaciones",
-          "extended": true,
+          "max": "19",
+          "morning": "Nuboso a cubierto. Precipitaciones y tormentas.",
+          "evening": "Nuboso y cubierto. Precipitaciones y tormentas. Mejorando. Neblinas.",
+          "extended": false,
           "weather_code": "11"
+        },
+        {
+          "date": "Domingo 04",
+          "min": "10",
+          "max": "23",
+          "morning": null,
+          "evening": "Sin precipitaciones previstas",
+          "extended": true,
+          "weather_code": "4"
         }
       ]
     },
@@ -155,18 +155,9 @@
       "name": "Área Metropolitana",
       "days": [
         {
-          "date": "Miércoles 30",
-          "min": "11",
-          "max": "14",
-          "morning": "Cubierto a nuboso y algo nuboso. Probables precipitaciones escasas.",
-          "evening": "Algo nuboso y nuboso. Probables precipitaciones escasas. Neblinas.",
-          "extended": false,
-          "weather_code": "4"
-        },
-        {
           "date": "Jueves 01",
-          "min": "7",
-          "max": "15",
+          "min": "10",
+          "max": "14",
           "morning": "Nuboso y cubierto. Precipitaciones escasas. Neblinas.",
           "evening": "Disminución de nubosidad.",
           "extended": false,
@@ -175,7 +166,7 @@
         {
           "date": "Viernes 02",
           "min": "7",
-          "max": "16",
+          "max": "17",
           "morning": "Algo nuboso, períodos de claro. Neblinas.",
           "evening": "Nuboso.",
           "extended": false,
@@ -184,11 +175,20 @@
         {
           "date": "Sábado 03",
           "min": "9",
+          "max": "15",
+          "morning": "Desmejorando con aumento de nubosidad. Precipitaciones.",
+          "evening": "Cubierto a nuboso. Precipitaciones. Mejorando. Nieblas y neblinas.",
+          "extended": false,
+          "weather_code": "7"
+        },
+        {
+          "date": "Domingo 04",
+          "min": "12",
           "max": "18",
           "morning": null,
-          "evening": "Alta probabilidad de precipitaciones",
+          "evening": "Sin precipitaciones previstas",
           "extended": true,
-          "weather_code": "7"
+          "weather_code": "13"
         }
       ]
     },
@@ -196,17 +196,8 @@
       "name": "Suroeste",
       "days": [
         {
-          "date": "Miércoles 30",
-          "min": "7",
-          "max": "19",
-          "morning": "Algo nuboso y nuboso. Neblinas y bancos de niebla.",
-          "evening": "Algo nuboso y nuboso. Precipitaciones escasas. Neblinas.",
-          "extended": false,
-          "weather_code": "4"
-        },
-        {
           "date": "Jueves 01",
-          "min": "7",
+          "min": "9",
           "max": "18",
           "morning": "Nuboso y cubierto. Precipitaciones escasas. Neblinas.",
           "evening": "Disminución de nubosidad. Probables precipitaciones escasas. Neblinas.",
@@ -217,7 +208,7 @@
           "date": "Viernes 02",
           "min": "4",
           "max": "21",
-          "morning": "Algo nuboso, períodos de claro. Heladas agrometeorológicas. Nieblas y neblinas.",
+          "morning": "Algo nuboso, períodos de claro. Nieblas y neblinas.",
           "evening": "Nuboso.",
           "extended": false,
           "weather_code": "2"
@@ -225,11 +216,20 @@
         {
           "date": "Sábado 03",
           "min": "10",
-          "max": "19",
-          "morning": null,
-          "evening": "Alta probabilidad de precipitaciones",
-          "extended": true,
+          "max": "17",
+          "morning": "Desmejorando con aumento de nubosidad. Precipitaciones y probables tormentas.",
+          "evening": "Cubierto a nuboso. Precipitaciones. Mejorando. Nieblas y neblinas.",
+          "extended": false,
           "weather_code": "7"
+        },
+        {
+          "date": "Domingo 04",
+          "min": "11",
+          "max": "22",
+          "morning": null,
+          "evening": "Sin precipitaciones previstas",
+          "extended": true,
+          "weather_code": "13"
         }
       ]
     }
