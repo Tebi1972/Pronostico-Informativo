@@ -290,7 +290,8 @@ def obtener_actuales():
     print("Páginas SYNOP consultadas:", pagina - 1)
 
     def recientes(registros, nombre, max_horas=3):
-        xs = [x for x in registros if x.get("name") == nombre and x.get("value") is not None
+        xs = [x for x in registros if x.get("name") == nombre
+              and (x.get("value") is not None or str(x.get("description") or "").strip())
               and 0 <= edad_horas(instante(x), ahora) <= max_horas]
         xs.sort(key=instante, reverse=True)
         if not xs:
@@ -315,13 +316,13 @@ def obtener_actuales():
             oktas = [int(x) for x in re.findall(r"(\d+)\s*OKTAS?", t)]
             if oktas:
                 n = max(oktas)
-                return "Cubierto" if n >= 7 else "Nuboso" if n >= 5 else "Algo nuboso" if n >= 3 else "Despejado"
+                return "Cubierto" if n >= 8 else "Nuboso" if n >= 4 else "Algo nuboso" if n >= 1 else "Despejado"
             return nube
         if totals:
             try:
                 n = float(totals[0]["value"])
                 if n > 8: n = n * 8 / 100
-                return "Cubierto" if n >= 7 else "Nuboso" if n >= 5 else "Algo nuboso" if n >= 3 else "Despejado"
+                return "Cubierto" if n >= 8 else "Nuboso" if n >= 4 else "Algo nuboso" if n >= 1 else "Despejado"
             except (TypeError, ValueError):
                 pass
         return texto
