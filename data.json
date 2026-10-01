@@ -1,15 +1,15 @@
 {
-  "updated": "01/10/2026 17:27",
+  "updated": "01/10/2026 18:25",
   "source": "INUMET",
   "current": {
     "station": "Carrasco",
     "wigos": "0-20000-0-86580",
-    "temperature": 12.6,
+    "temperature": 12.5,
     "condition": "Algo nuboso",
     "present_weather": "CLOUDS GENERALLY DISSOLVING OR BECOMING LESS DEVELOPED",
-    "cloud_amount": "3 OKTAS",
-    "observation_time": "2026-10-01T20:00:00Z",
-    "humidity": 58,
+    "cloud_amount": "1 OKTA OR LESS, BUT NOT ZERO",
+    "observation_time": "2026-10-01T21:00:00Z",
+    "humidity": 56,
     "wind_speed_kmh": 27.7,
     "wind_direction_deg": 240,
     "visibility_m": 15000
@@ -18,38 +18,38 @@
     "Norte": {
       "station": "Artigas",
       "wigos": "0-20000-0-86330",
-      "temperature": 17.8,
+      "temperature": 17.0,
       "condition": "Nuboso",
       "present_weather": null,
-      "cloud_amount": "5 OKTAS",
-      "observation_time": "2026-10-01T20:00:00Z",
-      "humidity": 53,
-      "wind_speed_kmh": 21.2,
-      "wind_direction_deg": 216,
-      "visibility_m": 20000
+      "cloud_amount": "4 OKTAS",
+      "observation_time": "2026-10-01T21:00:00Z",
+      "humidity": 55,
+      "wind_speed_kmh": 20.9,
+      "wind_direction_deg": 190,
+      "visibility_m": 18000
     },
     "Este": {
       "station": "Rocha",
       "wigos": "0-20000-0-86565",
-      "temperature": 11.2,
+      "temperature": 11.4,
       "condition": "Nuboso",
       "present_weather": null,
-      "cloud_amount": "6 OKTAS",
-      "observation_time": "2026-10-01T20:00:00Z",
-      "humidity": 64,
-      "wind_speed_kmh": 28.8,
-      "wind_direction_deg": 247,
+      "cloud_amount": "5 OKTAS",
+      "observation_time": "2026-10-01T21:00:00Z",
+      "humidity": 62,
+      "wind_speed_kmh": 16.2,
+      "wind_direction_deg": 268,
       "visibility_m": 15000
     },
     "Sur": {
       "station": "Carrasco",
       "wigos": "0-20000-0-86580",
-      "temperature": 12.6,
+      "temperature": 12.5,
       "condition": "Algo nuboso",
       "present_weather": "CLOUDS GENERALLY DISSOLVING OR BECOMING LESS DEVELOPED",
-      "cloud_amount": "3 OKTAS",
-      "observation_time": "2026-10-01T20:00:00Z",
-      "humidity": 58,
+      "cloud_amount": "1 OKTA OR LESS, BUT NOT ZERO",
+      "observation_time": "2026-10-01T21:00:00Z",
+      "humidity": 56,
       "wind_speed_kmh": 27.7,
       "wind_direction_deg": 240,
       "visibility_m": 15000
@@ -57,14 +57,14 @@
     "Oeste": {
       "station": "Mercedes",
       "wigos": "0-20000-0-86490",
-      "temperature": 14.2,
-      "condition": "Nuboso",
+      "temperature": 13.9,
+      "condition": "Cubierto",
       "present_weather": null,
-      "cloud_amount": "6 OKTAS",
-      "observation_time": "2026-10-01T20:00:00Z",
+      "cloud_amount": "7 OKTAS OR MORE, BUT NOT 8 OKTAS",
+      "observation_time": "2026-10-01T21:00:00Z",
       "humidity": 67,
-      "wind_speed_kmh": 15.1,
-      "wind_direction_deg": 186,
+      "wind_speed_kmh": 12.2,
+      "wind_direction_deg": 189,
       "visibility_m": 20000
     }
   },
@@ -72,12 +72,12 @@
     "montevideo_carrasco": {
       "station": "Carrasco",
       "wigos": "0-20000-0-86580",
-      "temperature": 12.6,
+      "temperature": 12.5,
       "condition": "Algo nuboso",
       "present_weather": "CLOUDS GENERALLY DISSOLVING OR BECOMING LESS DEVELOPED",
-      "cloud_amount": "3 OKTAS",
-      "observation_time": "2026-10-01T20:00:00Z",
-      "humidity": 58,
+      "cloud_amount": "1 OKTA OR LESS, BUT NOT ZERO",
+      "observation_time": "2026-10-01T21:00:00Z",
+      "humidity": 56,
       "wind_speed_kmh": 27.7,
       "wind_direction_deg": 240,
       "visibility_m": 15000
@@ -90,7 +90,7 @@
         {
           "date": "Jueves 01",
           "min": "5",
-          "max": "16",
+          "max": "15",
           "morning": "Nuboso y cubierto. Precipitaciones escasas. Neblinas y bancos de niebla.",
           "evening": "Disminución de nubosidad. Precipitaciones escasas. Mejorando. Neblinas.",
           "extended": false,
@@ -108,7 +108,7 @@
         {
           "date": "Sábado 03",
           "min": "6",
-          "max": "19",
+          "max": "18",
           "morning": "Desmejorando con aumento de nubosidad. Precipitaciones. Neblinas.",
           "evening": "Nuboso y cubierto. Precipitaciones. Neblinas y bancos de niebla.",
           "extended": false,
@@ -116,10 +116,10 @@
         },
         {
           "date": "Domingo 04",
-          "min": "8",
+          "min": "7",
           "max": "22",
           "morning": null,
-          "evening": "Baja probabilidad de precipitaciones",
+          "evening": "Probabilidad media de precipitaciones",
           "extended": true,
           "weather_code": "13"
         }
@@ -133,7 +133,7 @@
           "min": "10",
           "max": "20",
           "morning": "Nuboso y cubierto, períodos de algo nuboso. Precipitaciones escasas y aisladas. Neblinas.",
-          "evening": "Disminución de nubosidad. Precipitaciones escasas y aisladas. Mejorando.",
+          "evening": "Disminución de nubosidad.",
           "extended": false,
           "weather_code": "2"
         },
@@ -172,9 +172,9 @@
         {
           "date": "Jueves 01",
           "min": "8",
-          "max": "14",
+          "max": "13",
           "morning": "Nuboso y cubierto. Precipitaciones escasas. Neblinas.",
-          "evening": "Nuboso. Baja probabilidad de precipitaciones escasas.",
+          "evening": "Algo nuboso, períodos de claro.",
           "extended": false,
           "weather_code": "13"
         },
@@ -213,9 +213,9 @@
         {
           "date": "Jueves 01",
           "min": "9",
-          "max": "18",
+          "max": "16",
           "morning": "Nuboso y cubierto. Precipitaciones escasas. Neblinas.",
-          "evening": "Disminución de nubosidad. Probables precipitaciones escasas. Neblinas.",
+          "evening": "Disminución de nubosidad. Neblinas y bancos de niebla.",
           "extended": false,
           "weather_code": "13"
         },
@@ -239,7 +239,7 @@
         },
         {
           "date": "Domingo 04",
-          "min": "11",
+          "min": "10",
           "max": "22",
           "morning": null,
           "evening": "Sin precipitaciones previstas",
