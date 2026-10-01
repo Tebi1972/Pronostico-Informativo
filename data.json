@@ -1,5 +1,5 @@
 {
-  "updated": "01/10/2026 11:11",
+  "updated": "01/10/2026 11:27",
   "source": "INUMET",
   "current": {
     "station": "Carrasco",
@@ -60,12 +60,12 @@
       "temperature": 12.3,
       "condition": "Cubierto",
       "present_weather": null,
-      "cloud_amount": "8 OKTAS",
+      "cloud_amount": "7 OKTAS OR MORE, BUT NOT 8 OKTAS",
       "observation_time": "2026-10-01T14:00:00Z",
       "humidity": 83,
       "wind_speed_kmh": 17.6,
       "wind_direction_deg": 186,
-      "visibility_m": 3000
+      "visibility_m": 18000
     }
   },
   "locations": {
