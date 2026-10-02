@@ -14,7 +14,6 @@
   .meta{margin-bottom:11mm}.meta div{margin:3mm 0}.current-regions div{margin:7mm 0}
   .day{margin:0 0 10mm}.day-title{font-size:18pt;font-weight:700;margin-bottom:5mm}
   .region{margin:0 0 5mm}.region-name{font-weight:700}.temps{white-space:nowrap}
-  .forecast-text{margin-top:1mm}
   .error{padding:20px;color:#900;font-weight:bold}
   @page{size:A4 portrait;margin:0}
   @media print{
@@ -23,7 +22,7 @@
     .page:first-of-type{page-break-after:always;break-after:page}
     .day{page-break-inside:avoid;break-inside:avoid-page}
     .region{page-break-inside:avoid;break-inside:avoid-page}
-    .current-regions,.region,.forecast-text{font-size:16pt}
+    .current-regions,.region{font-size:16pt}
   }
 </style>
 </head>
@@ -48,10 +47,7 @@ function uyDateTime(iso){
 }
 function forecastText(day){
   if(!day)return '—';
-  const a=[];
-  if(day.morning)a.push(`Mañana: ${day.morning}`);
-  if(day.evening)a.push(`${day.extended?'Pronóstico:':'Tarde/Noche:'} ${day.evening}`);
-  return a.join(' ' )||'—';
+  return day.evening||'—';
 }
 function weekdayName(baseIso,offset){
   let base=baseIso?new Date(baseIso):new Date();
@@ -67,9 +63,13 @@ function render(d){
   const vis=c.visibility_m==null?'—':`${num(Number(c.visibility_m)/1000,1)} km`;
   const wind=c.wind_speed_kmh==null?'—':`${cardinal(c.wind_direction_deg)} ${num(c.wind_speed_kmh,1)} km/h`;
   const currents=REGION_ORDER.map(r=>{const x=(d.current_regions||{})[r.current]||{};return `<div><b>${r.label}:</b> temperatura actual ${num(x.temperature,1)}° - ${esc(x.condition)}</div>`}).join('');
-  // Se imprimen los tres días futuros: mañana, pasado mañana y el tercero (extendido de INUMET).
+  // Se imprimen los tres días futuros. Para cada región se muestra únicamente
+  // el pronóstico de tarde/noche, sin referencia temporal, en una sola línea.
   const days=[1,2,3].map((idx,i)=>{
-    const regs=REGION_ORDER.map(r=>{const day=(((d.forecasts||{})[r.forecast]||{}).days||[])[idx];return `<div class="region"><span class="region-name">${r.label}:</span> <span class="temps">máx. ${day?esc(day.max):'—'}° / mín. ${day?esc(day.min):'—'}°.</span><div class="forecast-text">${esc(forecastText(day))}</div></div>`}).join('');
+    const regs=REGION_ORDER.map(r=>{
+      const day=(((d.forecasts||{})[r.forecast]||{}).days||[])[idx];
+      return `<div class="region"><span class="region-name">${r.label}:</span> <span class="temps">máx. ${day?esc(day.max):'—'}° / mín. ${day?esc(day.min):'—'}°</span> — ${esc(forecastText(day))}</div>`;
+    }).join('');
     return `<section class="day"><div class="day-title">${weekdayName(c.observation_time,idx)}:</div>${regs}</section>`;
   }).join('');
   document.getElementById('app').innerHTML=`
