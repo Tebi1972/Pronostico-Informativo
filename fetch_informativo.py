@@ -63,6 +63,56 @@ def unir_textos(*partes):
     return " ".join(str(x).strip() for x in partes if str(x or "").strip()).strip() or None
 
 
+
+def resumir_pronostico(texto, weather_code=None):
+    """Resume para TV: cielo + lluvia relevante + tormentas/nieblas/vientos fuertes."""
+    original = re.sub(r"\s+", " ", str(texto or "")).strip()
+    bajo = original.lower()
+
+    patrones_cielo = [
+        (r"\balgo nuboso\b", "Algo nuboso"),
+        (r"\bparcialmente nuboso\b", "Parcialmente nuboso"),
+        (r"\bcubierto\b", "Cubierto"),
+        (r"\bnuboso\b", "Nuboso"),
+        (r"\bclaro\b", "Claro"),
+        (r"\bdespejado\b", "Despejado"),
+    ]
+    encontrados = []
+    for patron, etiqueta in patrones_cielo:
+        m = re.search(patron, bajo)
+        if m:
+            encontrados.append((m.start(), etiqueta))
+    cielo = min(encontrados, key=lambda x: x[0])[1] if encontrados else None
+
+    if not cielo and isinstance(weather_code, str):
+        wc = weather_code.strip().lower()
+        encontrados = []
+        for patron, etiqueta in patrones_cielo:
+            m = re.search(patron, wc)
+            if m:
+                encontrados.append((m.start(), etiqueta))
+        if encontrados:
+            cielo = min(encontrados, key=lambda x: x[0])[1]
+
+    baja_prob = bool(re.search(r"\bbaja\s+probabilidad\b", bajo))
+    lluvia = bool(re.search(r"\b(precipit\w*|lluv\w*|lloviz\w*|chaparr\w*)\b", bajo)) and not baja_prob
+    tormenta = bool(re.search(r"\btorment\w*\b", bajo))
+    niebla = bool(re.search(r"\bnieblas?\b", bajo))
+    viento_fuerte = bool(re.search(r"\bvientos?\s+(?:muy\s+)?fuertes?\b", bajo))
+
+    partes = [cielo] if cielo else []
+    if lluvia:
+        partes.append("con lluvias" if partes else "Lluvias")
+    if tormenta:
+        partes.append((("y" if lluvia else "con") + " tormentas") if partes else "Tormentas")
+    if niebla:
+        partes.append((("y" if partes else "Con") + " nieblas"))
+    if viento_fuerte:
+        partes.append((("y" if partes else "Con") + " vientos fuertes"))
+
+    return " ".join(partes) if partes else (original or "Pronóstico extendido")
+
+
 def convertir_periodo(periodo):
     datos = (periodo or {}).get("datos") or {}
     subs = datos.get("subgrupos") or []
@@ -84,7 +134,7 @@ def convertir_periodo(periodo):
         "min": str(minimo),
         "max": str(maximo),
         "morning": texto(manana),
-        "evening": texto(tarde),
+        "evening": resumir_pronostico(texto(tarde), datos.get("estadoTiempo")),
         "extended": False,
         "weather_code": datos.get("estadoTiempo"),
     }
@@ -94,7 +144,14 @@ def texto_extendido(item):
     subs = item.get("subgrupos") or []
     textos = []
     if isinstance(subs, list):
-        for sg in subs:
+        tarde_noche = [
+            sg for sg in subs
+            if isinstance(sg, dict)
+            and ("tarde" in str(sg.get("subgrupo", "")).lower()
+                 or "noche" in str(sg.get("subgrupo", "")).lower())
+        ]
+        fuente = tarde_noche if tarde_noche else subs
+        for sg in fuente:
             if isinstance(sg, dict):
                 t = unir_textos(sg.get("descripcion"), sg.get("evolucion"), sg.get("descripcionExtra"))
                 if t:
@@ -135,7 +192,7 @@ def convertir_extendido(item):
         "min": str(minimo),
         "max": str(maximo),
         "morning": None,
-        "evening": texto_extendido(item),
+        "evening": resumir_pronostico(texto_extendido(item), item.get("estadoTiempo")),
         "extended": True,
         "weather_code": item.get("estadoTiempo"),
     }
