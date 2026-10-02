@@ -282,47 +282,67 @@ def obtener_estado_actual_oficial():
         return {}
 
 def obtener_actuales():
-    # Mismo procedimiento de Tiempo Uruguay: recorrer todas las páginas SYNOP,
-    # identificar cada estación por WIGOS y elegir observaciones recientes.
+    # INUMET publica las observaciones SYNOP con phenomenonTime y reportTime.
+    # Para saber cuál es realmente la observación más nueva usamos reportTime
+    # como referencia principal. Esto evita quedar atados a una hora anterior
+    # cuando phenomenonTime representa un intervalo (por ejemplo, en viento).
     ahora = datetime.now(timezone.utc)
     desde = ahora - timedelta(hours=24)
     rango = desde.strftime("%Y-%m-%dT%H:%M:%SZ") + "/" + ahora.strftime("%Y-%m-%dT%H:%M:%SZ")
     por_wigos = {meta[0]: [] for meta in ESTACIONES.values()}
-    url, params, pagina = API_OBSERVACIONES, {"f": "json", "limit": 1000, "datetime": rango}, 1
-    while url and pagina <= 20:
+
+    url = API_OBSERVACIONES
+    params = {"f": "json", "limit": 1000, "datetime": rango}
+    pagina = 1
+    while url and pagina <= 30:
         r = requests.get(url, params=params, headers=HEADERS, timeout=60)
         r.raise_for_status()
         datos = r.json()
         for f in datos.get("features", []):
             prop = f.get("properties", {})
-            wigos = str(prop.get("wigos_station_identifier"))
-            if wigos in por_wigos and prop.get("phenomenonTime"):
+            wigos = str(prop.get("wigos_station_identifier") or "")
+            if wigos in por_wigos:
                 por_wigos[wigos].append(prop)
         url = next((x.get("href") for x in datos.get("links", []) if x.get("rel") == "next"), None)
         params = None
         pagina += 1
     print("Páginas SYNOP consultadas:", pagina - 1)
 
-    def recientes(registros, nombre, max_horas=3):
-        xs = [x for x in registros if x.get("name") == nombre
-              and (x.get("value") is not None or str(x.get("description") or "").strip())
-              and 0 <= edad_horas(instante(x), ahora) <= max_horas]
-        xs.sort(key=instante, reverse=True)
-        if not xs:
+    def tiempo_registro(p):
+        # reportTime es la hora del informe SYNOP. Si no existe, usamos
+        # phenomenonTime como respaldo.
+        return str(p.get("reportTime") or instante(p) or "")
+
+    def ultimo(registros, nombre, max_horas=12):
+        candidatos = []
+        for x in registros:
+            if x.get("name") != nombre:
+                continue
+            if x.get("value") is None and not str(x.get("description") or "").strip():
+                continue
+            iso = tiempo_registro(x)
+            if not iso:
+                continue
+            if 0 <= edad_horas(iso, ahora) <= max_horas:
+                candidatos.append(x)
+        candidatos.sort(key=tiempo_registro, reverse=True)
+        if not candidatos:
             return []
-        ultima_hora = instante(xs[0])
-        return [x for x in xs if instante(x) == ultima_hora]
+        hora = tiempo_registro(candidatos[0])
+        return [x for x in candidatos if tiempo_registro(x) == hora]
 
     def descripcion(xs):
-        return " | ".join(dict.fromkeys(str(x.get("description") or "").strip()
-                                     for x in xs if x.get("description"))) or None
+        return " | ".join(dict.fromkeys(
+            str(x.get("description") or "").strip()
+            for x in xs if str(x.get("description") or "").strip()
+        )) or None
 
     def condicion(weather, clouds, totals):
-        # No inferir lluvia a partir del pronóstico: solo del tiempo presente observado.
         texto = descripcion(weather)
         if texto and any(k in texto.upper() for k in (
             "RAIN", "DRIZZLE", "SHOWER", "THUNDER", "PRECIP", "HAIL", "SNOW",
-            "LLUV", "LLOV", "LLOVIZ", "CHAPARR", "TORMENT", "GRANIZ", "NIEV")):
+            "LLUV", "LLOV", "LLOVIZ", "CHAPARR", "TORMENT", "GRANIZ", "NIEV"
+        )):
             return texto
         nube = descripcion(clouds)
         if nube:
@@ -335,55 +355,63 @@ def obtener_actuales():
         if totals:
             try:
                 n = float(totals[0]["value"])
-                if n > 8: n = n * 8 / 100
+                if n > 8:
+                    n = n * 8 / 100
                 return "Cubierto" if n >= 8 else "Nuboso" if n >= 4 else "Algo nuboso" if n >= 1 else "Despejado"
             except (TypeError, ValueError):
                 pass
         return texto
 
-    estado_oficial = obtener_estado_actual_oficial()
+    def hora_uy(p):
+        if not p:
+            return None
+        iso = tiempo_registro(p)
+        try:
+            dt = datetime.fromisoformat(iso.replace("Z", "+00:00")).astimezone(UY_TZ)
+            return dt.strftime("%d/%m/%Y %H:%M")
+        except Exception:
+            return iso
+
     actuales = {}
     for zona, (wigos, estacion) in ESTACIONES.items():
         registros = por_wigos[wigos]
-        temp = recientes(registros, "air_temperature")
-        hum = recientes(registros, "relative_humidity")
-        viento = recientes(registros, "wind_speed")
-        direccion = recientes(registros, "wind_direction")
-        vis = recientes(registros, "horizontal_visibility")
-        weather = recientes(registros, "present_weather")
-        clouds = recientes(registros, "cloud_amount")
-        totals = recientes(registros, "cloud_cover_total")
-        condicion_synop = condicion(weather, clouds, totals)
-        oficial = estado_oficial.get(zona, {})
-        # Prioridad: fenómeno observado; luego cielo SYNOP; si falta, tabla oficial
-        # de estado actual de INUMET para esa misma estación.
-        condicion_final = condicion_synop or oficial.get("present_weather") or oficial.get("sky")
+        temp = ultimo(registros, "air_temperature")
+        hum = ultimo(registros, "relative_humidity")
+        viento = ultimo(registros, "wind_speed")
+        direccion = ultimo(registros, "wind_direction")
+        vis = ultimo(registros, "horizontal_visibility")
+        weather = ultimo(registros, "present_weather")
+        clouds = ultimo(registros, "cloud_amount")
+        totals = ultimo(registros, "cloud_cover_total")
+
+        condicion_final = condicion(weather, clouds, totals)
+        observation_time = tiempo_registro(temp[0]) if temp else None
+
         actuales[zona] = {
             "station": estacion,
             "wigos": wigos,
-            "temperature": temp[0]["value"] if temp else None,
+            "temperature": temp[0].get("value") if temp else None,
             "condition": condicion_final,
-            "present_weather": descripcion(weather) or oficial.get("present_weather"),
-            "cloud_amount": descripcion(clouds) or oficial.get("sky"),
-            "observation_time": instante(temp[0]) if temp else None,
-            "humidity": round(float(hum[0]["value"])) if hum else None,
-            "wind_speed_kmh": round(float(viento[0]["value"]) * 3.6, 1) if viento else None,
-            "wind_direction_deg": round(float(direccion[0]["value"])) if direccion else None,
-            "visibility_m": round(float(vis[0]["value"])) if vis else None,
+            "present_weather": descripcion(weather),
+            "cloud_amount": descripcion(clouds),
+            "observation_time": observation_time,
+            "humidity": round(float(hum[0]["value"])) if hum and hum[0].get("value") is not None else None,
+            "wind_speed_kmh": round(float(viento[0]["value"]) * 3.6, 1) if viento and viento[0].get("value") is not None else None,
+            "wind_direction_deg": round(float(direccion[0]["value"])) if direccion and direccion[0].get("value") is not None else None,
+            "visibility_m": round(float(vis[0]["value"])) if vis and vis[0].get("value") is not None else None,
         }
-        print(zona, estacion, "registros:", len(registros), "temperatura:",
-              actuales[zona]["temperature"], "cielo:", actuales[zona]["condition"])
-    # La tabla Estado actual es la referencia operativa para el informativo.
-    # Si INUMET publicó allí una observación más reciente, reemplazamos TODAS las
-    # variables actuales por ese mismo corte horario; SYNOP queda como respaldo.
-    oficial_completo = obtener_estado_actual_oficial()
-    for zona, od in oficial_completo.items():
-        if od.get("temperature") is None:
-            continue
-        actuales[zona].update({k:v for k,v in od.items() if v is not None})
-        print("Estado oficial", zona, "hora:", od.get("official_observation_hour"),
-              "temp:", od.get("temperature"), "hum:", od.get("humidity"),
-              "viento:", od.get("wind_speed_kmh"), "vis_m:", od.get("visibility_m"))
+
+        print(
+            zona, estacion,
+            "registros:", len(registros),
+            "hora:", hora_uy(temp[0]) if temp else None,
+            "temperatura:", actuales[zona]["temperature"],
+            "humedad:", actuales[zona]["humidity"],
+            "viento_kmh:", actuales[zona]["wind_speed_kmh"],
+            "vis_m:", actuales[zona]["visibility_m"],
+            "cielo:", actuales[zona]["condition"],
+        )
+
     if all(x["temperature"] is None for x in actuales.values()):
         raise RuntimeError("INUMET no devolvió temperaturas recientes para las cuatro estaciones")
     return actuales
