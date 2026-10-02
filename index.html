@@ -18,7 +18,12 @@
   .error{padding:20px;color:#900;font-weight:bold}
   @page{size:A4 portrait;margin:0}
   @media print{
-    body{background:#fff}.toolbar{display:none}.page{margin:0;box-shadow:none;width:210mm;height:297mm;min-height:297mm;page-break-after:always;overflow:hidden}.page:last-child{page-break-after:auto}
+    body{background:#fff}.toolbar{display:none}
+    .page{margin:0;box-shadow:none;width:210mm;height:auto;min-height:0;overflow:visible;page-break-after:auto;break-after:auto}
+    .page:first-of-type{page-break-after:always;break-after:page}
+    .day{page-break-inside:avoid;break-inside:avoid-page}
+    .region{page-break-inside:avoid;break-inside:avoid-page}
+    .current-regions,.region,.forecast-text{font-size:16pt}
   }
 </style>
 </head>
