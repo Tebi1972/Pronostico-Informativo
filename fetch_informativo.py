@@ -64,7 +64,16 @@ def unir_textos(*partes):
 
 
 
+def cielo_desde_codigo_extendido(weather_code):
+    codigo = str(weather_code).strip() if weather_code is not None else ""
+    return {"4": "Cubierto"}.get(codigo)
+
+
 def resumir_pronostico(texto, weather_code=None):
+    if texto and "baja probabilidad" in str(texto).lower():
+        cielo = cielo_desde_codigo_extendido(weather_code)
+        return cielo
+
     """Resume para TV: cielo + lluvia relevante + tormentas/nieblas/vientos fuertes."""
     original = re.sub(r"\s+", " ", str(texto or "")).strip()
     bajo = original.lower()
