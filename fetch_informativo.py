@@ -233,39 +233,53 @@ ESTACIONES = {
 
 
 def obtener_estado_actual_oficial():
-    """Lee de INUMET el estado actual publicado para las cuatro estaciones.
+    """Lee la tabla oficial Estado actual de INUMET.
 
-    Se usa solamente como complemento del SYNOP para tiempo presente/nubosidad.
-    Las temperaturas y demás variables continúan saliendo de la API SYNOP.
+    Esta tabla es la referencia que ve el editor en la web de INUMET y publica
+    temperatura, humedad, viento, visibilidad y cielo para una misma hora de observación.
     """
     try:
         r = requests.get(URL_ESTADO, headers=HEADERS, timeout=30)
         r.raise_for_status()
         soup = BeautifulSoup(r.text, "html.parser")
-        buscadas = {
-            "Norte": "artigas",
-            "Este": "rocha",
-            "Sur": "carrasco",
-            "Oeste": "mercedes",
-        }
-        salida = {}
+        texto = soup.get_text(" ", strip=True)
+        mf = re.search(r"Fecha:\s*(\d{4}-\d{2}-\d{2})", texto, re.I)
+        mh = re.search(r"Observaciones realizadas a la hora\s*(\d{1,2}:\d{2})", texto, re.I)
+        fecha = mf.group(1) if mf else datetime.now(UY_TZ).strftime("%Y-%m-%d")
+        hora = mh.group(1) if mh else None
+        obs_iso = f"{fecha}T{hora}:00-03:00" if hora else None
+
+        buscadas = {"Norte":"artigas", "Este":"rocha", "Sur":"carrasco", "Oeste":"mercedes"}
+        dirs = {"N":0,"NNE":22.5,"NE":45,"ENE":67.5,"E":90,"ESE":112.5,"SE":135,"SSE":157.5,
+                "S":180,"SSW":202.5,"SW":225,"WSW":247.5,"W":270,"WNW":292.5,"NW":315,"NNW":337.5}
+        def num(x):
+            m=re.search(r"-?\d+(?:[.,]\d+)?", str(x or ""))
+            return float(m.group(0).replace(",",".")) if m else None
+        salida={}
         for tr in soup.find_all("tr"):
-            c = [re.sub(r"\s+", " ", x.get_text(" ", strip=True)).strip()
-                 for x in tr.find_all(["td", "th"])]
-            if len(c) < 4:
-                continue
-            nombre = c[0].lower()
-            zona = next((z for z, prefijo in buscadas.items() if nombre.startswith(prefijo)), None)
-            if not zona:
-                continue
-            cielo = c[2] if len(c) > 2 and c[2] not in ("", "-") else None
-            presente = c[3] if len(c) > 3 and c[3] not in ("", "-") else None
-            salida[zona] = {"sky": cielo, "present_weather": presente}
+            c=[re.sub(r"\s+"," ",x.get_text(" ",strip=True)).strip() for x in tr.find_all(["td","th"])]
+            if len(c)<8: continue
+            nombre=c[0].lower()
+            zona=next((z for z,pref in buscadas.items() if nombre.startswith(pref)),None)
+            if not zona: continue
+            viento=c[1]
+            partes=[x.strip().upper() for x in viento.split("/")]
+            direccion=dirs.get(partes[0]) if partes and partes[0] not in ("CALMO","-") else None
+            velocidad=num(partes[1]) if len(partes)>1 else (0.0 if partes and partes[0]=="CALMO" else None)
+            cielo=c[2] if c[2] not in ("","-") else None
+            presente=c[3] if c[3] not in ("","-") else None
+            salida[zona]={
+                "temperature":num(c[4]), "humidity":num(c[5]),
+                "visibility_m": None if num(c[7]) is None else round(num(c[7])*1000),
+                "wind_speed_kmh":velocidad, "wind_direction_deg":direccion,
+                "condition":presente or cielo, "present_weather":presente,
+                "cloud_amount":cielo, "observation_time":obs_iso,
+                "official_observation_date":fecha, "official_observation_hour":hora,
+            }
         return salida
     except Exception as e:
         print("Aviso: no se pudo leer estado actual de INUMET:", e)
         return {}
-
 
 def obtener_actuales():
     # Mismo procedimiento de Tiempo Uruguay: recorrer todas las páginas SYNOP,
@@ -359,6 +373,17 @@ def obtener_actuales():
         }
         print(zona, estacion, "registros:", len(registros), "temperatura:",
               actuales[zona]["temperature"], "cielo:", actuales[zona]["condition"])
+    # La tabla Estado actual es la referencia operativa para el informativo.
+    # Si INUMET publicó allí una observación más reciente, reemplazamos TODAS las
+    # variables actuales por ese mismo corte horario; SYNOP queda como respaldo.
+    oficial_completo = obtener_estado_actual_oficial()
+    for zona, od in oficial_completo.items():
+        if od.get("temperature") is None:
+            continue
+        actuales[zona].update({k:v for k,v in od.items() if v is not None})
+        print("Estado oficial", zona, "hora:", od.get("official_observation_hour"),
+              "temp:", od.get("temperature"), "hum:", od.get("humidity"),
+              "viento:", od.get("wind_speed_kmh"), "vis_m:", od.get("visibility_m"))
     if all(x["temperature"] is None for x in actuales.values()):
         raise RuntimeError("INUMET no devolvió temperaturas recientes para las cuatro estaciones")
     return actuales
