@@ -67,7 +67,13 @@ def unir_textos(*partes):
 
 def cielo_desde_codigo_extendido(weather_code):
     codigo = str(weather_code).strip() if weather_code is not None else ""
-    return {"4": "Cubierto"}.get(codigo)
+    # Códigos de estadoTiempo ya observados en el pronóstico de INUMET.
+    # 13 corresponde a "Algo nuboso"; 4 puede representar nubosidad y
+    # se conserva la equivalencia previa usada por el proyecto.
+    return {
+        "4": "Cubierto",
+        "13": "Algo nuboso",
+    }.get(codigo)
 
 
 def resumir_pronostico(texto, weather_code=None):
@@ -253,13 +259,6 @@ def obtener_pronosticos():
             except (TypeError, ValueError):
                 continue
             if n >= 3:
-                # DIAGNÓSTICO TEMPORAL:
-                # muestra en el log el objeto bruto que INUMET entrega
-                # para el primer día extendido de la zona Noroeste.
-                if zona == "NW" and n == 3:
-                    print("=== DEBUG INUMET NW diaMasN=3 ===")
-                    print(json.dumps(item, ensure_ascii=False, indent=2))
-                    print("=== FIN DEBUG INUMET NW ===")
                 por_zona[zona].append((n, item))
 
         for zona, pares in por_zona.items():
