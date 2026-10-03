@@ -170,11 +170,14 @@ def texto_extendido(item):
     if textos:
         return " ".join(dict.fromkeys(textos))
 
-    for clave in (
+    # INUMET no siempre usa el mismo nombre de campo en el extendido.
+    claves_prob = (
         "probabilidadPrecipitaciones", "probabilidadPrecipitacion",
         "probPrecipitaciones", "probPrecipitacion", "probLluvia",
         "precipitaciones", "precipitacion",
-    ):
+        "probabilidad", "prob",
+    )
+    for clave in claves_prob:
         valor = item.get(clave)
         if valor not in (None, ""):
             bajo = str(valor).strip().lower()
@@ -187,7 +190,16 @@ def texto_extendido(item):
             if bajo in {"alta", "alto"}:
                 return "Alta probabilidad de precipitaciones"
             return str(valor).strip()
-    return "Pronóstico extendido"
+
+    # Respaldo para variantes de estructura del JSON extendido de INUMET.
+    for clave, valor in item.items():
+        nombre = str(clave).lower()
+        if valor in (None, ""):
+            continue
+        if ("precipit" in nombre or "lluv" in nombre) and not isinstance(valor, (dict, list)):
+            return str(valor).strip()
+
+    return None
 
 
 def convertir_extendido(item):
