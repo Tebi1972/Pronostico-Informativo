@@ -11,6 +11,7 @@ UY_TZ = ZoneInfo("America/Montevideo")
 URL_PRONOSTICO = "https://www.inumet.gub.uy/tiempo/pronostico"
 URL_EXTENDIDO = "https://www.inumet.gub.uy/reportes/pronosticos/pronosticoV4.json"
 URL_ESTADO = "https://www.inumet.gub.uy/index.php/tiempo/estado-actual"
+URL_ESTADO_DINAMICO = "https://www.inumet.gub.uy/reportes/estadoActual/estadoActualDatosHorarios.mch"
 API_OBSERVACIONES = (
     "https://w2b.inumet.gub.uy/oapi/collections/"
     "urn:wmo:md:uy-inumet:surface-based-observations.synop/items"
@@ -289,10 +290,20 @@ def edad_horas(iso, ahora):
 
 # Identificadores WIGOS comprobados en Tiempo Uruguay.
 ESTACIONES = {
-    "Norte": ("0-20000-0-86330", "Artigas"),
-    "Este": ("0-20000-0-86565", "Rocha"),
-    "Sur": ("0-20000-0-86580", "Carrasco"),
-    "Oeste": ("0-20000-0-86490", "Mercedes"),
+    "Norte": ("0-20000-0-86330", "Artigas", 16),
+    "Este": ("0-20000-0-86565", "Rocha", 236),
+    "Sur": ("0-20000-0-86580", "Carrasco", 39),
+    "Oeste": ("0-20000-0-86490", "Mercedes", 162),
+}
+
+VARIABLES_ESTADO = {
+    "temperature": 47,
+    "humidity": 25,
+    "wind_direction_deg": 8,
+    "wind_speed": 29,
+    "visibility": 74,
+    "cloud_amount": 3,
+    "present_weather": 123,
 }
 
 
@@ -345,7 +356,7 @@ def obtener_estado_actual_oficial():
         print("Aviso: no se pudo leer estado actual de INUMET:", e)
         return {}
 
-def obtener_actuales():
+def obtener_actuales_synop():
     # INUMET publica las observaciones SYNOP con phenomenonTime y reportTime.
     # Para saber cuál es realmente la observación más nueva usamos reportTime
     # como referencia principal. Esto evita quedar atados a una hora anterior
@@ -437,7 +448,7 @@ def obtener_actuales():
             return iso
 
     actuales = {}
-    for zona, (wigos, estacion) in ESTACIONES.items():
+    for zona, (wigos, estacion, _id_inumet) in ESTACIONES.items():
         registros = por_wigos[wigos]
         temp = ultimo(registros, "air_temperature")
         hum = ultimo(registros, "relative_humidity")
@@ -480,6 +491,102 @@ def obtener_actuales():
         raise RuntimeError("INUMET no devolvió temperaturas recientes para las cuatro estaciones")
     return actuales
 
+
+
+def _valor_matriz_estado(datos, estacion_id, variable_id):
+    """Devuelve el valor [0] de la matriz oficial de Estado actual de INUMET."""
+    estaciones = datos.get("estaciones") or []
+    variables = datos.get("variables") or []
+    observaciones = datos.get("observaciones") or []
+    ids_est = [x.get("id") for x in estaciones]
+    ids_var = [x.get("idInt") for x in variables]
+    try:
+        ie = ids_est.index(estacion_id)
+        iv = ids_var.index(variable_id)
+        fila = (observaciones[iv] or {}).get("datos") or []
+        celda = fila[ie] if ie < len(fila) else None
+        if isinstance(celda, list):
+            return celda[0] if celda else None
+        return celda
+    except (ValueError, IndexError, TypeError):
+        return None
+
+
+def _numero(v):
+    if v in (None, "", "-", "null"):
+        return None
+    try:
+        return float(str(v).replace(",", "."))
+    except (TypeError, ValueError):
+        return None
+
+
+def _condicion_estado(presente, cielo):
+    # El estado presente es el dato que INUMET usa para el icono cuando existe.
+    if presente not in (None, "", "-"):
+        return str(presente)
+    if cielo in (None, "", "-"):
+        return None
+    # Algunos despliegues devuelven directamente texto; si es numérico, lo
+    # conservamos como respaldo y la tabla HTML oficial puede completar texto.
+    return str(cielo)
+
+
+def obtener_actuales_dinamicos():
+    """Fuente primaria: matriz dinámica que alimenta Estado actual de INUMET."""
+    r = requests.get(URL_ESTADO_DINAMICO, headers=HEADERS, timeout=30)
+    r.raise_for_status()
+    datos = r.json()
+    if not all(k in datos for k in ("estaciones", "variables", "observaciones")):
+        raise RuntimeError("Formato inesperado en Estado actual dinámico de INUMET")
+
+    # La matriz no siempre expone una marca temporal por celda. La tomamos de
+    # la propia página oficial, que publica la hora común de observación.
+    tabla = obtener_estado_actual_oficial()
+    actuales = {}
+    for zona, (wigos, estacion, estacion_id) in ESTACIONES.items():
+        temp = _numero(_valor_matriz_estado(datos, estacion_id, VARIABLES_ESTADO["temperature"]))
+        hum = _numero(_valor_matriz_estado(datos, estacion_id, VARIABLES_ESTADO["humidity"]))
+        vel = _numero(_valor_matriz_estado(datos, estacion_id, VARIABLES_ESTADO["wind_speed"]))
+        dire = _numero(_valor_matriz_estado(datos, estacion_id, VARIABLES_ESTADO["wind_direction_deg"]))
+        vis = _numero(_valor_matriz_estado(datos, estacion_id, VARIABLES_ESTADO["visibility"]))
+        cielo = _valor_matriz_estado(datos, estacion_id, VARIABLES_ESTADO["cloud_amount"])
+        presente = _valor_matriz_estado(datos, estacion_id, VARIABLES_ESTADO["present_weather"])
+        oficial = tabla.get(zona, {})
+
+        # Preferimos el texto ya interpretado por la tabla oficial para cielo/tiempo.
+        condicion = oficial.get("condition") or _condicion_estado(presente, cielo)
+        # La variable 29 se publica habitualmente en km/h en esta interfaz.
+        actuales[zona] = {
+            "station": estacion,
+            "wigos": wigos,
+            "temperature": temp,
+            "condition": condicion,
+            "present_weather": oficial.get("present_weather") or (str(presente) if presente not in (None, "", "-") else None),
+            "cloud_amount": oficial.get("cloud_amount") or (str(cielo) if cielo not in (None, "", "-") else None),
+            "observation_time": oficial.get("observation_time"),
+            "humidity": round(hum) if hum is not None else oficial.get("humidity"),
+            "wind_speed_kmh": vel if vel is not None else oficial.get("wind_speed_kmh"),
+            "wind_direction_deg": round(dire) if dire is not None else oficial.get("wind_direction_deg"),
+            # La interfaz dinámica maneja visibilidad en km; data.json la guarda en metros.
+            "visibility_m": round(vis * 1000) if vis is not None else oficial.get("visibility_m"),
+        }
+        print("Estado dinámico", zona, estacion, actuales[zona])
+
+    if any(x["temperature"] is None for x in actuales.values()):
+        faltan = [z for z, x in actuales.items() if x["temperature"] is None]
+        raise RuntimeError("Estado actual dinámico sin temperatura para: " + ", ".join(faltan))
+    return actuales
+
+
+def obtener_actuales():
+    try:
+        actuales = obtener_actuales_dinamicos()
+        print("Fuente de datos actuales: Estado actual dinámico de INUMET")
+        return actuales
+    except Exception as e:
+        print("Aviso: falló Estado actual dinámico; se usa SYNOP como respaldo:", e)
+        return obtener_actuales_synop()
 
 def main():
     forecasts = obtener_pronosticos()
