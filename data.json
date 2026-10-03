@@ -1,5 +1,5 @@
 {
-  "updated": "03/10/2026 15:45",
+  "updated": "03/10/2026 15:51",
   "source": "INUMET",
   "current": {
     "station": "Carrasco",
@@ -152,7 +152,7 @@
           "date": "Martes 06",
           "min": "8",
           "max": "23",
-          "evening": null,
+          "evening": "Algo nuboso",
           "extended": true,
           "weather_code": "13"
         }
