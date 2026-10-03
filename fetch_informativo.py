@@ -588,17 +588,21 @@ def obtener_actuales_dinamicos():
         presente = _valor_matriz_estado(datos, estacion_id, VARIABLES_ESTADO["present_weather"])
         oficial = tabla.get(zona, {})
 
-        # Preferimos el texto ya interpretado por la tabla oficial para cielo/tiempo.
-        condicion = oficial.get("condition") or _condicion_estado(presente, cielo)
+        # Para Pronóstico Informativo, "condition" debe representar solamente
+        # el estado del cielo. No reinterpretamos el código bruto de tiempo
+        # presente como si fuera un código de pronóstico.
+        cielo_texto = oficial.get("cloud_amount") or _texto_cielo_estado(cielo)
         respaldo = synop_respaldo.get(zona, {})
         # La variable 29 se publica habitualmente en km/h en esta interfaz.
         actuales[zona] = {
             "station": estacion,
             "wigos": wigos,
             "temperature": temp,
-            "condition": condicion,
-            "present_weather": oficial.get("present_weather") or _texto_tiempo_presente(presente),
-            "cloud_amount": oficial.get("cloud_amount") or _texto_cielo_estado(cielo),
+            "condition": cielo_texto,
+            # Se conserva el valor bruto de la matriz dinámica. Su tabla de
+            # códigos se validará por separado antes de usarla en Tiempo Uruguay.
+            "present_weather": presente,
+            "cloud_amount": cielo_texto,
             "observation_time": oficial.get("observation_time") or respaldo.get("observation_time"),
             "humidity": round(hum) if hum is not None else oficial.get("humidity"),
             "wind_speed_kmh": vel if vel is not None else oficial.get("wind_speed_kmh"),
