@@ -170,14 +170,11 @@ def texto_extendido(item):
     if textos:
         return " ".join(dict.fromkeys(textos))
 
-    # INUMET no siempre usa el mismo nombre de campo en el extendido.
-    claves_prob = (
+    for clave in (
         "probabilidadPrecipitaciones", "probabilidadPrecipitacion",
         "probPrecipitaciones", "probPrecipitacion", "probLluvia",
         "precipitaciones", "precipitacion",
-        "probabilidad", "prob",
-    )
-    for clave in claves_prob:
+    ):
         valor = item.get(clave)
         if valor not in (None, ""):
             bajo = str(valor).strip().lower()
@@ -190,16 +187,7 @@ def texto_extendido(item):
             if bajo in {"alta", "alto"}:
                 return "Alta probabilidad de precipitaciones"
             return str(valor).strip()
-
-    # Respaldo para variantes de estructura del JSON extendido de INUMET.
-    for clave, valor in item.items():
-        nombre = str(clave).lower()
-        if valor in (None, ""):
-            continue
-        if ("precipit" in nombre or "lluv" in nombre) and not isinstance(valor, (dict, list)):
-            return str(valor).strip()
-
-    return None
+    return "Pronóstico extendido"
 
 
 def convertir_extendido(item):
@@ -265,6 +253,13 @@ def obtener_pronosticos():
             except (TypeError, ValueError):
                 continue
             if n >= 3:
+                # DIAGNÓSTICO TEMPORAL:
+                # muestra en el log el objeto bruto que INUMET entrega
+                # para el primer día extendido de la zona Noroeste.
+                if zona == "NW" and n == 3:
+                    print("=== DEBUG INUMET NW diaMasN=3 ===")
+                    print(json.dumps(item, ensure_ascii=False, indent=2))
+                    print("=== FIN DEBUG INUMET NW ===")
                 por_zona[zona].append((n, item))
 
         for zona, pares in por_zona.items():
