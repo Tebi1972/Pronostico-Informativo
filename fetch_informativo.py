@@ -565,7 +565,20 @@ def _condicion_estado(presente, cielo):
 
 def obtener_actuales_dinamicos():
     """Fuente primaria: matriz dinámica que alimenta Estado actual de INUMET."""
-    r = requests.get(URL_ESTADO_DINAMICO, headers=HEADERS, timeout=30)
+    # Evitamos que GitHub Actions/CDN reutilice una respuesta anterior de la
+    # matriz dinámica. INUMET actualiza este recurso manteniendo la misma URL.
+    headers_estado = dict(HEADERS)
+    headers_estado.update({
+        "Cache-Control": "no-cache, no-store, max-age=0",
+        "Pragma": "no-cache",
+    })
+    cache_buster = int(datetime.now(timezone.utc).timestamp() * 1000)
+    r = requests.get(
+        URL_ESTADO_DINAMICO,
+        params={"_": cache_buster},
+        headers=headers_estado,
+        timeout=30,
+    )
     r.raise_for_status()
     datos = r.json()
     if not all(k in datos for k in ("estaciones", "variables", "observaciones")):
