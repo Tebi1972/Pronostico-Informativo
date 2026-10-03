@@ -521,16 +521,41 @@ def _numero(v):
         return None
 
 
-def _condicion_estado(presente, cielo):
-    # El estado presente es el dato que INUMET usa para el icono cuando existe.
-    if presente not in (None, "", "-"):
-        return str(presente)
+def _texto_cielo_estado(cielo):
     if cielo in (None, "", "-"):
         return None
-    # Algunos despliegues devuelven directamente texto; si es numérico, lo
-    # conservamos como respaldo y la tabla HTML oficial puede completar texto.
-    return str(cielo)
+    t = str(cielo).strip().lower()
+    mapa = {
+        "des": "Despejado", "desp": "Despejado",
+        "poc": "Poco nuboso", "poco": "Poco nuboso",
+        "alg": "Algo nuboso",
+        "nub": "Nuboso",
+        "muy": "Muy nuboso",
+        "cub": "Cubierto",
+    }
+    return mapa.get(t, str(cielo))
 
+
+def _texto_tiempo_presente(presente):
+    if presente in (None, "", "-"):
+        return None
+    # Códigos que usa la interfaz de INUMET para representar el fenómeno/ícono.
+    # Si aparece un código no conocido, no inventamos una descripción.
+    mapa = {
+        "2": "Lluvias",
+        "4": "Nuboso",
+        "7": "Lluvias y nieblas",
+        "11": "Lluvias y tormentas",
+        "13": "Algo nuboso",
+    }
+    t = str(presente).strip()
+    return mapa.get(t)
+
+
+def _condicion_estado(presente, cielo):
+    # Para la portada informativa privilegiamos una descripción legible.
+    # Un fenómeno presente conocido tiene prioridad; de lo contrario usamos cielo.
+    return _texto_tiempo_presente(presente) or _texto_cielo_estado(cielo)
 
 def obtener_actuales_dinamicos():
     """Fuente primaria: matriz dinámica que alimenta Estado actual de INUMET."""
@@ -543,6 +568,15 @@ def obtener_actuales_dinamicos():
     # La matriz no siempre expone una marca temporal por celda. La tomamos de
     # la propia página oficial, que publica la hora común de observación.
     tabla = obtener_estado_actual_oficial()
+    # Si la página HTML no expone la hora (actualmente puede cargarse por JS),
+    # usamos exclusivamente la marca temporal del SYNOP oficial como respaldo.
+    # Los valores meteorológicos siguen viniendo de la matriz dinámica.
+    synop_respaldo = {}
+    if not tabla or any(not tabla.get(z, {}).get("observation_time") for z in ESTACIONES):
+        try:
+            synop_respaldo = obtener_actuales_synop()
+        except Exception as e:
+            print("Aviso: no se pudo obtener hora SYNOP de respaldo:", e)
     actuales = {}
     for zona, (wigos, estacion, estacion_id) in ESTACIONES.items():
         temp = _numero(_valor_matriz_estado(datos, estacion_id, VARIABLES_ESTADO["temperature"]))
@@ -556,15 +590,16 @@ def obtener_actuales_dinamicos():
 
         # Preferimos el texto ya interpretado por la tabla oficial para cielo/tiempo.
         condicion = oficial.get("condition") or _condicion_estado(presente, cielo)
+        respaldo = synop_respaldo.get(zona, {})
         # La variable 29 se publica habitualmente en km/h en esta interfaz.
         actuales[zona] = {
             "station": estacion,
             "wigos": wigos,
             "temperature": temp,
             "condition": condicion,
-            "present_weather": oficial.get("present_weather") or (str(presente) if presente not in (None, "", "-") else None),
-            "cloud_amount": oficial.get("cloud_amount") or (str(cielo) if cielo not in (None, "", "-") else None),
-            "observation_time": oficial.get("observation_time"),
+            "present_weather": oficial.get("present_weather") or _texto_tiempo_presente(presente),
+            "cloud_amount": oficial.get("cloud_amount") or _texto_cielo_estado(cielo),
+            "observation_time": oficial.get("observation_time") or respaldo.get("observation_time"),
             "humidity": round(hum) if hum is not None else oficial.get("humidity"),
             "wind_speed_kmh": vel if vel is not None else oficial.get("wind_speed_kmh"),
             "wind_direction_deg": round(dire) if dire is not None else oficial.get("wind_direction_deg"),
