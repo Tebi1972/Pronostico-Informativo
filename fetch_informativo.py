@@ -535,6 +535,7 @@ def _texto_cielo_estado(cielo):
         "des": "Despejado", "desp": "Despejado",
         "poc": "Poco nuboso", "poco": "Poco nuboso",
         "alg": "Algo nuboso",
+        "an": "Algo nuboso",
         "nub": "Nuboso",
         "muy": "Muy nuboso",
         "cub": "Cubierto",
