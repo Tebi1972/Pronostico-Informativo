@@ -631,20 +631,47 @@ def obtener_actuales_dinamicos():
         }
         print("Estado dinámico", zona, estacion, actuales[zona])
 
-    if any(x["temperature"] is None for x in actuales.values()):
-        faltan = [z for z, x in actuales.items() if x["temperature"] is None]
-        raise RuntimeError("Estado actual dinámico sin temperatura para: " + ", ".join(faltan))
     return actuales
 
 
 def obtener_actuales():
     try:
-        actuales = obtener_actuales_dinamicos()
-        print("Fuente de datos actuales: Estado actual dinámico de INUMET")
-        return actuales
+        dinamicos = obtener_actuales_dinamicos()
     except Exception as e:
-        print("Aviso: falló Estado actual dinámico; se usa SYNOP como respaldo:", e)
+        print("Aviso: falló por completo Estado actual dinámico; se usa SYNOP como respaldo:", e)
         return obtener_actuales_synop()
+
+    faltantes = [
+        zona for zona, datos in dinamicos.items()
+        if datos.get("temperature") is None
+    ]
+
+    if not faltantes:
+        print("Fuente de datos actuales: Estado actual dinámico de INUMET")
+        return dinamicos
+
+    print(
+        "Aviso: faltan temperaturas dinámicas para:",
+        ", ".join(faltantes),
+        "- se usa SYNOP solo en esas regiones"
+    )
+
+    try:
+        synop = obtener_actuales_synop()
+    except Exception as e:
+        print("Aviso: no se pudo obtener SYNOP para completar regiones faltantes:", e)
+        return dinamicos
+
+    for zona in faltantes:
+        respaldo = synop.get(zona, {})
+        if respaldo.get("temperature") is not None:
+            dinamicos[zona] = respaldo
+            print("Respaldo SYNOP aplicado solo a", zona, respaldo)
+        else:
+            print("Aviso: SYNOP tampoco tiene temperatura para", zona)
+
+    print("Fuente de datos actuales: dinámica INUMET + respaldo SYNOP por región")
+    return dinamicos
 
 def main():
     forecasts = obtener_pronosticos()
