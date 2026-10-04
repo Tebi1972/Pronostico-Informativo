@@ -1,86 +1,86 @@
 {
-  "updated": "04/10/2026 02:17",
+  "updated": "04/10/2026 09:26",
   "source": "INUMET",
   "current": {
     "station": "Carrasco",
     "wigos": "0-20000-0-86580",
-    "temperature": 11.1,
-    "condition": "Algo nuboso",
-    "present_weather": "MORE OR LESS CONTINUOUS",
-    "cloud_amount": "2 OKTAS",
-    "observation_time": "2026-10-04T05:10:00Z",
-    "humidity": 94,
-    "wind_speed_kmh": 5.4,
-    "wind_direction_deg": 280,
-    "visibility_m": 4000
+    "temperature": 13.9,
+    "condition": "an",
+    "present_weather": 2,
+    "cloud_amount": "an",
+    "observation_time": "2026-10-04T12:00:00Z",
+    "humidity": 90,
+    "wind_speed_kmh": 19.0,
+    "wind_direction_deg": 210,
+    "visibility_m": 15000
   },
   "current_regions": {
     "Norte": {
       "station": "Artigas",
       "wigos": "0-20000-0-86330",
-      "temperature": 12.6,
+      "temperature": 13.0,
       "condition": "Cubierto",
-      "present_weather": null,
-      "cloud_amount": "7 OKTAS OR MORE, BUT NOT 8 OKTAS",
-      "observation_time": "2026-10-04T05:00:00Z",
-      "humidity": 96,
-      "wind_speed_kmh": 18.0,
-      "wind_direction_deg": 192,
-      "visibility_m": 10000
+      "present_weather": 4,
+      "cloud_amount": "Cubierto",
+      "observation_time": "2026-10-04T12:00:00Z",
+      "humidity": 87,
+      "wind_speed_kmh": 13.0,
+      "wind_direction_deg": 160,
+      "visibility_m": 12000
     },
     "Este": {
       "station": "Rocha",
       "wigos": "0-20000-0-86565",
-      "temperature": 12.7,
-      "condition": "Cubierto",
-      "present_weather": null,
-      "cloud_amount": "8 OKTAS",
-      "observation_time": "2026-10-04T05:00:00Z",
-      "humidity": 88,
-      "wind_speed_kmh": 11.9,
-      "wind_direction_deg": 251,
-      "visibility_m": 12000
+      "temperature": 14.2,
+      "condition": "Nuboso",
+      "present_weather": 13,
+      "cloud_amount": "Nuboso",
+      "observation_time": "2026-10-04T12:00:00Z",
+      "humidity": 82,
+      "wind_speed_kmh": 24.0,
+      "wind_direction_deg": 210,
+      "visibility_m": 15000
     },
     "Sur": {
       "station": "Carrasco",
       "wigos": "0-20000-0-86580",
-      "temperature": 11.1,
-      "condition": "Algo nuboso",
-      "present_weather": "MORE OR LESS CONTINUOUS",
-      "cloud_amount": "2 OKTAS",
-      "observation_time": "2026-10-04T05:10:00Z",
-      "humidity": 94,
-      "wind_speed_kmh": 5.4,
-      "wind_direction_deg": 280,
-      "visibility_m": 4000
+      "temperature": 13.9,
+      "condition": "an",
+      "present_weather": 2,
+      "cloud_amount": "an",
+      "observation_time": "2026-10-04T12:00:00Z",
+      "humidity": 90,
+      "wind_speed_kmh": 19.0,
+      "wind_direction_deg": 210,
+      "visibility_m": 15000
     },
     "Oeste": {
       "station": "Mercedes",
       "wigos": "0-20000-0-86490",
-      "temperature": 8.0,
+      "temperature": 13.1,
       "condition": "Cubierto",
-      "present_weather": null,
-      "cloud_amount": "8 OKTAS",
-      "observation_time": "2026-10-04T05:00:00Z",
+      "present_weather": 8,
+      "cloud_amount": "Cubierto",
+      "observation_time": "2026-10-04T12:00:00Z",
       "humidity": 98,
-      "wind_speed_kmh": 5.0,
-      "wind_direction_deg": 237,
-      "visibility_m": 10000
+      "wind_speed_kmh": 4.0,
+      "wind_direction_deg": 250,
+      "visibility_m": 300
     }
   },
   "locations": {
     "montevideo_carrasco": {
       "station": "Carrasco",
       "wigos": "0-20000-0-86580",
-      "temperature": 11.1,
-      "condition": "Algo nuboso",
-      "present_weather": "MORE OR LESS CONTINUOUS",
-      "cloud_amount": "2 OKTAS",
-      "observation_time": "2026-10-04T05:10:00Z",
-      "humidity": 94,
-      "wind_speed_kmh": 5.4,
-      "wind_direction_deg": 280,
-      "visibility_m": 4000
+      "temperature": 13.9,
+      "condition": "an",
+      "present_weather": 2,
+      "cloud_amount": "an",
+      "observation_time": "2026-10-04T12:00:00Z",
+      "humidity": 90,
+      "wind_speed_kmh": 19.0,
+      "wind_direction_deg": 210,
+      "visibility_m": 15000
     }
   },
   "forecasts": {
@@ -89,7 +89,7 @@
       "days": [
         {
           "date": "Domingo 04",
-          "min": "7",
+          "min": "8",
           "max": "20",
           "evening": "Algo nuboso y nieblas",
           "extended": false,
@@ -200,7 +200,7 @@
       "days": [
         {
           "date": "Domingo 04",
-          "min": "8",
+          "min": "6",
           "max": "22",
           "evening": "Algo nuboso",
           "extended": false,
