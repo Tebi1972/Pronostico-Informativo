@@ -1,15 +1,15 @@
 {
-  "updated": "04/10/2026 20:23",
+  "updated": "04/10/2026 21:10",
   "source": "INUMET",
   "current": {
     "station": "Carrasco",
     "wigos": "0-20000-0-86580",
-    "temperature": 17.0,
+    "temperature": 15.0,
     "condition": "cl",
     "present_weather": 1,
     "cloud_amount": "cl",
-    "observation_time": "2026-10-04T23:10:00Z",
-    "humidity": 49,
+    "observation_time": "2026-10-05T00:00:00Z",
+    "humidity": 54,
     "wind_speed_kmh": 7.0,
     "wind_direction_deg": 360,
     "visibility_m": 15000
@@ -44,12 +44,12 @@
     "Sur": {
       "station": "Carrasco",
       "wigos": "0-20000-0-86580",
-      "temperature": 17.0,
+      "temperature": 15.0,
       "condition": "cl",
       "present_weather": 1,
       "cloud_amount": "cl",
-      "observation_time": "2026-10-04T23:10:00Z",
-      "humidity": 49,
+      "observation_time": "2026-10-05T00:00:00Z",
+      "humidity": 54,
       "wind_speed_kmh": 7.0,
       "wind_direction_deg": 360,
       "visibility_m": 15000
@@ -72,12 +72,12 @@
     "montevideo_carrasco": {
       "station": "Carrasco",
       "wigos": "0-20000-0-86580",
-      "temperature": 17.0,
+      "temperature": 15.0,
       "condition": "cl",
       "present_weather": 1,
       "cloud_amount": "cl",
-      "observation_time": "2026-10-04T23:10:00Z",
-      "humidity": 49,
+      "observation_time": "2026-10-05T00:00:00Z",
+      "humidity": 54,
       "wind_speed_kmh": 7.0,
       "wind_direction_deg": 360,
       "visibility_m": 15000
