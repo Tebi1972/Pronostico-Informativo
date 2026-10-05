@@ -1,17 +1,17 @@
 {
-  "updated": "05/10/2026 05:31",
+  "updated": "05/10/2026 06:10",
   "source": "INUMET",
   "current": {
     "station": "Carrasco",
     "wigos": "0-20000-0-86580",
-    "temperature": 9.9,
-    "condition": "Nuboso",
-    "present_weather": 13,
-    "cloud_amount": "Nuboso",
+    "temperature": 8.9,
+    "condition": "Algo nuboso",
+    "present_weather": 2,
+    "cloud_amount": "Algo nuboso",
     "observation_time": "2026-10-05T08:10:00Z",
-    "humidity": 78,
-    "wind_speed_kmh": 13.0,
-    "wind_direction_deg": 360,
+    "humidity": 84,
+    "wind_speed_kmh": 9.0,
+    "wind_direction_deg": 350,
     "visibility_m": 15000
   },
   "current_regions": {
@@ -44,14 +44,14 @@
     "Sur": {
       "station": "Carrasco",
       "wigos": "0-20000-0-86580",
-      "temperature": 9.9,
-      "condition": "Nuboso",
-      "present_weather": 13,
-      "cloud_amount": "Nuboso",
+      "temperature": 8.9,
+      "condition": "Algo nuboso",
+      "present_weather": 2,
+      "cloud_amount": "Algo nuboso",
       "observation_time": "2026-10-05T08:10:00Z",
-      "humidity": 78,
-      "wind_speed_kmh": 13.0,
-      "wind_direction_deg": 360,
+      "humidity": 84,
+      "wind_speed_kmh": 9.0,
+      "wind_direction_deg": 350,
       "visibility_m": 15000
     },
     "Oeste": {
@@ -72,14 +72,14 @@
     "montevideo_carrasco": {
       "station": "Carrasco",
       "wigos": "0-20000-0-86580",
-      "temperature": 9.9,
-      "condition": "Nuboso",
-      "present_weather": 13,
-      "cloud_amount": "Nuboso",
+      "temperature": 8.9,
+      "condition": "Algo nuboso",
+      "present_weather": 2,
+      "cloud_amount": "Algo nuboso",
       "observation_time": "2026-10-05T08:10:00Z",
-      "humidity": 78,
-      "wind_speed_kmh": 13.0,
-      "wind_direction_deg": 360,
+      "humidity": 84,
+      "wind_speed_kmh": 9.0,
+      "wind_direction_deg": 350,
       "visibility_m": 15000
     }
   },
@@ -126,7 +126,7 @@
       "days": [
         {
           "date": "Lunes 05",
-          "min": "12",
+          "min": "11",
           "max": "23",
           "evening": "Nuboso con lluvias",
           "extended": false,
@@ -163,7 +163,7 @@
       "days": [
         {
           "date": "Lunes 05",
-          "min": "10",
+          "min": "9",
           "max": "20",
           "evening": "Algo nuboso",
           "extended": false,
@@ -181,7 +181,7 @@
           "date": "Miércoles 07",
           "min": "11",
           "max": "20",
-          "evening": "Cubierto con lluvias",
+          "evening": "Cubierto con lluvias y tormentas",
           "extended": false,
           "weather_code": "4"
         },
@@ -200,7 +200,7 @@
       "days": [
         {
           "date": "Lunes 05",
-          "min": "10",
+          "min": "9",
           "max": "22",
           "evening": "Algo nuboso con lluvias",
           "extended": false,
