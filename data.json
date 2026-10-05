@@ -1,16 +1,16 @@
 {
-  "updated": "04/10/2026 23:26",
+  "updated": "05/10/2026 00:10",
   "source": "INUMET",
   "current": {
     "station": "Carrasco",
     "wigos": "0-20000-0-86580",
-    "temperature": 13.0,
-    "condition": "Algo nuboso",
-    "present_weather": 2,
-    "cloud_amount": "Algo nuboso",
+    "temperature": 11.0,
+    "condition": "cl",
+    "present_weather": 1,
+    "cloud_amount": "cl",
     "observation_time": "2026-10-05T02:10:00Z",
-    "humidity": 64,
-    "wind_speed_kmh": 9.0,
+    "humidity": 71,
+    "wind_speed_kmh": 11.0,
     "wind_direction_deg": 360,
     "visibility_m": 15000
   },
@@ -44,13 +44,13 @@
     "Sur": {
       "station": "Carrasco",
       "wigos": "0-20000-0-86580",
-      "temperature": 13.0,
-      "condition": "Algo nuboso",
-      "present_weather": 2,
-      "cloud_amount": "Algo nuboso",
+      "temperature": 11.0,
+      "condition": "cl",
+      "present_weather": 1,
+      "cloud_amount": "cl",
       "observation_time": "2026-10-05T02:10:00Z",
-      "humidity": 64,
-      "wind_speed_kmh": 9.0,
+      "humidity": 71,
+      "wind_speed_kmh": 11.0,
       "wind_direction_deg": 360,
       "visibility_m": 15000
     },
@@ -72,13 +72,13 @@
     "montevideo_carrasco": {
       "station": "Carrasco",
       "wigos": "0-20000-0-86580",
-      "temperature": 13.0,
-      "condition": "Algo nuboso",
-      "present_weather": 2,
-      "cloud_amount": "Algo nuboso",
+      "temperature": 11.0,
+      "condition": "cl",
+      "present_weather": 1,
+      "cloud_amount": "cl",
       "observation_time": "2026-10-05T02:10:00Z",
-      "humidity": 64,
-      "wind_speed_kmh": 9.0,
+      "humidity": 71,
+      "wind_speed_kmh": 11.0,
       "wind_direction_deg": 360,
       "visibility_m": 15000
     }
@@ -88,16 +88,8 @@
       "name": "Este",
       "days": [
         {
-          "date": "Domingo 04",
-          "min": "9",
-          "max": "22",
-          "evening": "Algo nuboso y nieblas",
-          "extended": false,
-          "weather_code": "13"
-        },
-        {
           "date": "Lunes 05",
-          "min": "7",
+          "min": "5",
           "max": "19",
           "evening": "Algo nuboso",
           "extended": false,
@@ -115,9 +107,17 @@
           "date": "Miércoles 07",
           "min": "10",
           "max": "20",
+          "evening": "Cubierto con lluvias y tormentas",
+          "extended": false,
+          "weather_code": "4"
+        },
+        {
+          "date": "Jueves 08",
+          "min": "12",
+          "max": "22",
           "evening": "Lluvias",
           "extended": true,
-          "weather_code": "4"
+          "weather_code": "7"
         }
       ]
     },
@@ -125,18 +125,10 @@
       "name": "Norte",
       "days": [
         {
-          "date": "Domingo 04",
-          "min": "9",
-          "max": "22",
-          "evening": "Algo nuboso",
-          "extended": false,
-          "weather_code": "4"
-        },
-        {
           "date": "Lunes 05",
           "min": "12",
           "max": "23",
-          "evening": "Nuboso",
+          "evening": "Nuboso con lluvias",
           "extended": false,
           "weather_code": "4"
         },
@@ -144,7 +136,7 @@
           "date": "Martes 06",
           "min": "9",
           "max": "23",
-          "evening": "Nuboso",
+          "evening": "Nuboso con lluvias",
           "extended": false,
           "weather_code": "13"
         },
@@ -152,23 +144,23 @@
           "date": "Miércoles 07",
           "min": "13",
           "max": "25",
+          "evening": "Nuboso con lluvias y tormentas",
+          "extended": false,
+          "weather_code": "7"
+        },
+        {
+          "date": "Jueves 08",
+          "min": "13",
+          "max": "24",
           "evening": "Lluvias",
           "extended": true,
-          "weather_code": "7"
+          "weather_code": "13"
         }
       ]
     },
     "M": {
       "name": "Sur",
       "days": [
-        {
-          "date": "Domingo 04",
-          "min": "10",
-          "max": "21",
-          "evening": "Claro",
-          "extended": false,
-          "weather_code": "13"
-        },
         {
           "date": "Lunes 05",
           "min": "10",
@@ -189,23 +181,23 @@
           "date": "Miércoles 07",
           "min": "11",
           "max": "20",
-          "evening": "Lluvias",
-          "extended": true,
+          "evening": "Cubierto con lluvias",
+          "extended": false,
           "weather_code": "4"
+        },
+        {
+          "date": "Jueves 08",
+          "min": "14",
+          "max": "16",
+          "evening": "Algo nuboso",
+          "extended": true,
+          "weather_code": "13"
         }
       ]
     },
     "SO": {
       "name": "Oeste",
       "days": [
-        {
-          "date": "Domingo 04",
-          "min": "7",
-          "max": "23",
-          "evening": "Claro",
-          "extended": false,
-          "weather_code": "13"
-        },
         {
           "date": "Lunes 05",
           "min": "10",
@@ -226,9 +218,17 @@
           "date": "Miércoles 07",
           "min": "11",
           "max": "20",
-          "evening": "Lluvias",
-          "extended": true,
+          "evening": "Cubierto con lluvias y tormentas",
+          "extended": false,
           "weather_code": "4"
+        },
+        {
+          "date": "Jueves 08",
+          "min": "12",
+          "max": "22",
+          "evening": "Algo nuboso",
+          "extended": true,
+          "weather_code": "13"
         }
       ]
     }
