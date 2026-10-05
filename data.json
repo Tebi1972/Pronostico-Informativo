@@ -1,5 +1,5 @@
 {
-  "updated": "05/10/2026 15:10",
+  "updated": "05/10/2026 15:32",
   "source": "INUMET",
   "current": {
     "station": "Carrasco",
@@ -22,7 +22,7 @@
       "condition": "Nuboso",
       "present_weather": 13,
       "cloud_amount": "Nuboso",
-      "observation_time": "2026-10-05T17:00:00Z",
+      "observation_time": "2026-10-05T18:00:00Z",
       "humidity": 41,
       "wind_speed_kmh": 30.0,
       "wind_direction_deg": 120,
@@ -35,7 +35,7 @@
       "condition": "Nuboso",
       "present_weather": 13,
       "cloud_amount": "Nuboso",
-      "observation_time": "2026-10-05T17:00:00Z",
+      "observation_time": "2026-10-05T18:00:00Z",
       "humidity": 54,
       "wind_speed_kmh": 13.0,
       "wind_direction_deg": 180,
@@ -61,7 +61,7 @@
       "condition": "Nuboso",
       "present_weather": 13,
       "cloud_amount": "Nuboso",
-      "observation_time": "2026-10-05T17:00:00Z",
+      "observation_time": "2026-10-05T18:00:00Z",
       "humidity": 45,
       "wind_speed_kmh": 4.0,
       "wind_direction_deg": 40,
