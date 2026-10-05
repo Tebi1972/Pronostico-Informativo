@@ -1,5 +1,5 @@
 {
-  "updated": "05/10/2026 12:10",
+  "updated": "05/10/2026 12:30",
   "source": "INUMET",
   "current": {
     "station": "Carrasco",
@@ -8,7 +8,7 @@
     "condition": "Nuboso",
     "present_weather": 13,
     "cloud_amount": "Nuboso",
-    "observation_time": "2026-10-05T14:10:00Z",
+    "observation_time": "2026-10-05T15:10:00Z",
     "humidity": 49,
     "wind_speed_kmh": 13.0,
     "wind_direction_deg": 330,
@@ -22,7 +22,7 @@
       "condition": "Cubierto",
       "present_weather": 4,
       "cloud_amount": "Cubierto",
-      "observation_time": "2026-10-05T14:00:00Z",
+      "observation_time": "2026-10-05T15:00:00Z",
       "humidity": 64,
       "wind_speed_kmh": 17.0,
       "wind_direction_deg": 100,
@@ -35,7 +35,7 @@
       "condition": "Nuboso",
       "present_weather": 13,
       "cloud_amount": "Nuboso",
-      "observation_time": "2026-10-05T14:00:00Z",
+      "observation_time": "2026-10-05T15:00:00Z",
       "humidity": 40,
       "wind_speed_kmh": 9.0,
       "wind_direction_deg": 350,
@@ -48,7 +48,7 @@
       "condition": "Nuboso",
       "present_weather": 13,
       "cloud_amount": "Nuboso",
-      "observation_time": "2026-10-05T14:10:00Z",
+      "observation_time": "2026-10-05T15:10:00Z",
       "humidity": 49,
       "wind_speed_kmh": 13.0,
       "wind_direction_deg": 330,
@@ -61,7 +61,7 @@
       "condition": "Nuboso",
       "present_weather": 13,
       "cloud_amount": "Nuboso",
-      "observation_time": "2026-10-05T14:00:00Z",
+      "observation_time": "2026-10-05T15:00:00Z",
       "humidity": 56,
       "wind_speed_kmh": 9.0,
       "wind_direction_deg": 10,
@@ -76,7 +76,7 @@
       "condition": "Nuboso",
       "present_weather": 13,
       "cloud_amount": "Nuboso",
-      "observation_time": "2026-10-05T14:10:00Z",
+      "observation_time": "2026-10-05T15:10:00Z",
       "humidity": 49,
       "wind_speed_kmh": 13.0,
       "wind_direction_deg": 330,
@@ -164,7 +164,7 @@
         {
           "date": "Lunes 05",
           "min": "8",
-          "max": "23",
+          "max": "24",
           "evening": "Algo nuboso",
           "extended": false,
           "weather_code": "13"
@@ -201,7 +201,7 @@
         {
           "date": "Lunes 05",
           "min": "9",
-          "max": "22",
+          "max": "23",
           "evening": "Algo nuboso con lluvias",
           "extended": false,
           "weather_code": "13"
