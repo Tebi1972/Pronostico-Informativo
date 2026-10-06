@@ -1,5 +1,5 @@
 {
-  "updated": "06/10/2026 14:25",
+  "updated": "06/10/2026 15:10",
   "source": "INUMET",
   "current": {
     "station": "Carrasco",
@@ -9,8 +9,8 @@
     "present_weather": 13,
     "cloud_amount": "Nuboso",
     "observation_time": "2026-10-06T17:10:00Z",
-    "humidity": 69,
-    "wind_speed_kmh": 24.0,
+    "humidity": 75,
+    "wind_speed_kmh": 20.0,
     "wind_direction_deg": 110,
     "visibility_m": 15000
   },
@@ -18,27 +18,27 @@
     "Norte": {
       "station": "Artigas",
       "wigos": "0-20000-0-86330",
-      "temperature": 23.8,
+      "temperature": 24.2,
       "condition": "Nuboso",
       "present_weather": 13,
       "cloud_amount": "Nuboso",
       "observation_time": "2026-10-06T17:00:00Z",
-      "humidity": 68,
-      "wind_speed_kmh": 15.0,
-      "wind_direction_deg": 50,
+      "humidity": 65,
+      "wind_speed_kmh": 17.0,
+      "wind_direction_deg": 70,
       "visibility_m": 20000
     },
     "Este": {
       "station": "Rocha",
       "wigos": "0-20000-0-86565",
-      "temperature": 20.6,
-      "condition": "Algo nuboso",
-      "present_weather": 2,
-      "cloud_amount": "Algo nuboso",
+      "temperature": 20.8,
+      "condition": "Nuboso",
+      "present_weather": 13,
+      "cloud_amount": "Nuboso",
       "observation_time": "2026-10-06T17:00:00Z",
-      "humidity": 66,
-      "wind_speed_kmh": 20.0,
-      "wind_direction_deg": 90,
+      "humidity": 65,
+      "wind_speed_kmh": 22.0,
+      "wind_direction_deg": 100,
       "visibility_m": 18000
     },
     "Sur": {
@@ -49,22 +49,22 @@
       "present_weather": 13,
       "cloud_amount": "Nuboso",
       "observation_time": "2026-10-06T17:10:00Z",
-      "humidity": 69,
-      "wind_speed_kmh": 24.0,
+      "humidity": 75,
+      "wind_speed_kmh": 20.0,
       "wind_direction_deg": 110,
       "visibility_m": 15000
     },
     "Oeste": {
       "station": "Mercedes",
       "wigos": "0-20000-0-86490",
-      "temperature": 21.5,
+      "temperature": 20.8,
       "condition": "Cubierto",
-      "present_weather": 4,
-      "cloud_amount": "Cubierto",
+      "present_weather": null,
+      "cloud_amount": "8 OKTAS",
       "observation_time": "2026-10-06T17:00:00Z",
-      "humidity": 61,
-      "wind_speed_kmh": 22.0,
-      "wind_direction_deg": 90,
+      "humidity": 60,
+      "wind_speed_kmh": 14.4,
+      "wind_direction_deg": 80,
       "visibility_m": 18000
     }
   },
@@ -77,8 +77,8 @@
       "present_weather": 13,
       "cloud_amount": "Nuboso",
       "observation_time": "2026-10-06T17:10:00Z",
-      "humidity": 69,
-      "wind_speed_kmh": 24.0,
+      "humidity": 75,
+      "wind_speed_kmh": 20.0,
       "wind_direction_deg": 110,
       "visibility_m": 15000
     }
