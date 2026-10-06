@@ -1,5 +1,5 @@
 {
-  "updated": "06/10/2026 03:10",
+  "updated": "06/10/2026 03:32",
   "source": "INUMET",
   "current": {
     "station": "Carrasco",
@@ -18,27 +18,27 @@
     "Norte": {
       "station": "Artigas",
       "wigos": "0-20000-0-86330",
-      "temperature": 12.4,
+      "temperature": 12.1,
       "condition": "Nuboso",
       "present_weather": null,
       "cloud_amount": "6 OKTAS",
-      "observation_time": "2026-10-06T05:00:00Z",
-      "humidity": 72,
-      "wind_speed_kmh": 15.1,
-      "wind_direction_deg": 129,
+      "observation_time": "2026-10-06T06:00:00Z",
+      "humidity": 73,
+      "wind_speed_kmh": 16.9,
+      "wind_direction_deg": 127,
       "visibility_m": 12000
     },
     "Este": {
       "station": "Rocha",
       "wigos": "0-20000-0-86565",
-      "temperature": 9.9,
+      "temperature": 11.9,
       "condition": "Nuboso",
       "present_weather": null,
       "cloud_amount": "6 OKTAS",
-      "observation_time": "2026-10-06T05:00:00Z",
-      "humidity": 84,
-      "wind_speed_kmh": 4.7,
-      "wind_direction_deg": 38,
+      "observation_time": "2026-10-06T06:00:00Z",
+      "humidity": 69,
+      "wind_speed_kmh": 6.1,
+      "wind_direction_deg": 57,
       "visibility_m": 20000
     },
     "Sur": {
@@ -57,14 +57,14 @@
     "Oeste": {
       "station": "Mercedes",
       "wigos": "0-20000-0-86490",
-      "temperature": 9.7,
+      "temperature": 8.6,
       "condition": "Algo nuboso",
       "present_weather": null,
       "cloud_amount": "1 OKTA OR LESS, BUT NOT ZERO",
-      "observation_time": "2026-10-06T05:00:00Z",
-      "humidity": 89,
-      "wind_speed_kmh": 4.0,
-      "wind_direction_deg": 108,
+      "observation_time": "2026-10-06T06:00:00Z",
+      "humidity": 90,
+      "wind_speed_kmh": 6.8,
+      "wind_direction_deg": 115,
       "visibility_m": 15000
     }
   },
