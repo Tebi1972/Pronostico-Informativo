@@ -1,18 +1,18 @@
 {
-  "updated": "06/10/2026 21:37",
+  "updated": "06/10/2026 22:10",
   "source": "INUMET",
   "current": {
     "station": "Carrasco",
     "wigos": "0-20000-0-86580",
     "temperature": 17.9,
     "condition": "Cubierto",
-    "present_weather": 4,
-    "cloud_amount": "Cubierto",
+    "present_weather": "STATE OF SKY ON THE WHOLE UNCHANGED",
+    "cloud_amount": "8 OKTAS",
     "observation_time": "2026-10-07T00:00:00Z",
-    "humidity": 81,
-    "wind_speed_kmh": 17.0,
-    "wind_direction_deg": 100,
-    "visibility_m": 18000
+    "humidity": 75,
+    "wind_speed_kmh": 14.8,
+    "wind_direction_deg": 50,
+    "visibility_m": 15000
   },
   "current_regions": {
     "Norte": {
@@ -46,13 +46,13 @@
       "wigos": "0-20000-0-86580",
       "temperature": 17.9,
       "condition": "Cubierto",
-      "present_weather": 4,
-      "cloud_amount": "Cubierto",
+      "present_weather": "STATE OF SKY ON THE WHOLE UNCHANGED",
+      "cloud_amount": "8 OKTAS",
       "observation_time": "2026-10-07T00:00:00Z",
-      "humidity": 81,
-      "wind_speed_kmh": 17.0,
-      "wind_direction_deg": 100,
-      "visibility_m": 18000
+      "humidity": 75,
+      "wind_speed_kmh": 14.8,
+      "wind_direction_deg": 50,
+      "visibility_m": 15000
     },
     "Oeste": {
       "station": "Mercedes",
@@ -74,13 +74,13 @@
       "wigos": "0-20000-0-86580",
       "temperature": 17.9,
       "condition": "Cubierto",
-      "present_weather": 4,
-      "cloud_amount": "Cubierto",
+      "present_weather": "STATE OF SKY ON THE WHOLE UNCHANGED",
+      "cloud_amount": "8 OKTAS",
       "observation_time": "2026-10-07T00:00:00Z",
-      "humidity": 81,
-      "wind_speed_kmh": 17.0,
-      "wind_direction_deg": 100,
-      "visibility_m": 18000
+      "humidity": 75,
+      "wind_speed_kmh": 14.8,
+      "wind_direction_deg": 50,
+      "visibility_m": 15000
     }
   },
   "forecasts": {
