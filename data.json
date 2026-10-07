@@ -1,17 +1,17 @@
 {
-  "updated": "07/10/2026 05:30",
+  "updated": "07/10/2026 06:10",
   "source": "INUMET",
   "current": {
     "station": "Carrasco",
     "wigos": "0-20000-0-86580",
-    "temperature": 15.3,
+    "temperature": 15.6,
     "condition": "Cubierto",
     "present_weather": 4,
     "cloud_amount": "Cubierto",
     "observation_time": "2026-10-07T08:10:00Z",
-    "humidity": 87,
+    "humidity": 88,
     "wind_speed_kmh": 22.0,
-    "wind_direction_deg": 60,
+    "wind_direction_deg": 50,
     "visibility_m": 18000
   },
   "current_regions": {
@@ -44,14 +44,14 @@
     "Sur": {
       "station": "Carrasco",
       "wigos": "0-20000-0-86580",
-      "temperature": 15.3,
+      "temperature": 15.6,
       "condition": "Cubierto",
       "present_weather": 4,
       "cloud_amount": "Cubierto",
       "observation_time": "2026-10-07T08:10:00Z",
-      "humidity": 87,
+      "humidity": 88,
       "wind_speed_kmh": 22.0,
-      "wind_direction_deg": 60,
+      "wind_direction_deg": 50,
       "visibility_m": 18000
     },
     "Oeste": {
@@ -72,14 +72,14 @@
     "montevideo_carrasco": {
       "station": "Carrasco",
       "wigos": "0-20000-0-86580",
-      "temperature": 15.3,
+      "temperature": 15.6,
       "condition": "Cubierto",
       "present_weather": 4,
       "cloud_amount": "Cubierto",
       "observation_time": "2026-10-07T08:10:00Z",
-      "humidity": 87,
+      "humidity": 88,
       "wind_speed_kmh": 22.0,
-      "wind_direction_deg": 60,
+      "wind_direction_deg": 50,
       "visibility_m": 18000
     }
   },
@@ -89,7 +89,7 @@
       "days": [
         {
           "date": "Miércoles 07",
-          "min": "11",
+          "min": "13",
           "max": "23",
           "evening": "Cubierto con lluvias y tormentas",
           "extended": false,
@@ -163,7 +163,7 @@
       "days": [
         {
           "date": "Miércoles 07",
-          "min": "13",
+          "min": "14",
           "max": "20",
           "evening": "Cubierto con lluvias y tormentas",
           "extended": false,
@@ -200,7 +200,7 @@
       "days": [
         {
           "date": "Miércoles 07",
-          "min": "11",
+          "min": "14",
           "max": "23",
           "evening": "Cubierto con lluvias y tormentas",
           "extended": false,
