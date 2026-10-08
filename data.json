@@ -1,5 +1,5 @@
 {
-  "updated": "08/10/2026 17:23",
+  "updated": "08/10/2026 17:38",
   "source": "INUMET",
   "current": {
     "station": "Carrasco",
@@ -90,16 +90,16 @@
         {
           "date": "Jueves 08",
           "min": "13",
-          "max": "24",
+          "max": "25",
           "evening": "Nuboso con lluvias y nieblas",
           "extended": false,
           "weather_code": "11"
         },
         {
           "date": "Viernes 09",
-          "min": "13",
-          "max": "21",
-          "evening": "Cubierto con lluvias",
+          "min": "12",
+          "max": "19",
+          "evening": "Cubierto con lluvias y tormentas y nieblas",
           "extended": false,
           "weather_code": "13"
         },
@@ -113,8 +113,8 @@
         },
         {
           "date": "Domingo 11",
-          "min": "11",
-          "max": "21",
+          "min": "10",
+          "max": "19",
           "evening": "Lluvias",
           "extended": true,
           "weather_code": "4"
@@ -135,14 +135,14 @@
         {
           "date": "Viernes 09",
           "min": "14",
-          "max": "22",
-          "evening": "Cubierto con lluvias y tormentas",
+          "max": "21",
+          "evening": "Cubierto con lluvias y tormentas y nieblas",
           "extended": false,
           "weather_code": "4"
         },
         {
           "date": "Sábado 10",
-          "min": "14",
+          "min": "13",
           "max": "21",
           "evening": "Nuboso con lluvias",
           "extended": false,
@@ -150,7 +150,7 @@
         },
         {
           "date": "Domingo 11",
-          "min": "12",
+          "min": "11",
           "max": "22",
           "evening": "Algo nuboso",
           "extended": true,
@@ -164,7 +164,7 @@
         {
           "date": "Jueves 08",
           "min": "14",
-          "max": "19",
+          "max": "18",
           "evening": "Cubierto con lluvias y nieblas",
           "extended": false,
           "weather_code": "11"
@@ -172,23 +172,23 @@
         {
           "date": "Viernes 09",
           "min": "14",
-          "max": "17",
+          "max": "16",
           "evening": "Cubierto con lluvias",
           "extended": false,
           "weather_code": "13"
         },
         {
           "date": "Sábado 10",
-          "min": "14",
-          "max": "16",
+          "min": "13",
+          "max": "17",
           "evening": "Cubierto con lluvias",
           "extended": false,
           "weather_code": "3"
         },
         {
           "date": "Domingo 11",
-          "min": "13",
-          "max": "17",
+          "min": "12",
+          "max": "16",
           "evening": "Lluvias",
           "extended": true,
           "weather_code": "4"
@@ -201,7 +201,7 @@
         {
           "date": "Jueves 08",
           "min": "13",
-          "max": "22",
+          "max": "20",
           "evening": "Nuboso con lluvias",
           "extended": false,
           "weather_code": "11"
@@ -209,7 +209,7 @@
         {
           "date": "Viernes 09",
           "min": "13",
-          "max": "21",
+          "max": "20",
           "evening": "Cubierto con lluvias",
           "extended": false,
           "weather_code": "13"
