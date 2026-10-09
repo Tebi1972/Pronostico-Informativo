@@ -1,5 +1,5 @@
 {
-  "updated": "09/10/2026 07:15",
+  "updated": "09/10/2026 07:23",
   "source": "INUMET",
   "current": {
     "station": "Carrasco",
@@ -57,15 +57,15 @@
     "Oeste": {
       "station": "Mercedes",
       "wigos": "0-20000-0-86490",
-      "temperature": 12.2,
-      "condition": null,
-      "present_weather": null,
-      "cloud_amount": null,
+      "temperature": 12.6,
+      "condition": "Nuboso",
+      "present_weather": 13,
+      "cloud_amount": "Nuboso",
       "observation_time": "2026-10-09T10:00:00Z",
-      "humidity": 95,
-      "wind_speed_kmh": 11.2,
-      "wind_direction_deg": 161,
-      "visibility_m": null
+      "humidity": 96,
+      "wind_speed_kmh": 15.0,
+      "wind_direction_deg": 160,
+      "visibility_m": 15000
     }
   },
   "locations": {
