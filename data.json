@@ -1,5 +1,5 @@
 {
-  "updated": "10/10/2026 05:35",
+  "updated": "10/10/2026 06:15",
   "source": "INUMET",
   "current": {
     "station": "Carrasco",
@@ -8,24 +8,24 @@
     "condition": "Cubierto",
     "present_weather": 4,
     "cloud_amount": "Cubierto",
-    "observation_time": "2026-10-10T08:10:00Z",
-    "humidity": 90,
-    "wind_speed_kmh": 19.0,
+    "observation_time": "2026-10-10T09:10:00Z",
+    "humidity": 91,
+    "wind_speed_kmh": 20.0,
     "wind_direction_deg": 140,
-    "visibility_m": 15000
+    "visibility_m": 12000
   },
   "current_regions": {
     "Norte": {
       "station": "Artigas",
       "wigos": "0-20000-0-86330",
-      "temperature": 14.4,
+      "temperature": 14.5,
       "condition": "Cubierto",
       "present_weather": null,
       "cloud_amount": "8 OKTAS",
-      "observation_time": "2026-10-10T08:00:00Z",
-      "humidity": 92,
-      "wind_speed_kmh": 19.1,
-      "wind_direction_deg": 152,
+      "observation_time": "2026-10-10T09:00:00Z",
+      "humidity": 91,
+      "wind_speed_kmh": 8.3,
+      "wind_direction_deg": 182,
       "visibility_m": 12000
     },
     "Este": {
@@ -35,10 +35,10 @@
       "condition": "Cubierto",
       "present_weather": null,
       "cloud_amount": "8 OKTAS",
-      "observation_time": "2026-10-10T08:00:00Z",
+      "observation_time": "2026-10-10T09:00:00Z",
       "humidity": 91,
-      "wind_speed_kmh": 12.2,
-      "wind_direction_deg": 188,
+      "wind_speed_kmh": 13.0,
+      "wind_direction_deg": 185,
       "visibility_m": 10000
     },
     "Sur": {
@@ -48,23 +48,23 @@
       "condition": "Cubierto",
       "present_weather": 4,
       "cloud_amount": "Cubierto",
-      "observation_time": "2026-10-10T08:10:00Z",
-      "humidity": 90,
-      "wind_speed_kmh": 19.0,
+      "observation_time": "2026-10-10T09:10:00Z",
+      "humidity": 91,
+      "wind_speed_kmh": 20.0,
       "wind_direction_deg": 140,
-      "visibility_m": 15000
+      "visibility_m": 12000
     },
     "Oeste": {
       "station": "Mercedes",
       "wigos": "0-20000-0-86490",
-      "temperature": 12.7,
+      "temperature": 12.4,
       "condition": "Cubierto",
       "present_weather": null,
       "cloud_amount": "8 OKTAS",
-      "observation_time": "2026-10-10T08:00:00Z",
-      "humidity": 89,
-      "wind_speed_kmh": 9.4,
-      "wind_direction_deg": 165,
+      "observation_time": "2026-10-10T09:00:00Z",
+      "humidity": 91,
+      "wind_speed_kmh": 7.9,
+      "wind_direction_deg": 210,
       "visibility_m": 10000
     }
   },
@@ -76,11 +76,11 @@
       "condition": "Cubierto",
       "present_weather": 4,
       "cloud_amount": "Cubierto",
-      "observation_time": "2026-10-10T08:10:00Z",
-      "humidity": 90,
-      "wind_speed_kmh": 19.0,
+      "observation_time": "2026-10-10T09:10:00Z",
+      "humidity": 91,
+      "wind_speed_kmh": 20.0,
       "wind_direction_deg": 140,
-      "visibility_m": 15000
+      "visibility_m": 12000
     }
   },
   "forecasts": {
@@ -200,7 +200,7 @@
       "days": [
         {
           "date": "Sábado 10",
-          "min": "12",
+          "min": "11",
           "max": "18",
           "evening": "Nuboso con lluvias",
           "extended": false,
