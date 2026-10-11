@@ -1,5 +1,5 @@
 {
-  "updated": "11/10/2026 07:23",
+  "updated": "11/10/2026 07:35",
   "source": "INUMET",
   "current": {
     "station": "Carrasco",
@@ -126,7 +126,7 @@
       "days": [
         {
           "date": "Domingo 11",
-          "min": "9",
+          "min": "8",
           "max": "22",
           "evening": "Nuboso",
           "extended": false,
