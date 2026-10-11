@@ -1,5 +1,5 @@
 {
-  "updated": "11/10/2026 15:23",
+  "updated": "11/10/2026 15:39",
   "source": "INUMET",
   "current": {
     "station": "Carrasco",
@@ -201,7 +201,7 @@
         {
           "date": "Domingo 11",
           "min": "7",
-          "max": "18",
+          "max": "19",
           "evening": "Nuboso con lluvias",
           "extended": false,
           "weather_code": "4"
