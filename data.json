@@ -1,58 +1,58 @@
 {
-  "updated": "12/10/2026 14:38",
+  "updated": "12/10/2026 15:15",
   "source": "INUMET",
   "current": {
     "station": "Carrasco",
     "wigos": "0-20000-0-86580",
-    "temperature": 13.3,
+    "temperature": 13.2,
     "condition": "Cubierto",
-    "present_weather": 6,
+    "present_weather": 4,
     "cloud_amount": "Cubierto",
     "observation_time": "2026-10-12T17:10:00Z",
-    "humidity": 90,
+    "humidity": 89,
     "wind_speed_kmh": 24.0,
-    "wind_direction_deg": 120,
-    "visibility_m": 5000
+    "wind_direction_deg": 130,
+    "visibility_m": 10000
   },
   "current_regions": {
     "Norte": {
       "station": "Artigas",
       "wigos": "0-20000-0-86330",
-      "temperature": 17.0,
+      "temperature": 16.6,
       "condition": "Cubierto",
       "present_weather": 4,
       "cloud_amount": "Cubierto",
-      "observation_time": "2026-10-12T17:00:00Z",
+      "observation_time": "2026-10-12T18:00:00Z",
       "humidity": 74,
-      "wind_speed_kmh": 19.0,
-      "wind_direction_deg": 100,
-      "visibility_m": 10000
+      "wind_speed_kmh": 20.0,
+      "wind_direction_deg": 120,
+      "visibility_m": 12000
     },
     "Este": {
       "station": "Rocha",
       "wigos": "0-20000-0-86565",
-      "temperature": 15.3,
+      "temperature": 15.5,
       "condition": "Cubierto",
       "present_weather": 4,
       "cloud_amount": "Cubierto",
-      "observation_time": "2026-10-12T17:00:00Z",
+      "observation_time": "2026-10-12T18:00:00Z",
       "humidity": 83,
-      "wind_speed_kmh": 9.0,
-      "wind_direction_deg": 150,
+      "wind_speed_kmh": 15.0,
+      "wind_direction_deg": 160,
       "visibility_m": 15000
     },
     "Sur": {
       "station": "Carrasco",
       "wigos": "0-20000-0-86580",
-      "temperature": 13.3,
+      "temperature": 13.2,
       "condition": "Cubierto",
-      "present_weather": 6,
+      "present_weather": 4,
       "cloud_amount": "Cubierto",
       "observation_time": "2026-10-12T17:10:00Z",
-      "humidity": 90,
+      "humidity": 89,
       "wind_speed_kmh": 24.0,
-      "wind_direction_deg": 120,
-      "visibility_m": 5000
+      "wind_direction_deg": 130,
+      "visibility_m": 10000
     },
     "Oeste": {
       "station": "Mercedes",
@@ -61,26 +61,26 @@
       "condition": "Cubierto",
       "present_weather": 4,
       "cloud_amount": "Cubierto",
-      "observation_time": "2026-10-12T17:00:00Z",
-      "humidity": 75,
-      "wind_speed_kmh": 19.0,
-      "wind_direction_deg": 130,
-      "visibility_m": 20000
+      "observation_time": "2026-10-12T18:00:00Z",
+      "humidity": 74,
+      "wind_speed_kmh": 20.0,
+      "wind_direction_deg": 110,
+      "visibility_m": 18000
     }
   },
   "locations": {
     "montevideo_carrasco": {
       "station": "Carrasco",
       "wigos": "0-20000-0-86580",
-      "temperature": 13.3,
+      "temperature": 13.2,
       "condition": "Cubierto",
-      "present_weather": 6,
+      "present_weather": 4,
       "cloud_amount": "Cubierto",
       "observation_time": "2026-10-12T17:10:00Z",
-      "humidity": 90,
+      "humidity": 89,
       "wind_speed_kmh": 24.0,
-      "wind_direction_deg": 120,
-      "visibility_m": 5000
+      "wind_direction_deg": 130,
+      "visibility_m": 10000
     }
   },
   "forecasts": {
