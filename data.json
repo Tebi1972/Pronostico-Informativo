@@ -1,5 +1,5 @@
 {
-  "updated": "12/10/2026 14:23",
+  "updated": "12/10/2026 14:38",
   "source": "INUMET",
   "current": {
     "station": "Carrasco",
@@ -31,14 +31,14 @@
     "Este": {
       "station": "Rocha",
       "wigos": "0-20000-0-86565",
-      "temperature": 14.7,
+      "temperature": 15.3,
       "condition": "Cubierto",
-      "present_weather": null,
-      "cloud_amount": "8 OKTAS",
+      "present_weather": 4,
+      "cloud_amount": "Cubierto",
       "observation_time": "2026-10-12T17:00:00Z",
-      "humidity": 85,
-      "wind_speed_kmh": 11.5,
-      "wind_direction_deg": 177,
+      "humidity": 83,
+      "wind_speed_kmh": 9.0,
+      "wind_direction_deg": 150,
       "visibility_m": 15000
     },
     "Sur": {
