@@ -1,44 +1,44 @@
 {
-  "updated": "15/10/2026 05:23",
+  "updated": "15/10/2026 06:15",
   "source": "INUMET",
   "current": {
     "station": "Carrasco",
     "wigos": "0-20000-0-86580",
     "temperature": 15.0,
     "condition": "Cubierto",
-    "present_weather": 4,
+    "present_weather": 6,
     "cloud_amount": "Cubierto",
-    "observation_time": "2026-10-15T08:10:00Z",
-    "humidity": 94,
+    "observation_time": "2026-10-15T09:10:00Z",
+    "humidity": 96,
     "wind_speed_kmh": 9.0,
     "wind_direction_deg": 160,
-    "visibility_m": 10000
+    "visibility_m": 5000
   },
   "current_regions": {
     "Norte": {
       "station": "Artigas",
       "wigos": "0-20000-0-86330",
-      "temperature": 14.9,
+      "temperature": 14.8,
       "condition": "Algo nuboso",
       "present_weather": null,
       "cloud_amount": "3 OKTAS",
-      "observation_time": "2026-10-15T08:00:00Z",
-      "humidity": 90,
-      "wind_speed_kmh": 7.6,
-      "wind_direction_deg": 148,
+      "observation_time": "2026-10-15T09:00:00Z",
+      "humidity": 91,
+      "wind_speed_kmh": 7.2,
+      "wind_direction_deg": 199,
       "visibility_m": 15000
     },
     "Este": {
       "station": "Rocha",
       "wigos": "0-20000-0-86565",
-      "temperature": 12.8,
+      "temperature": 13.5,
       "condition": "Cubierto",
       "present_weather": null,
       "cloud_amount": "8 OKTAS",
-      "observation_time": "2026-10-15T08:00:00Z",
+      "observation_time": "2026-10-15T09:00:00Z",
       "humidity": 99,
-      "wind_speed_kmh": 1.8,
-      "wind_direction_deg": 292,
+      "wind_speed_kmh": 2.2,
+      "wind_direction_deg": 304,
       "visibility_m": 10000
     },
     "Sur": {
@@ -46,25 +46,25 @@
       "wigos": "0-20000-0-86580",
       "temperature": 15.0,
       "condition": "Cubierto",
-      "present_weather": 4,
+      "present_weather": 6,
       "cloud_amount": "Cubierto",
-      "observation_time": "2026-10-15T08:10:00Z",
-      "humidity": 94,
+      "observation_time": "2026-10-15T09:10:00Z",
+      "humidity": 96,
       "wind_speed_kmh": 9.0,
       "wind_direction_deg": 160,
-      "visibility_m": 10000
+      "visibility_m": 5000
     },
     "Oeste": {
       "station": "Mercedes",
       "wigos": "0-20000-0-86490",
-      "temperature": 13.3,
+      "temperature": 12.2,
       "condition": "Nuboso",
       "present_weather": null,
       "cloud_amount": "5 OKTAS",
-      "observation_time": "2026-10-15T08:00:00Z",
-      "humidity": 93,
-      "wind_speed_kmh": 7.6,
-      "wind_direction_deg": 190,
+      "observation_time": "2026-10-15T09:00:00Z",
+      "humidity": 95,
+      "wind_speed_kmh": 5.0,
+      "wind_direction_deg": 195,
       "visibility_m": 15000
     }
   },
@@ -74,13 +74,13 @@
       "wigos": "0-20000-0-86580",
       "temperature": 15.0,
       "condition": "Cubierto",
-      "present_weather": 4,
+      "present_weather": 6,
       "cloud_amount": "Cubierto",
-      "observation_time": "2026-10-15T08:10:00Z",
-      "humidity": 94,
+      "observation_time": "2026-10-15T09:10:00Z",
+      "humidity": 96,
       "wind_speed_kmh": 9.0,
       "wind_direction_deg": 160,
-      "visibility_m": 10000
+      "visibility_m": 5000
     }
   },
   "forecasts": {
@@ -163,7 +163,7 @@
       "days": [
         {
           "date": "Jueves 15",
-          "min": "13",
+          "min": "14",
           "max": "17",
           "evening": "Nuboso con lluvias",
           "extended": false,
@@ -200,7 +200,7 @@
       "days": [
         {
           "date": "Jueves 15",
-          "min": "12",
+          "min": "13",
           "max": "19",
           "evening": null,
           "extended": false,
