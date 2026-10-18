@@ -1,17 +1,17 @@
 {
-  "updated": "18/10/2026 17:23",
+  "updated": "18/10/2026 18:15",
   "source": "INUMET",
   "current": {
     "station": "Carrasco",
     "wigos": "0-20000-0-86580",
-    "temperature": 12.4,
+    "temperature": 12.0,
     "condition": "Nuboso",
     "present_weather": 13,
     "cloud_amount": "Nuboso",
-    "observation_time": "2026-10-18T20:10:00Z",
-    "humidity": 68,
-    "wind_speed_kmh": 26.0,
-    "wind_direction_deg": 150,
+    "observation_time": "2026-10-18T21:10:00Z",
+    "humidity": 70,
+    "wind_speed_kmh": 22.0,
+    "wind_direction_deg": 160,
     "visibility_m": 12000
   },
   "current_regions": {
@@ -22,49 +22,49 @@
       "condition": "Algo nuboso",
       "present_weather": 2,
       "cloud_amount": "Algo nuboso",
-      "observation_time": "2026-10-18T20:00:00Z",
+      "observation_time": "2026-10-18T21:00:00Z",
       "humidity": 42,
-      "wind_speed_kmh": 20.0,
-      "wind_direction_deg": 190,
-      "visibility_m": 20000
+      "wind_speed_kmh": 19.0,
+      "wind_direction_deg": 200,
+      "visibility_m": 10000
     },
     "Este": {
       "station": "Rocha",
       "wigos": "0-20000-0-86565",
-      "temperature": 13.0,
+      "temperature": 12.8,
       "condition": "Nuboso",
       "present_weather": 13,
       "cloud_amount": "Nuboso",
-      "observation_time": "2026-10-18T20:00:00Z",
-      "humidity": 73,
-      "wind_speed_kmh": 20.0,
-      "wind_direction_deg": 220,
-      "visibility_m": 18000
+      "observation_time": "2026-10-18T21:00:00Z",
+      "humidity": 77,
+      "wind_speed_kmh": 19.0,
+      "wind_direction_deg": 210,
+      "visibility_m": 15000
     },
     "Sur": {
       "station": "Carrasco",
       "wigos": "0-20000-0-86580",
-      "temperature": 12.4,
+      "temperature": 12.0,
       "condition": "Nuboso",
       "present_weather": 13,
       "cloud_amount": "Nuboso",
-      "observation_time": "2026-10-18T20:10:00Z",
-      "humidity": 68,
-      "wind_speed_kmh": 26.0,
-      "wind_direction_deg": 150,
+      "observation_time": "2026-10-18T21:10:00Z",
+      "humidity": 70,
+      "wind_speed_kmh": 22.0,
+      "wind_direction_deg": 160,
       "visibility_m": 12000
     },
     "Oeste": {
       "station": "Mercedes",
       "wigos": "0-20000-0-86490",
-      "temperature": 15.2,
+      "temperature": 15.0,
       "condition": "Cubierto",
       "present_weather": null,
       "cloud_amount": "7 OKTAS OR MORE, BUT NOT 8 OKTAS",
-      "observation_time": "2026-10-18T20:00:00Z",
-      "humidity": 54,
-      "wind_speed_kmh": 9.4,
-      "wind_direction_deg": 166,
+      "observation_time": "2026-10-18T21:00:00Z",
+      "humidity": 57,
+      "wind_speed_kmh": 9.7,
+      "wind_direction_deg": 156,
       "visibility_m": 20000
     }
   },
@@ -72,14 +72,14 @@
     "montevideo_carrasco": {
       "station": "Carrasco",
       "wigos": "0-20000-0-86580",
-      "temperature": 12.4,
+      "temperature": 12.0,
       "condition": "Nuboso",
       "present_weather": 13,
       "cloud_amount": "Nuboso",
-      "observation_time": "2026-10-18T20:10:00Z",
-      "humidity": 68,
-      "wind_speed_kmh": 26.0,
-      "wind_direction_deg": 150,
+      "observation_time": "2026-10-18T21:10:00Z",
+      "humidity": 70,
+      "wind_speed_kmh": 22.0,
+      "wind_direction_deg": 160,
       "visibility_m": 12000
     }
   },
@@ -90,8 +90,8 @@
         {
           "date": "Domingo 18",
           "min": "9",
-          "max": "18",
-          "evening": "Nuboso con lluvias y nieblas",
+          "max": "16",
+          "evening": "Nuboso con lluvias",
           "extended": false,
           "weather_code": "4"
         },
@@ -114,8 +114,8 @@
         {
           "date": "Miércoles 21",
           "min": "7",
-          "max": "22",
-          "evening": "Lluvias",
+          "max": "21",
+          "evening": "Algo nuboso",
           "extended": true,
           "weather_code": "13"
         }
@@ -127,7 +127,7 @@
         {
           "date": "Domingo 18",
           "min": "5",
-          "max": "19",
+          "max": "20",
           "evening": "Nuboso con lluvias",
           "extended": false,
           "weather_code": "2"
@@ -150,8 +150,8 @@
         },
         {
           "date": "Miércoles 21",
-          "min": "10",
-          "max": "25",
+          "min": "11",
+          "max": "24",
           "evening": "Algo nuboso",
           "extended": true,
           "weather_code": "13"
@@ -172,16 +172,16 @@
         {
           "date": "Lunes 19",
           "min": "8",
-          "max": "17",
+          "max": "16",
           "evening": "Nuboso",
           "extended": false,
           "weather_code": "13"
         },
         {
           "date": "Martes 20",
-          "min": "8",
+          "min": "7",
           "max": "19",
-          "evening": "Nuboso",
+          "evening": "Algo nuboso",
           "extended": false,
           "weather_code": "13"
         },
@@ -189,7 +189,7 @@
           "date": "Miércoles 21",
           "min": "10",
           "max": "22",
-          "evening": "Lluvias",
+          "evening": "Algo nuboso",
           "extended": true,
           "weather_code": "13"
         }
@@ -201,14 +201,14 @@
         {
           "date": "Domingo 18",
           "min": "6",
-          "max": "18",
+          "max": "16",
           "evening": "Nuboso con lluvias",
           "extended": false,
           "weather_code": "13"
         },
         {
           "date": "Lunes 19",
-          "min": "5",
+          "min": "6",
           "max": "19",
           "evening": "Nuboso",
           "extended": false,
@@ -218,15 +218,15 @@
           "date": "Martes 20",
           "min": "7",
           "max": "21",
-          "evening": "Nuboso con lluvias",
+          "evening": "Algo nuboso",
           "extended": false,
           "weather_code": "13"
         },
         {
           "date": "Miércoles 21",
-          "min": "9",
+          "min": "10",
           "max": "23",
-          "evening": "Lluvias",
+          "evening": "Algo nuboso",
           "extended": true,
           "weather_code": "13"
         }
