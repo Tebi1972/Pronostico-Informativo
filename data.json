@@ -1,16 +1,16 @@
 {
-  "updated": "22/10/2026 17:23",
+  "updated": "22/10/2026 18:15",
   "source": "INUMET",
   "current": {
     "station": "Carrasco",
     "wigos": "0-20000-0-86580",
-    "temperature": 20.2,
+    "temperature": 19.8,
     "condition": "Cubierto",
     "present_weather": 4,
     "cloud_amount": "Cubierto",
-    "observation_time": "2026-10-22T20:10:00Z",
-    "humidity": 68,
-    "wind_speed_kmh": 24.0,
+    "observation_time": "2026-10-22T21:10:00Z",
+    "humidity": 69,
+    "wind_speed_kmh": 19.0,
     "wind_direction_deg": 50,
     "visibility_m": 15000
   },
@@ -18,67 +18,67 @@
     "Norte": {
       "station": "Artigas",
       "wigos": "0-20000-0-86330",
-      "temperature": 18.8,
-      "condition": "Cubierto",
-      "present_weather": 11,
-      "cloud_amount": "Cubierto",
-      "observation_time": "2026-10-22T20:00:00Z",
-      "humidity": 97,
-      "wind_speed_kmh": 11.0,
-      "wind_direction_deg": 70,
-      "visibility_m": 5000
+      "temperature": 19.6,
+      "condition": "Nuboso",
+      "present_weather": 15,
+      "cloud_amount": "Nuboso",
+      "observation_time": "2026-10-22T21:00:00Z",
+      "humidity": 96,
+      "wind_speed_kmh": 19.0,
+      "wind_direction_deg": 90,
+      "visibility_m": 7000
     },
     "Este": {
       "station": "Rocha",
       "wigos": "0-20000-0-86565",
-      "temperature": 17.2,
+      "temperature": 17.0,
       "condition": "Cubierto",
-      "present_weather": null,
-      "cloud_amount": "8 OKTAS",
-      "observation_time": "2026-10-22T20:00:00Z",
-      "humidity": 78,
-      "wind_speed_kmh": 18.7,
-      "wind_direction_deg": 68,
+      "present_weather": 4,
+      "cloud_amount": "Cubierto",
+      "observation_time": "2026-10-22T21:00:00Z",
+      "humidity": 80,
+      "wind_speed_kmh": 24.0,
+      "wind_direction_deg": 80,
       "visibility_m": 15000
     },
     "Sur": {
       "station": "Carrasco",
       "wigos": "0-20000-0-86580",
-      "temperature": 20.2,
+      "temperature": 19.8,
       "condition": "Cubierto",
       "present_weather": 4,
       "cloud_amount": "Cubierto",
-      "observation_time": "2026-10-22T20:10:00Z",
-      "humidity": 68,
-      "wind_speed_kmh": 24.0,
+      "observation_time": "2026-10-22T21:10:00Z",
+      "humidity": 69,
+      "wind_speed_kmh": 19.0,
       "wind_direction_deg": 50,
       "visibility_m": 15000
     },
     "Oeste": {
       "station": "Mercedes",
       "wigos": "0-20000-0-86490",
-      "temperature": 18.9,
+      "temperature": 18.2,
       "condition": "Cubierto",
-      "present_weather": 11,
+      "present_weather": 6,
       "cloud_amount": "Cubierto",
-      "observation_time": "2026-10-22T20:00:00Z",
-      "humidity": 94,
-      "wind_speed_kmh": 11.0,
-      "wind_direction_deg": 90,
-      "visibility_m": 4000
+      "observation_time": "2026-10-22T21:00:00Z",
+      "humidity": 97,
+      "wind_speed_kmh": 7.0,
+      "wind_direction_deg": 120,
+      "visibility_m": 3000
     }
   },
   "locations": {
     "montevideo_carrasco": {
       "station": "Carrasco",
       "wigos": "0-20000-0-86580",
-      "temperature": 20.2,
+      "temperature": 19.8,
       "condition": "Cubierto",
       "present_weather": 4,
       "cloud_amount": "Cubierto",
-      "observation_time": "2026-10-22T20:10:00Z",
-      "humidity": 68,
-      "wind_speed_kmh": 24.0,
+      "observation_time": "2026-10-22T21:10:00Z",
+      "humidity": 69,
+      "wind_speed_kmh": 19.0,
       "wind_direction_deg": 50,
       "visibility_m": 15000
     }
@@ -90,22 +90,22 @@
         {
           "date": "Jueves 22",
           "min": "13",
-          "max": "23",
+          "max": "21",
           "evening": "Nuboso con lluvias y tormentas",
           "extended": false,
           "weather_code": "4"
         },
         {
           "date": "Viernes 23",
-          "min": "12",
-          "max": "23",
+          "min": "14",
+          "max": "24",
           "evening": "Nuboso con lluvias",
           "extended": false,
           "weather_code": "11"
         },
         {
           "date": "Sábado 24",
-          "min": "12",
+          "min": "13",
           "max": "20",
           "evening": "Nuboso con lluvias",
           "extended": false,
@@ -113,7 +113,7 @@
         },
         {
           "date": "Domingo 25",
-          "min": "9",
+          "min": "10",
           "max": "17",
           "evening": "Lluvias",
           "extended": true,
@@ -127,7 +127,7 @@
         {
           "date": "Jueves 22",
           "min": "15",
-          "max": "28",
+          "max": "25",
           "evening": "Nuboso con lluvias y tormentas",
           "extended": false,
           "weather_code": "11"
@@ -164,8 +164,8 @@
         {
           "date": "Jueves 22",
           "min": "12",
-          "max": "23",
-          "evening": "Nuboso con lluvias",
+          "max": "22",
+          "evening": "Nuboso con lluvias y tormentas",
           "extended": false,
           "weather_code": "4"
         },
@@ -181,7 +181,7 @@
           "date": "Sábado 24",
           "min": "13",
           "max": "18",
-          "evening": "Cubierto",
+          "evening": "Nuboso con lluvias",
           "extended": false,
           "weather_code": "4"
         },
@@ -201,7 +201,7 @@
         {
           "date": "Jueves 22",
           "min": "13",
-          "max": "25",
+          "max": "23",
           "evening": "Nuboso con lluvias y tormentas",
           "extended": false,
           "weather_code": "4"
