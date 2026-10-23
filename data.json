@@ -1,5 +1,5 @@
 {
-  "updated": "23/10/2026 11:15",
+  "updated": "23/10/2026 11:23",
   "source": "INUMET",
   "current": {
     "station": "Carrasco",
@@ -126,7 +126,7 @@
       "days": [
         {
           "date": "Viernes 23",
-          "min": "17",
+          "min": "16",
           "max": "28",
           "evening": "Nuboso con lluvias y tormentas",
           "extended": false,
