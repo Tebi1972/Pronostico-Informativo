@@ -1,5 +1,5 @@
 {
-  "updated": "24/10/2026 18:15",
+  "updated": "24/10/2026 18:23",
   "source": "INUMET",
   "current": {
     "station": "Carrasco",
@@ -106,7 +106,7 @@
         {
           "date": "Lunes 26",
           "min": "6",
-          "max": "19",
+          "max": "17",
           "evening": "Nuboso con lluvias y nieblas",
           "extended": false,
           "weather_code": "4"
@@ -143,7 +143,7 @@
         {
           "date": "Lunes 26",
           "min": "7",
-          "max": "22",
+          "max": "20",
           "evening": "Nuboso",
           "extended": false,
           "weather_code": "13"
@@ -180,7 +180,7 @@
         {
           "date": "Lunes 26",
           "min": "8",
-          "max": "17",
+          "max": "16",
           "evening": "Nuboso",
           "extended": false,
           "weather_code": "4"
@@ -217,7 +217,7 @@
         {
           "date": "Lunes 26",
           "min": "6",
-          "max": "20",
+          "max": "17",
           "evening": "Nuboso",
           "extended": false,
           "weather_code": "4"
