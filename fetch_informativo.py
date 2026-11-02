@@ -205,23 +205,28 @@ def descripcion_extendida(item):
         "precipitaciones", "precipitacion",
     )
     valor = next((item[k] for k in claves if item.get(k) not in (None, "")), None)
+    # Código 2 del ícono extendido: algo nuboso (no es lluvia).
+    cielo = {"2": "Algo nuboso", "13": "Algo nuboso"}.get(str(item.get("estadoTiempo") or "").strip())
+
+    def combinar(probabilidad):
+        return f"{cielo}, {probabilidad[0].lower() + probabilidad[1:]}" if cielo else probabilidad
     if valor is None:
         # No inferimos precipitaciones a partir del código del ícono.
-        return "Probabilidad de precipitaciones no informada"
+        return combinar("Probabilidad de precipitaciones no informada")
     if isinstance(valor, (int, float)):
-        return f"Probabilidad de precipitaciones: {valor}%"
+        return combinar(f"Probabilidad de precipitaciones: {valor}%")
     texto = str(valor).strip()
     bajo = texto.lower()
     if bajo in ("nula", "ninguna", "0", "0%"):
-        return "Sin precipitaciones previstas"
+        return combinar("Sin precipitaciones previstas")
     if bajo in ("baja", "bajo", "media", "moderada", "moderado", "alta", "alto"):
-        return f"Probabilidad de precipitaciones: {texto.lower()}"
+        return combinar(f"Probabilidad de precipitaciones: {texto.lower()}")
     if re.fullmatch(r"\d+(?:[.,]\d+)?%?", texto):
-        return f"Probabilidad de precipitaciones: {texto if texto.endswith('%') else texto + '%'}"
+        return combinar(f"Probabilidad de precipitaciones: {texto if texto.endswith('%') else texto + '%'}")
     if "probabilidad" in bajo:
-        return texto
+        return combinar(texto)
     # Si es un descriptor no reconocido, no afirmar que habrá lluvia.
-    return f"Precipitaciones: {texto}"
+    return combinar(f"Precipitaciones: {texto}")
 
 
 def convertir_extendido(item):
