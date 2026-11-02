@@ -196,6 +196,34 @@ def texto_extendido(item):
     return "Pronóstico extendido"
 
 
+def descripcion_extendida(item):
+    """El día extendido ofrece un ícono y probabilidad, no un pronóstico
+    textual de lluvia confirmada. Nunca interpretar estadoTiempo como lluvia."""
+    claves = (
+        "probabilidadPrecipitaciones", "probabilidadPrecipitacion",
+        "probPrecipitaciones", "probPrecipitacion", "probLluvia",
+        "precipitaciones", "precipitacion",
+    )
+    valor = next((item[k] for k in claves if item.get(k) not in (None, "")), None)
+    if valor is None:
+        # No inferimos precipitaciones a partir del código del ícono.
+        return "Probabilidad de precipitaciones no informada"
+    if isinstance(valor, (int, float)):
+        return f"Probabilidad de precipitaciones: {valor}%"
+    texto = str(valor).strip()
+    bajo = texto.lower()
+    if bajo in ("nula", "ninguna", "0", "0%"):
+        return "Sin precipitaciones previstas"
+    if bajo in ("baja", "bajo", "media", "moderada", "moderado", "alta", "alto"):
+        return f"Probabilidad de precipitaciones: {texto.lower()}"
+    if re.fullmatch(r"\\d+(?:[.,]\\d+)?%?", texto):
+        return f"Probabilidad de precipitaciones: {texto if texto.endswith('%') else texto + '%'}"
+    if "probabilidad" in bajo:
+        return texto
+    # Si es un descriptor no reconocido, no afirmar que habrá lluvia.
+    return f"Precipitaciones: {texto}"
+
+
 def convertir_extendido(item):
     fecha = item.get("grupo") or item.get("grupoCorto")
     minimo = item.get("tempMin")
@@ -206,7 +234,7 @@ def convertir_extendido(item):
         "date": str(fecha),
         "min": str(minimo),
         "max": str(maximo),
-        "evening": resumir_pronostico(texto_extendido(item), item.get("estadoTiempo")),
+        "evening": descripcion_extendida(item),
         "extended": True,
         "weather_code": item.get("estadoTiempo"),
     }
