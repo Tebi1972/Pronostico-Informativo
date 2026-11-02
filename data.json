@@ -1,5 +1,5 @@
 {
-  "updated": "02/11/2026 13:15",
+  "updated": "02/11/2026 13:23",
   "source": "INUMET",
   "current": {
     "station": "Carrasco",
@@ -115,7 +115,7 @@
           "date": "Jueves 05",
           "min": "11",
           "max": "24",
-          "evening": "Lluvias",
+          "evening": "Sin precipitaciones previstas",
           "extended": true,
           "weather_code": "2"
         }
@@ -152,7 +152,7 @@
           "date": "Jueves 05",
           "min": "12",
           "max": "25",
-          "evening": "Lluvias",
+          "evening": "Sin precipitaciones previstas",
           "extended": true,
           "weather_code": "2"
         }
@@ -189,7 +189,7 @@
           "date": "Jueves 05",
           "min": "11",
           "max": "21",
-          "evening": "Lluvias",
+          "evening": "Sin precipitaciones previstas",
           "extended": true,
           "weather_code": "2"
         }
@@ -226,7 +226,7 @@
           "date": "Jueves 05",
           "min": "11",
           "max": "25",
-          "evening": "Lluvias",
+          "evening": "Sin precipitaciones previstas",
           "extended": true,
           "weather_code": "2"
         }
