@@ -216,7 +216,7 @@ def descripcion_extendida(item):
         return "Sin precipitaciones previstas"
     if bajo in ("baja", "bajo", "media", "moderada", "moderado", "alta", "alto"):
         return f"Probabilidad de precipitaciones: {texto.lower()}"
-    if re.fullmatch(r"\\d+(?:[.,]\\d+)?%?", texto):
+    if re.fullmatch(r"\d+(?:[.,]\d+)?%?", texto):
         return f"Probabilidad de precipitaciones: {texto if texto.endswith('%') else texto + '%'}"
     if "probabilidad" in bajo:
         return texto
