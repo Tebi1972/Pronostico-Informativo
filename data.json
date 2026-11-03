@@ -1,5 +1,5 @@
 {
-  "updated": "02/11/2026 22:40",
+  "updated": "02/11/2026 23:15",
   "source": "INUMET",
   "current": {
     "station": "Carrasco",
@@ -11,8 +11,8 @@
     "observation_time": "2026-11-03T01:10:00Z",
     "humidity": 96,
     "wind_speed_kmh": 4.0,
-    "wind_direction_deg": 150,
-    "visibility_m": 12000
+    "wind_direction_deg": 140,
+    "visibility_m": 1500
   },
   "current_regions": {
     "Norte": {
@@ -51,8 +51,8 @@
       "observation_time": "2026-11-03T01:10:00Z",
       "humidity": 96,
       "wind_speed_kmh": 4.0,
-      "wind_direction_deg": 150,
-      "visibility_m": 12000
+      "wind_direction_deg": 140,
+      "visibility_m": 1500
     },
     "Oeste": {
       "station": "Mercedes",
@@ -79,8 +79,8 @@
       "observation_time": "2026-11-03T01:10:00Z",
       "humidity": 96,
       "wind_speed_kmh": 4.0,
-      "wind_direction_deg": 150,
-      "visibility_m": 12000
+      "wind_direction_deg": 140,
+      "visibility_m": 1500
     }
   },
   "forecasts": {
