@@ -206,7 +206,7 @@ def descripcion_extendida(item):
     )
     valor = next((item[k] for k in claves if item.get(k) not in (None, "")), None)
     # Código 2 del ícono extendido: algo nuboso (no es lluvia).
-    cielo = {"2": "Algo nuboso", "13": "Algo nuboso"}.get(str(item.get("estadoTiempo") or "").strip())
+    cielo = cielo_desde_codigo_extendido(item.get("estadoTiempo")) or ({"2": "Algo nuboso"}.get(str(item.get("estadoTiempo") or "").strip()))
 
     def combinar(probabilidad):
         return f"{cielo}, {probabilidad[0].lower() + probabilidad[1:]}" if cielo else probabilidad
