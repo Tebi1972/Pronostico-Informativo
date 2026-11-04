@@ -1,5 +1,5 @@
 {
-  "updated": "04/11/2026 06:15",
+  "updated": "04/11/2026 06:23",
   "source": "INUMET",
   "current": {
     "station": "Carrasco",
@@ -115,7 +115,7 @@
           "date": "Sábado 07",
           "min": "9",
           "max": "19",
-          "evening": "Algo nuboso, probabilidad de precipitaciones: alta",
+          "evening": "Algo nuboso, probabilidad de precipitaciones: media",
           "extended": true,
           "weather_code": "13"
         }
@@ -152,9 +152,9 @@
           "date": "Sábado 07",
           "min": "11",
           "max": "21",
-          "evening": "Algo nuboso, probabilidad de precipitaciones: alta",
+          "evening": "Probabilidad de precipitaciones: alta",
           "extended": true,
-          "weather_code": "13"
+          "weather_code": "6"
         }
       ]
     },
@@ -226,9 +226,9 @@
           "date": "Sábado 07",
           "min": "11",
           "max": "20",
-          "evening": "Algo nuboso, probabilidad de precipitaciones: baja",
+          "evening": "Probabilidad de precipitaciones: alta",
           "extended": true,
-          "weather_code": "13"
+          "weather_code": "6"
         }
       ]
     }
