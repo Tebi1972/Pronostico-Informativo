@@ -1,5 +1,5 @@
 {
-  "updated": "05/11/2026 14:16",
+  "updated": "05/11/2026 14:23",
   "source": "INUMET",
   "current": {
     "station": "Carrasco",
@@ -110,6 +110,14 @@
           "evening": "Con nieblas",
           "extended": false,
           "weather_code": "13"
+        },
+        {
+          "date": "Domingo 08",
+          "min": "5",
+          "max": "20",
+          "evening": "Algo nuboso, sin precipitaciones previstas",
+          "extended": true,
+          "weather_code": "13"
         }
       ]
     },
@@ -139,6 +147,14 @@
           "evening": "Disminución de nubosidad.",
           "extended": false,
           "weather_code": "6"
+        },
+        {
+          "date": "Domingo 08",
+          "min": "6",
+          "max": "21",
+          "evening": "Algo nuboso, sin precipitaciones previstas",
+          "extended": true,
+          "weather_code": "2"
         }
       ]
     },
@@ -168,6 +184,14 @@
           "evening": "Disminución de nubosidad. Neblinas.",
           "extended": false,
           "weather_code": "13"
+        },
+        {
+          "date": "Domingo 08",
+          "min": "8",
+          "max": "18",
+          "evening": "Algo nuboso, sin precipitaciones previstas",
+          "extended": true,
+          "weather_code": "2"
         }
       ]
     },
@@ -197,6 +221,14 @@
           "evening": "Disminución de nubosidad. Neblinas.",
           "extended": false,
           "weather_code": "6"
+        },
+        {
+          "date": "Domingo 08",
+          "min": "5",
+          "max": "21",
+          "evening": "Algo nuboso, sin precipitaciones previstas",
+          "extended": true,
+          "weather_code": "2"
         }
       ]
     }
