@@ -1,5 +1,5 @@
 {
-  "updated": "07/11/2026 17:23",
+  "updated": "07/11/2026 18:15",
   "source": "INUMET",
   "current": {
     "station": "Carrasco",
@@ -8,8 +8,8 @@
     "condition": "Nuboso",
     "present_weather": 13,
     "cloud_amount": "Nuboso",
-    "observation_time": "2026-11-07T20:10:00Z",
-    "humidity": 65,
+    "observation_time": "2026-11-07T21:10:00Z",
+    "humidity": 63,
     "wind_speed_kmh": 22.0,
     "wind_direction_deg": 180,
     "visibility_m": 15000
@@ -18,25 +18,25 @@
     "Norte": {
       "station": "Artigas",
       "wigos": "0-20000-0-86330",
-      "temperature": 20.4,
+      "temperature": 19.8,
       "condition": "Nuboso",
       "present_weather": 13,
       "cloud_amount": "Nuboso",
-      "observation_time": "2026-11-07T20:00:00Z",
-      "humidity": 61,
-      "wind_speed_kmh": 19.0,
-      "wind_direction_deg": 170,
-      "visibility_m": 20000
+      "observation_time": "2026-11-07T21:00:00Z",
+      "humidity": 56,
+      "wind_speed_kmh": 24.0,
+      "wind_direction_deg": 180,
+      "visibility_m": 15000
     },
     "Este": {
       "station": "Rocha",
       "wigos": "0-20000-0-86565",
-      "temperature": 15.8,
+      "temperature": 15.0,
       "condition": "Nuboso",
       "present_weather": 13,
       "cloud_amount": "Nuboso",
-      "observation_time": "2026-11-07T20:00:00Z",
-      "humidity": 71,
+      "observation_time": "2026-11-07T21:00:00Z",
+      "humidity": 80,
       "wind_speed_kmh": 26.0,
       "wind_direction_deg": 180,
       "visibility_m": 15000
@@ -48,8 +48,8 @@
       "condition": "Nuboso",
       "present_weather": 13,
       "cloud_amount": "Nuboso",
-      "observation_time": "2026-11-07T20:10:00Z",
-      "humidity": 65,
+      "observation_time": "2026-11-07T21:10:00Z",
+      "humidity": 63,
       "wind_speed_kmh": 22.0,
       "wind_direction_deg": 180,
       "visibility_m": 15000
@@ -57,15 +57,15 @@
     "Oeste": {
       "station": "Mercedes",
       "wigos": "0-20000-0-86490",
-      "temperature": 18.1,
-      "condition": "Nuboso",
-      "present_weather": 13,
-      "cloud_amount": "Nuboso",
-      "observation_time": "2026-11-07T20:00:00Z",
+      "temperature": 17.3,
+      "condition": "Algo nuboso",
+      "present_weather": 2,
+      "cloud_amount": "Algo nuboso",
+      "observation_time": "2026-11-07T21:00:00Z",
       "humidity": 55,
       "wind_speed_kmh": 28.0,
-      "wind_direction_deg": 190,
-      "visibility_m": 15000
+      "wind_direction_deg": 180,
+      "visibility_m": 18000
     }
   },
   "locations": {
@@ -76,8 +76,8 @@
       "condition": "Nuboso",
       "present_weather": 13,
       "cloud_amount": "Nuboso",
-      "observation_time": "2026-11-07T20:10:00Z",
-      "humidity": 65,
+      "observation_time": "2026-11-07T21:10:00Z",
+      "humidity": 63,
       "wind_speed_kmh": 22.0,
       "wind_direction_deg": 180,
       "visibility_m": 15000
@@ -90,7 +90,7 @@
         {
           "date": "Sábado 07",
           "min": "6",
-          "max": "19",
+          "max": "18",
           "evening": "Lluvias",
           "extended": false,
           "weather_code": "13"
@@ -113,7 +113,7 @@
         },
         {
           "date": "Martes 10",
-          "min": "10",
+          "min": "9",
           "max": "26",
           "evening": "Algo nuboso, sin precipitaciones previstas",
           "extended": true,
@@ -127,7 +127,7 @@
         {
           "date": "Sábado 07",
           "min": "10",
-          "max": "23",
+          "max": "24",
           "evening": "Lluvias",
           "extended": false,
           "weather_code": "6"
@@ -164,7 +164,7 @@
         {
           "date": "Sábado 07",
           "min": "10",
-          "max": "16",
+          "max": "17",
           "evening": "Lluvias",
           "extended": false,
           "weather_code": "13"
