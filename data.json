@@ -1,5 +1,5 @@
 {
-  "updated": "07/11/2026 13:15",
+  "updated": "07/11/2026 13:23",
   "source": "INUMET",
   "current": {
     "station": "Carrasco",
@@ -127,7 +127,7 @@
         {
           "date": "Sábado 07",
           "min": "10",
-          "max": "22",
+          "max": "23",
           "evening": "Lluvias",
           "extended": false,
           "weather_code": "6"
