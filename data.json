@@ -1,5 +1,5 @@
 {
-  "updated": "08/11/2026 17:15",
+  "updated": "08/11/2026 17:23",
   "source": "INUMET",
   "current": {
     "station": "Carrasco",
@@ -91,13 +91,13 @@
           "date": "Domingo 08",
           "min": "2",
           "max": "21",
-          "evening": "Claro y nieblas",
+          "evening": "Claro",
           "extended": false,
           "weather_code": "13"
         },
         {
           "date": "Lunes 09",
-          "min": "5",
+          "min": "4",
           "max": "23",
           "evening": "Claro",
           "extended": false,
@@ -106,7 +106,7 @@
         {
           "date": "Martes 10",
           "min": "9",
-          "max": "26",
+          "max": "25",
           "evening": "Aumento de nubosidad.",
           "extended": false,
           "weather_code": "2"
@@ -127,14 +127,14 @@
         {
           "date": "Domingo 08",
           "min": "5",
-          "max": "23",
+          "max": "22",
           "evening": "Claro",
           "extended": false,
           "weather_code": "2"
         },
         {
           "date": "Lunes 09",
-          "min": "7",
+          "min": "8",
           "max": "25",
           "evening": "Claro",
           "extended": false,
@@ -150,8 +150,8 @@
         },
         {
           "date": "Miércoles 11",
-          "min": "14",
-          "max": "30",
+          "min": "15",
+          "max": "29",
           "evening": "Algo nuboso, probabilidad de precipitaciones: media",
           "extended": true,
           "weather_code": "13"
@@ -164,7 +164,7 @@
         {
           "date": "Domingo 08",
           "min": "7",
-          "max": "19",
+          "max": "17",
           "evening": "Claro",
           "extended": false,
           "weather_code": "2"
@@ -172,14 +172,14 @@
         {
           "date": "Lunes 09",
           "min": "7",
-          "max": "23",
+          "max": "22",
           "evening": "Claro",
           "extended": false,
           "weather_code": "2"
         },
         {
           "date": "Martes 10",
-          "min": "11",
+          "min": "12",
           "max": "26",
           "evening": "Aumento de nubosidad.",
           "extended": false,
@@ -208,8 +208,8 @@
         },
         {
           "date": "Lunes 09",
-          "min": "8",
-          "max": "26",
+          "min": "7",
+          "max": "25",
           "evening": "Claro",
           "extended": false,
           "weather_code": "2"
@@ -217,15 +217,15 @@
         {
           "date": "Martes 10",
           "min": "10",
-          "max": "28",
+          "max": "27",
           "evening": "Aumento de nubosidad.",
           "extended": false,
           "weather_code": "13"
         },
         {
           "date": "Miércoles 11",
-          "min": "15",
-          "max": "29",
+          "min": "16",
+          "max": "28",
           "evening": "Algo nuboso, probabilidad de precipitaciones: media",
           "extended": true,
           "weather_code": "13"
