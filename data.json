@@ -1,5 +1,5 @@
 {
-  "updated": "09/11/2026 12:15",
+  "updated": "09/11/2026 12:23",
   "source": "INUMET",
   "current": {
     "station": "Carrasco",
@@ -164,7 +164,7 @@
         {
           "date": "Lunes 09",
           "min": "8",
-          "max": "22",
+          "max": "24",
           "evening": "Claro",
           "extended": false,
           "weather_code": "2"
