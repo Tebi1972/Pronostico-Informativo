@@ -1,17 +1,17 @@
 {
-  "updated": "10/11/2026 05:23",
+  "updated": "10/11/2026 06:15",
   "source": "INUMET",
   "current": {
     "station": "Carrasco",
     "wigos": "0-20000-0-86580",
-    "temperature": 13.5,
+    "temperature": 13.4,
     "condition": "cl",
     "present_weather": 1,
     "cloud_amount": "cl",
-    "observation_time": "2026-11-10T08:10:00Z",
-    "humidity": 86,
-    "wind_speed_kmh": 15.0,
-    "wind_direction_deg": 40,
+    "observation_time": "2026-11-10T09:10:00Z",
+    "humidity": 85,
+    "wind_speed_kmh": 13.0,
+    "wind_direction_deg": 20,
     "visibility_m": 18000
   },
   "current_regions": {
@@ -22,49 +22,49 @@
       "condition": "0",
       "present_weather": null,
       "cloud_amount": "0",
-      "observation_time": "2026-11-10T08:00:00Z",
+      "observation_time": "2026-11-10T09:00:00Z",
       "humidity": 83,
-      "wind_speed_kmh": 7.6,
-      "wind_direction_deg": 147,
+      "wind_speed_kmh": 15.1,
+      "wind_direction_deg": 123,
       "visibility_m": 12000
     },
     "Este": {
       "station": "Rocha",
       "wigos": "0-20000-0-86565",
-      "temperature": 12.1,
+      "temperature": 11.5,
       "condition": "0",
       "present_weather": null,
       "cloud_amount": "0",
-      "observation_time": "2026-11-10T08:00:00Z",
-      "humidity": 90,
-      "wind_speed_kmh": 6.1,
-      "wind_direction_deg": 45,
+      "observation_time": "2026-11-10T09:00:00Z",
+      "humidity": 93,
+      "wind_speed_kmh": 6.5,
+      "wind_direction_deg": 68,
       "visibility_m": 18000
     },
     "Sur": {
       "station": "Carrasco",
       "wigos": "0-20000-0-86580",
-      "temperature": 13.5,
+      "temperature": 13.4,
       "condition": "cl",
       "present_weather": 1,
       "cloud_amount": "cl",
-      "observation_time": "2026-11-10T08:10:00Z",
-      "humidity": 86,
-      "wind_speed_kmh": 15.0,
-      "wind_direction_deg": 40,
+      "observation_time": "2026-11-10T09:10:00Z",
+      "humidity": 85,
+      "wind_speed_kmh": 13.0,
+      "wind_direction_deg": 20,
       "visibility_m": 18000
     },
     "Oeste": {
       "station": "Mercedes",
       "wigos": "0-20000-0-86490",
-      "temperature": 13.7,
+      "temperature": 13.4,
       "condition": "0",
       "present_weather": null,
       "cloud_amount": "0",
-      "observation_time": "2026-11-10T08:00:00Z",
-      "humidity": 81,
-      "wind_speed_kmh": 15.1,
-      "wind_direction_deg": 64,
+      "observation_time": "2026-11-10T09:00:00Z",
+      "humidity": 84,
+      "wind_speed_kmh": 18.0,
+      "wind_direction_deg": 56,
       "visibility_m": 15000
     }
   },
@@ -72,14 +72,14 @@
     "montevideo_carrasco": {
       "station": "Carrasco",
       "wigos": "0-20000-0-86580",
-      "temperature": 13.5,
+      "temperature": 13.4,
       "condition": "cl",
       "present_weather": 1,
       "cloud_amount": "cl",
-      "observation_time": "2026-11-10T08:10:00Z",
-      "humidity": 86,
-      "wind_speed_kmh": 15.0,
-      "wind_direction_deg": 40,
+      "observation_time": "2026-11-10T09:10:00Z",
+      "humidity": 85,
+      "wind_speed_kmh": 13.0,
+      "wind_direction_deg": 20,
       "visibility_m": 18000
     }
   },
@@ -89,7 +89,7 @@
       "days": [
         {
           "date": "Martes 10",
-          "min": "9",
+          "min": "10",
           "max": "26",
           "evening": "Aumento de nubosidad.",
           "extended": false,
@@ -126,7 +126,7 @@
       "days": [
         {
           "date": "Martes 10",
-          "min": "10",
+          "min": "9",
           "max": "29",
           "evening": "Lluvias y tormentas",
           "extended": false,
@@ -163,7 +163,7 @@
       "days": [
         {
           "date": "Martes 10",
-          "min": "12",
+          "min": "13",
           "max": "27",
           "evening": "Aumento de nubosidad.",
           "extended": false,
@@ -202,7 +202,7 @@
           "date": "Martes 10",
           "min": "10",
           "max": "28",
-          "evening": "Aumento de nubosidad.",
+          "evening": "Algo nuboso",
           "extended": false,
           "weather_code": "13"
         },
