@@ -1,5 +1,5 @@
 {
-  "updated": "16/11/2026 12:15",
+  "updated": "16/11/2026 12:23",
   "source": "INUMET",
   "current": {
     "station": "Carrasco",
@@ -126,7 +126,7 @@
       "days": [
         {
           "date": "Lunes 16",
-          "min": "19",
+          "min": "18",
           "max": "32",
           "evening": "Nuboso con lluvias y tormentas",
           "extended": false,
@@ -163,7 +163,7 @@
       "days": [
         {
           "date": "Lunes 16",
-          "min": "16",
+          "min": "17",
           "max": "26",
           "evening": "Nuboso con lluvias",
           "extended": false,
@@ -200,7 +200,7 @@
       "days": [
         {
           "date": "Lunes 16",
-          "min": "17",
+          "min": "18",
           "max": "30",
           "evening": "Nuboso con lluvias y tormentas",
           "extended": false,
