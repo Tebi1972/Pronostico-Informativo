@@ -1,5 +1,5 @@
 {
-  "updated": "18/11/2026 14:15",
+  "updated": "18/11/2026 14:23",
   "source": "INUMET",
   "current": {
     "station": "Carrasco",
@@ -91,7 +91,7 @@
           "date": "Miércoles 18",
           "min": "14",
           "max": "29",
-          "evening": "Algo nuboso con tormentas y nieblas",
+          "evening": "Nuboso con tormentas y nieblas",
           "extended": false,
           "weather_code": "13"
         },
@@ -165,7 +165,7 @@
           "date": "Miércoles 18",
           "min": "16",
           "max": "26",
-          "evening": "Algo nuboso",
+          "evening": "Algo nuboso con tormentas",
           "extended": false,
           "weather_code": "13"
         },
