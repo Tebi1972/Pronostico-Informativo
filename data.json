@@ -1,5 +1,5 @@
 {
-  "updated": "23/11/2026 11:23",
+  "updated": "23/11/2026 11:54",
   "source": "INUMET",
   "current": {
     "station": "Carrasco",
@@ -163,7 +163,7 @@
       "days": [
         {
           "date": "Lunes 23",
-          "min": "13",
+          "min": "14",
           "max": "26",
           "evening": "Algo nuboso",
           "extended": false,
