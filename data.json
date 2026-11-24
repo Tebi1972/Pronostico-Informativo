@@ -1,5 +1,5 @@
 {
-  "updated": "23/11/2026 20:23",
+  "updated": "23/11/2026 21:15",
   "source": "INUMET",
   "current": {
     "station": "Carrasco",
@@ -8,37 +8,37 @@
     "condition": "Cubierto",
     "present_weather": 4,
     "cloud_amount": "Cubierto",
-    "observation_time": "2026-11-23T23:10:00Z",
-    "humidity": 59,
+    "observation_time": "2026-11-24T00:00:00Z",
+    "humidity": 57,
     "wind_speed_kmh": 7.0,
-    "wind_direction_deg": 350,
-    "visibility_m": 10000
+    "wind_direction_deg": 340,
+    "visibility_m": 15000
   },
   "current_regions": {
     "Norte": {
       "station": "Artigas",
       "wigos": "0-20000-0-86330",
-      "temperature": 24.6,
+      "temperature": 23.6,
       "condition": "Nuboso",
       "present_weather": null,
       "cloud_amount": "5 OKTAS",
-      "observation_time": "2026-11-23T23:00:00Z",
-      "humidity": 40,
-      "wind_speed_kmh": 15.1,
-      "wind_direction_deg": 109,
+      "observation_time": "2026-11-24T00:00:00Z",
+      "humidity": 44,
+      "wind_speed_kmh": 16.2,
+      "wind_direction_deg": 136,
       "visibility_m": 12000
     },
     "Este": {
       "station": "Rocha",
       "wigos": "0-20000-0-86565",
-      "temperature": 20.6,
+      "temperature": 19.9,
       "condition": "Cubierto",
       "present_weather": null,
       "cloud_amount": "8 OKTAS",
-      "observation_time": "2026-11-23T23:00:00Z",
-      "humidity": 69,
+      "observation_time": "2026-11-24T00:00:00Z",
+      "humidity": 71,
       "wind_speed_kmh": 6.1,
-      "wind_direction_deg": 84,
+      "wind_direction_deg": 41,
       "visibility_m": 18000
     },
     "Sur": {
@@ -48,23 +48,23 @@
       "condition": "Cubierto",
       "present_weather": 4,
       "cloud_amount": "Cubierto",
-      "observation_time": "2026-11-23T23:10:00Z",
-      "humidity": 59,
+      "observation_time": "2026-11-24T00:00:00Z",
+      "humidity": 57,
       "wind_speed_kmh": 7.0,
-      "wind_direction_deg": 350,
-      "visibility_m": 10000
+      "wind_direction_deg": 340,
+      "visibility_m": 15000
     },
     "Oeste": {
       "station": "Mercedes",
       "wigos": "0-20000-0-86490",
-      "temperature": 21.6,
+      "temperature": 19.3,
       "condition": "Cubierto",
       "present_weather": null,
       "cloud_amount": "8 OKTAS",
-      "observation_time": "2026-11-23T23:00:00Z",
-      "humidity": 69,
-      "wind_speed_kmh": 11.2,
-      "wind_direction_deg": 299,
+      "observation_time": "2026-11-24T00:00:00Z",
+      "humidity": 90,
+      "wind_speed_kmh": 7.9,
+      "wind_direction_deg": 269,
       "visibility_m": 15000
     }
   },
@@ -76,11 +76,11 @@
       "condition": "Cubierto",
       "present_weather": 4,
       "cloud_amount": "Cubierto",
-      "observation_time": "2026-11-23T23:10:00Z",
-      "humidity": 59,
+      "observation_time": "2026-11-24T00:00:00Z",
+      "humidity": 57,
       "wind_speed_kmh": 7.0,
-      "wind_direction_deg": 350,
-      "visibility_m": 10000
+      "wind_direction_deg": 340,
+      "visibility_m": 15000
     }
   },
   "forecasts": {
