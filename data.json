@@ -1,16 +1,16 @@
 {
-  "updated": "24/11/2026 23:23",
+  "updated": "25/11/2026 00:15",
   "source": "INUMET",
   "current": {
     "station": "Carrasco",
     "wigos": "0-20000-0-86580",
-    "temperature": 17.7,
-    "condition": "Nuboso",
-    "present_weather": 13,
-    "cloud_amount": "Nuboso",
-    "observation_time": "2026-11-25T02:10:00Z",
-    "humidity": 51,
-    "wind_speed_kmh": 33.0,
+    "temperature": 17.5,
+    "condition": "Algo nuboso",
+    "present_weather": 2,
+    "cloud_amount": "Algo nuboso",
+    "observation_time": "2026-11-25T03:10:00Z",
+    "humidity": 54,
+    "wind_speed_kmh": 22.0,
     "wind_direction_deg": 150,
     "visibility_m": 15000
   },
@@ -18,53 +18,53 @@
     "Norte": {
       "station": "Artigas",
       "wigos": "0-20000-0-86330",
-      "temperature": 21.3,
+      "temperature": 19.3,
       "condition": "Algo nuboso",
       "present_weather": null,
       "cloud_amount": "1 OKTA OR LESS, BUT NOT ZERO",
-      "observation_time": "2026-11-25T02:00:00Z",
-      "humidity": 62,
-      "wind_speed_kmh": 9.4,
-      "wind_direction_deg": 192,
+      "observation_time": "2026-11-25T03:00:00Z",
+      "humidity": 69,
+      "wind_speed_kmh": 11.5,
+      "wind_direction_deg": 187,
       "visibility_m": 20000
     },
     "Este": {
       "station": "Rocha",
       "wigos": "0-20000-0-86565",
-      "temperature": 16.5,
+      "temperature": 16.0,
       "condition": "Nuboso",
       "present_weather": null,
       "cloud_amount": "6 OKTAS",
-      "observation_time": "2026-11-25T02:00:00Z",
-      "humidity": 64,
-      "wind_speed_kmh": 20.2,
+      "observation_time": "2026-11-25T03:00:00Z",
+      "humidity": 62,
+      "wind_speed_kmh": 20.9,
       "wind_direction_deg": 202,
       "visibility_m": 15000
     },
     "Sur": {
       "station": "Carrasco",
       "wigos": "0-20000-0-86580",
-      "temperature": 17.7,
-      "condition": "Nuboso",
-      "present_weather": 13,
-      "cloud_amount": "Nuboso",
-      "observation_time": "2026-11-25T02:10:00Z",
-      "humidity": 51,
-      "wind_speed_kmh": 33.0,
+      "temperature": 17.5,
+      "condition": "Algo nuboso",
+      "present_weather": 2,
+      "cloud_amount": "Algo nuboso",
+      "observation_time": "2026-11-25T03:10:00Z",
+      "humidity": 54,
+      "wind_speed_kmh": 22.0,
       "wind_direction_deg": 150,
       "visibility_m": 15000
     },
     "Oeste": {
       "station": "Mercedes",
       "wigos": "0-20000-0-86490",
-      "temperature": 16.6,
+      "temperature": 18.3,
       "condition": "Algo nuboso",
       "present_weather": null,
       "cloud_amount": "2 OKTAS",
-      "observation_time": "2026-11-25T02:00:00Z",
-      "humidity": 70,
-      "wind_speed_kmh": 3.2,
-      "wind_direction_deg": 209,
+      "observation_time": "2026-11-25T03:00:00Z",
+      "humidity": 75,
+      "wind_speed_kmh": 19.4,
+      "wind_direction_deg": 131,
       "visibility_m": 18000
     }
   },
@@ -72,13 +72,13 @@
     "montevideo_carrasco": {
       "station": "Carrasco",
       "wigos": "0-20000-0-86580",
-      "temperature": 17.7,
-      "condition": "Nuboso",
-      "present_weather": 13,
-      "cloud_amount": "Nuboso",
-      "observation_time": "2026-11-25T02:10:00Z",
-      "humidity": 51,
-      "wind_speed_kmh": 33.0,
+      "temperature": 17.5,
+      "condition": "Algo nuboso",
+      "present_weather": 2,
+      "cloud_amount": "Algo nuboso",
+      "observation_time": "2026-11-25T03:10:00Z",
+      "humidity": 54,
+      "wind_speed_kmh": 22.0,
       "wind_direction_deg": 150,
       "visibility_m": 15000
     }
@@ -87,14 +87,6 @@
     "E": {
       "name": "Este",
       "days": [
-        {
-          "date": "Martes 24",
-          "min": "16",
-          "max": "29",
-          "evening": "Algo nuboso con tormentas",
-          "extended": false,
-          "weather_code": "13"
-        },
         {
           "date": "Miércoles 25",
           "min": "11",
@@ -115,23 +107,23 @@
           "date": "Viernes 27",
           "min": "9",
           "max": "26",
+          "evening": "Claro",
+          "extended": false,
+          "weather_code": "2"
+        },
+        {
+          "date": "Sábado 28",
+          "min": "13",
+          "max": "29",
           "evening": "Algo nuboso, sin precipitaciones previstas",
           "extended": true,
-          "weather_code": "2"
+          "weather_code": "13"
         }
       ]
     },
     "NW": {
       "name": "Norte",
       "days": [
-        {
-          "date": "Martes 24",
-          "min": "16",
-          "max": "29",
-          "evening": "Algo nuboso",
-          "extended": false,
-          "weather_code": "13"
-        },
         {
           "date": "Miércoles 25",
           "min": "15",
@@ -152,7 +144,15 @@
           "date": "Viernes 27",
           "min": "15",
           "max": "30",
-          "evening": "Algo nuboso, probabilidad de precipitaciones: baja",
+          "evening": "Algo nuboso",
+          "extended": false,
+          "weather_code": "13"
+        },
+        {
+          "date": "Sábado 28",
+          "min": "16",
+          "max": "31",
+          "evening": "Algo nuboso, sin precipitaciones previstas",
           "extended": true,
           "weather_code": "13"
         }
@@ -161,14 +161,6 @@
     "M": {
       "name": "Sur",
       "days": [
-        {
-          "date": "Martes 24",
-          "min": "18",
-          "max": "29",
-          "evening": "Algo nuboso con tormentas",
-          "extended": false,
-          "weather_code": "13"
-        },
         {
           "date": "Miércoles 25",
           "min": "13",
@@ -189,6 +181,14 @@
           "date": "Viernes 27",
           "min": "12",
           "max": "28",
+          "evening": "Claro",
+          "extended": false,
+          "weather_code": "2"
+        },
+        {
+          "date": "Sábado 28",
+          "min": "15",
+          "max": "28",
           "evening": "Algo nuboso, sin precipitaciones previstas",
           "extended": true,
           "weather_code": "2"
@@ -199,16 +199,8 @@
       "name": "Oeste",
       "days": [
         {
-          "date": "Martes 24",
-          "min": "15",
-          "max": "29",
-          "evening": "Algo nuboso",
-          "extended": false,
-          "weather_code": "13"
-        },
-        {
           "date": "Miércoles 25",
-          "min": "14",
+          "min": "12",
           "max": "29",
           "evening": "Claro",
           "extended": false,
@@ -225,6 +217,14 @@
         {
           "date": "Viernes 27",
           "min": "12",
+          "max": "30",
+          "evening": "Claro",
+          "extended": false,
+          "weather_code": "2"
+        },
+        {
+          "date": "Sábado 28",
+          "min": "15",
           "max": "30",
           "evening": "Algo nuboso, sin precipitaciones previstas",
           "extended": true,
