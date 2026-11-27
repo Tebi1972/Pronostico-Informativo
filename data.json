@@ -1,17 +1,17 @@
 {
-  "updated": "26/11/2026 22:23",
+  "updated": "26/11/2026 23:15",
   "source": "INUMET",
   "current": {
     "station": "Carrasco",
     "wigos": "0-20000-0-86580",
-    "temperature": 17.7,
+    "temperature": 15.6,
     "condition": "cl",
     "present_weather": 1,
     "cloud_amount": "cl",
-    "observation_time": "2026-11-27T01:10:00Z",
-    "humidity": 65,
+    "observation_time": "2026-11-27T02:10:00Z",
+    "humidity": 62,
     "wind_speed_kmh": 15.0,
-    "wind_direction_deg": 90,
+    "wind_direction_deg": 60,
     "visibility_m": 15000
   },
   "current_regions": {
@@ -31,27 +31,27 @@
     "Este": {
       "station": "Rocha",
       "wigos": "0-20000-0-86565",
-      "temperature": 14.7,
+      "temperature": 11.0,
       "condition": "0",
       "present_weather": null,
       "cloud_amount": "0",
-      "observation_time": "2026-11-27T00:46:00Z",
-      "humidity": 68,
+      "observation_time": "2026-11-27T02:12:00Z",
+      "humidity": 89,
       "wind_speed_kmh": 10.1,
-      "wind_direction_deg": 2,
+      "wind_direction_deg": 1,
       "visibility_m": 15000
     },
     "Sur": {
       "station": "Carrasco",
       "wigos": "0-20000-0-86580",
-      "temperature": 17.7,
+      "temperature": 15.6,
       "condition": "cl",
       "present_weather": 1,
       "cloud_amount": "cl",
-      "observation_time": "2026-11-27T01:10:00Z",
-      "humidity": 65,
+      "observation_time": "2026-11-27T02:10:00Z",
+      "humidity": 62,
       "wind_speed_kmh": 15.0,
-      "wind_direction_deg": 90,
+      "wind_direction_deg": 60,
       "visibility_m": 15000
     },
     "Oeste": {
@@ -72,14 +72,14 @@
     "montevideo_carrasco": {
       "station": "Carrasco",
       "wigos": "0-20000-0-86580",
-      "temperature": 17.7,
+      "temperature": 15.6,
       "condition": "cl",
       "present_weather": 1,
       "cloud_amount": "cl",
-      "observation_time": "2026-11-27T01:10:00Z",
-      "humidity": 65,
+      "observation_time": "2026-11-27T02:10:00Z",
+      "humidity": 62,
       "wind_speed_kmh": 15.0,
-      "wind_direction_deg": 90,
+      "wind_direction_deg": 60,
       "visibility_m": 15000
     }
   },
