@@ -1,5 +1,5 @@
 {
-  "updated": "27/11/2026 10:15",
+  "updated": "27/11/2026 10:23",
   "source": "INUMET",
   "current": {
     "station": "Carrasco",
@@ -22,7 +22,7 @@
       "condition": "Nuboso",
       "present_weather": 13,
       "cloud_amount": "Nuboso",
-      "observation_time": "2026-11-27T12:04:00Z",
+      "observation_time": "2026-11-27T13:16:00Z",
       "humidity": 65,
       "wind_speed_kmh": 24.0,
       "wind_direction_deg": 120,
