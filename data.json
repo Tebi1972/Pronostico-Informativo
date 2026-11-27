@@ -1,5 +1,5 @@
 {
-  "updated": "27/11/2026 09:15",
+  "updated": "27/11/2026 09:23",
   "source": "INUMET",
   "current": {
     "station": "Carrasco",
@@ -31,15 +31,15 @@
     "Este": {
       "station": "Rocha",
       "wigos": "0-20000-0-86565",
-      "temperature": 8.6,
-      "condition": null,
-      "present_weather": null,
-      "cloud_amount": null,
+      "temperature": 21.2,
+      "condition": "Nuboso",
+      "present_weather": 13,
+      "cloud_amount": "Nuboso",
       "observation_time": "2026-11-27T11:55:00Z",
-      "humidity": 95,
-      "wind_speed_kmh": null,
-      "wind_direction_deg": 1,
-      "visibility_m": 15000
+      "humidity": 55,
+      "wind_speed_kmh": 13.0,
+      "wind_direction_deg": 360,
+      "visibility_m": 18000
     },
     "Sur": {
       "station": "Carrasco",
@@ -61,7 +61,7 @@
       "condition": "Nuboso",
       "present_weather": 13,
       "cloud_amount": "Nuboso",
-      "observation_time": "2026-11-27T11:47:00Z",
+      "observation_time": "2026-11-27T12:21:00Z",
       "humidity": 65,
       "wind_speed_kmh": 9.0,
       "wind_direction_deg": 20,
